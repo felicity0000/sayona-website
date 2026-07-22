@@ -5,7 +5,6 @@ import {
   InstagramIcon,
   XIcon,
   LinkedinIcon,
-  YoutubeIcon,
   WhatsappIcon,
   TiktokIcon,
 } from './SocialIcons';
