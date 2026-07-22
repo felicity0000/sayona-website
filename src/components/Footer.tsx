@@ -7,6 +7,7 @@ import {
   LinkedinIcon,
   YoutubeIcon,
   WhatsappIcon,
+  TiktokIcon,
 } from './SocialIcons';
 
 interface FooterProps {
@@ -18,8 +19,12 @@ const socialLinks = [
   { Icon: InstagramIcon, href: '#', label: 'Instagram' },
   { Icon: XIcon, href: '#', label: 'X' },
   { Icon: LinkedinIcon, href: '#', label: 'LinkedIn' },
-  { Icon: YoutubeIcon, href: '#', label: 'YouTube' },
-  { Icon: WhatsappIcon, href: '#', label: 'WhatsApp' },
+  {
+    Icon: WhatsappIcon,
+    href: `https://wa.me/0756243447?text=${encodeURIComponent('Hello, I would like to inquire about your services.')}`,
+    label: 'WhatsApp',
+  },
+  { Icon: TiktokIcon, href: 'https://www.tiktok.com/@sayonaintltd?_r=1&_t=ZS-98FABjis0vK', label: 'TikTok' },
 ];
 const  Footer = ({ onNavigate }: FooterProps) => {
   const links = ['Home', 'About', 'Services', 'Projects', 'Contact'];
