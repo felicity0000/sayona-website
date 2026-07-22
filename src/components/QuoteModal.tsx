@@ -1,0 +1,305 @@
+import { useState, useEffect } from "react";
+import {
+  X,
+  Send,
+  CheckCircle2,
+  Building2,
+  User,
+  Mail,
+  Phone,
+  FileText,
+} from "lucide-react";
+
+interface QuoteModalProps {
+  open: boolean;
+  onClose: () => void;
+}
+
+const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
+  const [form, setForm] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    service: "",
+    projectType: "",
+    budget: "",
+    message: "",
+  });
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    // web3forms
+    e.preventDefault();
+    setStatus("loading");
+    setError("");
+  };
+
+  if (!open) return null;
+
+  const services = [
+    "Civil Construction",
+    "Engineering Design",
+    "Steel Fabrication",
+    "Project Management",
+    "Maintenance & Repair",
+    "Consulting",
+    "Products & Supply",
+  ];
+
+  return (
+    <div
+      className="fixed inset-0 z-100 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-[fadeIn_0.2s_ease-out]"
+      onClick={onClose}
+    >
+      <div
+        className="relative bg-zinc-950 border border-yellow-400/20 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-white/50 hover:text-yellow-400 hover:bg-white/5 transition-all duration-200 rounded-full z-10"
+        >
+          <X size={20} />
+        </button>
+
+        {status === "success" ? (
+          <div className="flex flex-col items-center justify-center text-center py-20 px-8">
+            <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-6 animate-[scaleIn_0.3s_ease-out]">
+              <CheckCircle2 size={32} className="text-black" />
+            </div>
+            <h3 className="text-2xl font-black text-white mb-2">
+              Quote Request Submitted!
+            </h3>
+            <p className="text-white/60">
+              Thank you for your interest. Our team will review your request and
+              get back to you within 24 hours.
+            </p>
+          </div>
+        ) : (
+          <div className="p-8">
+            <div className="mb-8">
+              <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">
+                Request a Quote
+              </span>
+              <h2 className="text-3xl font-black text-white mt-2 mb-2">
+                Let's Build Together
+              </h2>
+              <p className="text-white/50 text-sm">
+                Fill out the form below and we'll provide a customized quote for
+                your project.
+              </p>
+            </div>
+
+            {error && (
+              <div className="bg-red-500/10 border border-red-500/30 text-red-400 text-sm p-3 mb-4">
+                {error}
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="text-white/60 text-xs font-medium tracking-wide uppercase mb-2 block">
+                    Name *
+                  </label>
+                  <div className="relative">
+                    <User
+                      size={16}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 text-white/30"
+                    />
+                    <input
+                      required
+                      type="text"
+                      value={form.name}
+                      onChange={(e) =>
+                        setForm({ ...form, name: e.target.value })
+                      }
+                      className="w-full bg-black/50 border border-white/10 text-white pl-10 pr-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
+                      placeholder="Your name"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label className="text-white/60 text-xs font-medium tracking-wide uppercase mb-2 block">
+                    Company
+                  </label>
+                  <div className="relative">
+                    <Building2
+                      size={16}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 text-white/30"
+                    />
+                    <input
+                      type="text"
+                      value={form.company}
+                      onChange={(e) =>
+                        setForm({ ...form, company: e.target.value })
+                      }
+                      className="w-full bg-black/50 border border-white/10 text-white pl-10 pr-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
+                      placeholder="Company name"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="text-white/60 text-xs font-medium tracking-wide uppercase mb-2 block">
+                    Email *
+                  </label>
+                  <div className="relative">
+                    <Mail
+                      size={16}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 text-white/30"
+                    />
+                    <input
+                      required
+                      type="email"
+                      value={form.email}
+                      onChange={(e) =>
+                        setForm({ ...form, email: e.target.value })
+                      }
+                      className="w-full bg-black/50 border border-white/10 text-white pl-10 pr-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
+                      placeholder="you@example.com"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label className="text-white/60 text-xs font-medium tracking-wide uppercase mb-2 block">
+                    Phone
+                  </label>
+                  <div className="relative">
+                    <Phone
+                      size={16}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 text-white/30"
+                    />
+                    <input
+                      type="tel"
+                      value={form.phone}
+                      onChange={(e) =>
+                        setForm({ ...form, phone: e.target.value })
+                      }
+                      className="w-full bg-black/50 border border-white/10 text-white pl-10 pr-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
+                      placeholder="+255 ..."
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="text-white/60 text-xs font-medium tracking-wide uppercase mb-2 block">
+                    Service Needed *
+                  </label>
+                  <div className="relative">
+                    <FileText
+                      size={16}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 text-white/30 z-10"
+                    />
+                    <select
+                      required
+                      value={form.service}
+                      onChange={(e) =>
+                        setForm({ ...form, service: e.target.value })
+                      }
+                      className="w-full bg-black/50 border border-white/10 text-white pl-10 pr-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200 appearance-none"
+                    >
+                      <option value="" className="bg-zinc-950">
+                        Select a service
+                      </option>
+                      {services.map((s) => (
+                        <option key={s} value={s} className="bg-zinc-950">
+                          {s}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label className="text-white/60 text-xs font-medium tracking-wide uppercase mb-2 block">
+                    Project Type
+                  </label>
+                  <input
+                    type="text"
+                    value={form.projectType}
+                    onChange={(e) =>
+                      setForm({ ...form, projectType: e.target.value })
+                    }
+                    className="w-full bg-black/50 border border-white/10 text-white px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
+                    placeholder="e.g. Building, Bridge, Factory"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="text-white/60 text-xs font-medium tracking-wide uppercase mb-2 block">
+                  Estimated Budget
+                </label>
+                <input
+                  type="text"
+                  value={form.budget}
+                  onChange={(e) => setForm({ ...form, budget: e.target.value })}
+                  className="w-full bg-black/50 border border-white/10 text-white px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
+                  placeholder="e.g. $50,000 - $100,000"
+                />
+              </div>
+
+              <div>
+                <label className="text-white/60 text-xs font-medium tracking-wide uppercase mb-2 block">
+                  Project Details *
+                </label>
+                <textarea
+                  required
+                  rows={4}
+                  value={form.message}
+                  onChange={(e) =>
+                    setForm({ ...form, message: e.target.value })
+                  }
+                  className="w-full bg-black/50 border border-white/10 text-white px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200 resize-none"
+                  placeholder="Describe your project, timeline, and any specific requirements..."
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="group w-full bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-4 tracking-wider uppercase text-sm transition-all duration-200 hover:shadow-[0_0_20px_rgba(234,179,8,0.4)] active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {status === "loading" ? (
+                  <>
+                    <span className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
+                    Submitting...
+                  </>
+                ) : (
+                  <>
+                    Submit Request
+                    <Send
+                      size={16}
+                      className="group-hover:translate-x-1 transition-transform"
+                    />
+                  </>
+                )}
+              </button>
+            </form>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default QuoteModal;
