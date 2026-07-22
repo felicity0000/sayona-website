@@ -9,6 +9,8 @@ import root_top_glass_sheets_1 from "./roof-top-glass-sheets-1.jpeg";
 import pots_1 from "./pots-1.jpeg";
 import motorcycleCourierBox1 from "./motorcycle-box-courier-1.jpeg";
 import motorcycleCourierBox2 from "./motorcycle-box-courier-2.jpeg";
+import roofing_sheets_1 from "./roofing-systems-1.jpeg";
+import lighting_decorations_1 from "./lighting-decorations-1.jpeg"
 
 const images = {
     logo,
@@ -22,6 +24,8 @@ const images = {
     pots_1,
     motorcycleCourierBox1,
     motorcycleCourierBox2,
+    roofing_sheets_1,
+    lighting_decorations_1
 }
 
 export default images;

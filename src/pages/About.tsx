@@ -22,7 +22,7 @@ const About =() => {
             Engineering Trust, <span className="text-yellow-400">Building</span> Tomorrow
           </h1>
           <p className="text-white/60 max-w-2xl mx-auto text-lg leading-relaxed">
-            Sayona international limited was established in 2009 and based in Kampala plot17 enterprise road, Ntinda industrial area, Uganda.
+            Sayona international limited was established in 2009 and based in Kampala plot 17 enterprise road, Ntinda industrial area, Uganda.
           </p>
         </div>
       </section>

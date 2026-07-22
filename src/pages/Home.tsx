@@ -1,15 +1,23 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from "react";
 import {
-  Building2, Wrench, ShieldCheck, ArrowRight, Award,
-  Users, TrendingUp, Factory, Hammer, CheckCircle2, ChevronLeft, ChevronRight,
-  HeartHandshake,
-  Clock,
-  Cpu,
+  Building2,
+  Wrench,
+  ShieldCheck,
+  ArrowRight,
+  Award,
+  Users,
+  TrendingUp,
+  Factory,
+  Hammer,
+  CheckCircle2,
+  Settings2,
   BadgeCheck,
-  Settings2
-} from 'lucide-react';
-import images from '../assets/images';
-import { services } from '../data/servicesData';
+  Cpu,
+  Clock,
+  HeartHandshake,
+} from "lucide-react";
+import { services } from "../data/servicesData";
+import images from "../assets/images";
 
 interface HomeProps {
   onNavigate: (page: string) => void;
@@ -29,7 +37,7 @@ function useInView<T extends HTMLElement>() {
           obs.unobserve(entry.target);
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     );
     obs.observe(el);
     return () => obs.disconnect();
@@ -37,7 +45,7 @@ function useInView<T extends HTMLElement>() {
   return { ref, inView };
 }
 
-function Counter({ end, suffix = '' }: { end: number; suffix?: string }) {
+function Counter({ end, suffix = "" }: { end: number; suffix?: string }) {
   const { ref, inView } = useInView<HTMLDivElement>();
   const [count, setCount] = useState(0);
   useEffect(() => {
@@ -57,45 +65,14 @@ function Counter({ end, suffix = '' }: { end: number; suffix?: string }) {
   }, [inView, end]);
   return (
     <div ref={ref} className="text-4xl md:text-5xl font-black text-white">
-      {count}{suffix}
+      {count}
+      {suffix}
     </div>
   );
 }
 
-const Home = ({ onNavigate, onQuote }: HomeProps) => {
-
+export default function Home({ onNavigate, onQuote }: HomeProps) {
   const featuredServices = services.slice(0, 4);
-
-  const slides = [
-    {
-      image: images.hero4,
-      badge: 'Engineering Excellence Since 2009',
-      title: ' Fiberglass & Epoxy Solutions, Engineered with Purpose',
-      highlight: 'Solutions',
-      desc: "Sayona International is Uganda's trusted manufacturer of fiberglass products, epoxy solutions, and industrial fabrication — supplying premium fiberglass raw materials for the construction, industrial, automotive, commercial, and residential sectors.",
-    },
-    {
-      image: 'https://images.pexels.com/photos/159306/construction-site-build-construction-159306.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      badge: 'Civil Construction',
-      title: 'Structures That Stand the Test of Time',
-      highlight: 'Stand',
-      desc: 'From foundations to finishing, we build commercial, residential, and industrial structures with uncompromising quality and attention to detail.',
-    },
-    {
-      image: 'https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      badge: 'Steel Fabrication & Manufacturing',
-      title: 'Engineering Strength into Every Beam',
-      highlight: 'Strength',
-      desc: 'Custom steel fabrication and industrial equipment manufacturing — delivering precision-engineered components for projects of any scale.',
-    },
-    {
-      image: 'https://images.pexels.com/photos/162539/architecture-building-amsterdam-blue-sky-162539.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      badge: 'Infrastructure Development',
-      title: 'Connecting Communities, Building Progress',
-      highlight: 'Progress',
-      desc: 'Ports, railways, power stations, and public infrastructure — we deliver the projects that keep Tanzania moving forward.',
-    },
-  ];
 
   const stats = [
     { icon: Award, value: 10, suffix: "+", label: "Years Experience" },
@@ -137,144 +114,75 @@ const Home = ({ onNavigate, onQuote }: HomeProps) => {
     },
   ];
 
-
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const slideTimer = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  const goToSlide = useCallback((idx: number) => {
-    setCurrentSlide((idx + slides.length) % slides.length);
-  }, [slides.length]);
-
-  const nextSlide = useCallback(() => goToSlide(currentSlide + 1), [currentSlide, goToSlide]);
-  const prevSlide = useCallback(() => goToSlide(currentSlide - 1), [currentSlide, goToSlide]);
-
-  useEffect(() => {
-    slideTimer.current = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
-    return () => { if (slideTimer.current) clearInterval(slideTimer.current); };
-  }, [slides.length]);
-
   return (
     <div className="bg-black">
-      {/* Hero Carousel */}
-      <section
-        className="relative min-h-screen flex items-center overflow-hidden"
-        onMouseEnter={() => { if (slideTimer.current) clearInterval(slideTimer.current); }}
-        onMouseLeave={() => {
-          slideTimer.current = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % slides.length);
-          }, 6000);
-        }}
-      >
-        {/* Slides */}
-        {slides.map((slide, i) => (
+      {/* Hero */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0">
+          <img
+            src={images.decorativeCeiling1}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-linear-to-br from-black via-black/70 to-yellow-900/30" />
           <div
-            key={i}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              i === currentSlide ? 'opacity-50' : 'opacity-0 pointer-events-none'
-            }`}
-          >
-            {/* Background image */}
-            <div
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-8000 ease-out"
-              style={{
-                backgroundImage: `url(${slide.image})`,
-                transform: i === currentSlide ? 'scale(1.1)' : 'scale(1)',
-              }}
-            />
-            {/* Dark overlay */}
-            <div className="absolute inset-0 bg-linear-to-r from-black via-black/80 to-black/40" />
-            <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-black/60" />
-            {/* Grid pattern */}
-            <div className="absolute inset-0 opacity-20"
-              style={{
-                backgroundImage: `linear-gradient(rgba(234,179,8,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(234,179,8,0.03) 1px, transparent 1px)`,
-                backgroundSize: '60px 60px',
-              }}
-            />
-            {/* Glow accents */}
-            <div className="absolute top-1/4 -right-32 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute bottom-1/4 -left-32 w-96 h-96 bg-yellow-400/5 rounded-full blur-3xl" />
-          </div>
-        ))}
+            className="absolute inset-0 opacity-10"
+            style={{
+              backgroundImage: `linear-gradient(rgba(200,170,8,0.01) 1px, transparent 1px), linear-gradient(90deg, rgba(200,170,8,0.01) 1px, transparent 1px)`,
+              backgroundSize: "60px 60px",
+            }}
+          />
+          <div className="absolute top-1/4 -right-32 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 -left-32 w-96 h-96 bg-yellow-400/5 rounded-full blur-3xl" />
+        </div>
 
-        {/* Slide content */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full z-10">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full">
           <div className="max-w-3xl">
-            {slides.map((slide, i) => (
-              <div
-                key={i}
-                className={`${i === currentSlide ? 'block' : 'hidden'}`}
-              >
-                <div className={`inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/30 px-4 py-1.5 rounded-full mb-6 ${i === currentSlide ? 'animate-[fadeInUp_0.6s_ease-out]' : ''}`}>
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
-                  <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">{slide.badge}</span>
-                </div>
-                <h1 className={`text-5xl md:text-7xl font-black text-white leading-[1.05] mb-6 ${i === currentSlide ? 'animate-[fadeInUp_0.8s_ease-out]' : ''}`}>
-                  {slide.title.split(slide.highlight).map((part, idx, arr) => (
-                    <span key={idx}>
-                      {part}
-                      {idx < arr.length - 1 && <span className="text-yellow-400">{slide.highlight}</span>}
-                    </span>
-                  ))}
-                </h1>
-                <p className={`text-lg text-white/60 mb-10 max-w-xl leading-relaxed ${i === currentSlide ? 'animate-[fadeInUp_1s_ease-out]' : ''}`}>
-                  {slide.desc}
-                </p>
-              </div>
-            ))}
+            <div className="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/30 px-4 py-1.5 rounded-full mb-6 animate-[fadeInUp_0.6s_ease-out]">
+              <span className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
+              <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">
+                Excellence Since 2009
+              </span>
+            </div>
+            <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.05] mb-6 animate-[fadeInUp_0.8s_ease-out]">
+              Fiberglass & Epoxy <span className="text-yellow-400">Solutions</span>, Engineered with Purpose
+            </h1>
+            <p className="text-lg text-white/60 mb-10 max-w-xl leading-relaxed animate-[fadeInUp_1s_ease-out]">
+              Sayona International is Uganda's trusted manufacturer of
+              fiberglass products, epoxy solutions, and industrial fabrication
+              — supplying premium fiberglass raw materials for the
+              construction, industrial, automotive, commercial, and
+              residential sectors.
+            </p>
             <div className="flex flex-wrap gap-4 animate-[fadeInUp_1.2s_ease-out]">
               <button
                 onClick={onQuote}
                 className="group bg-yellow-400 hover:bg-yellow-300 text-black font-bold px-8 py-4 tracking-wider uppercase text-sm transition-all duration-200 hover:shadow-[0_0_30px_rgba(234,179,8,0.4)] active:scale-95 flex items-center gap-2"
               >
                 Get a Quote
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight
+                  size={18}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
               </button>
               <button
-                onClick={() => onNavigate('projects')}
+                onClick={() => onNavigate("projects")}
                 className="group border border-white/30 hover:border-yellow-400 hover:text-yellow-400 text-white font-bold px-8 py-4 tracking-wider uppercase text-sm transition-all duration-200 active:scale-95 flex items-center gap-2"
               >
                 Our Projects
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight
+                  size={18}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
               </button>
             </div>
           </div>
         </div>
 
-        {/* Carousel controls */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 border border-white/20 bg-black/30 backdrop-blur-sm text-white/70 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 transition-all duration-200 flex items-center justify-center group"
-          aria-label="Previous slide"
-        >
-          <ChevronLeft size={24} className="group-hover:-translate-x-0.5 transition-transform" />
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 border border-white/20 bg-black/30 backdrop-blur-sm text-white/70 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 transition-all duration-200 flex items-center justify-center group"
-          aria-label="Next slide"
-        >
-          <ChevronRight size={24} className="group-hover:translate-x-0.5 transition-transform" />
-        </button>
-
-        {/* Slide indicators */}
-        <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-20 flex gap-3">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => goToSlide(i)}
-              className={`h-1 transition-all duration-300 ${
-                i === currentSlide ? 'w-10 bg-yellow-400' : 'w-5 bg-white/30 hover:bg-white/50'
-              }`}
-              aria-label={`Go to slide ${i + 1}`}
-            />
-          ))}
-        </div>
-
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block z-20">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block">
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
             <div className="w-1 h-2 bg-yellow-400 rounded-full animate-bounce" />
           </div>
@@ -570,5 +478,3 @@ const Home = ({ onNavigate, onQuote }: HomeProps) => {
     </div>
   );
 }
-
-export default Home;

@@ -9,6 +9,9 @@ interface ServiceDetailProps {
 
 const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
   const service = getServiceBySlug(slug);
+  const featured = service?.items.filter((item) => item.image) ?? [];
+  const rest = service?.items.filter((item) => !item.image) ?? [];
+  const isMixed = featured.length > 0 && rest.length > 0;
 
   if (!service) {
     return (
@@ -67,31 +70,59 @@ const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
               Products & <span className="text-yellow-400">Capabilities</span>
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {service.items.map((item, i) => (
-              <div
-                key={i}
-                className="group bg-white/3 border border-white/10 overflow-hidden hover:bg-white/6 hover:border-yellow-400/40 transition-all duration-300"
-              >
-                {item.image && (
-                  <div className="h-44 overflow-hidden">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+          {featured.length > 0 && (
+            <div className={rest.length > 0 ? 'mb-16' : ''}>
+              {isMixed && (
+                <h3 className="text-yellow-400/70 text-xs tracking-widest uppercase font-semibold mb-6">
+                  Highlights
+                </h3>
+              )}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {featured.map((item, i) => (
+                  <div
+                    key={i}
+                    className="group bg-white/3 border border-white/10 overflow-hidden hover:bg-white/6 hover:border-yellow-400/40 transition-all duration-300"
+                  >
+                    <div className="h-52 overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-white font-bold leading-snug mb-2">{item.title}</h3>
+                      <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
                   </div>
-                )}
-                <div className="p-6">
-                  <div className="flex items-start gap-3 mb-2">
-                    <CheckCircle2 size={20} className="text-yellow-400 mt-0.5 shrink-0" />
-                    <h3 className="text-white font-bold leading-snug">{item.title}</h3>
-                  </div>
-                  <p className="text-white/50 text-sm leading-relaxed pl-8">{item.desc}</p>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          )}
+
+          {rest.length > 0 && (
+            <div>
+              {isMixed && (
+                <h3 className="text-yellow-400/70 text-xs tracking-widest uppercase font-semibold mb-6">
+                  Complete Range
+                </h3>
+              )}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {rest.map((item, i) => (
+                  <div
+                    key={i}
+                    className="group flex items-start gap-3 bg-white/3 border border-white/10 p-5 hover:bg-white/6 hover:border-yellow-400/40 transition-all duration-300"
+                  >
+                    <CheckCircle2 size={18} className="text-yellow-400 mt-0.5 shrink-0" />
+                    <div>
+                      <h3 className="text-white font-bold text-sm leading-snug mb-1">{item.title}</h3>
+                      <p className="text-white/50 text-xs leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
