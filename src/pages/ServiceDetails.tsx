@@ -1,5 +1,6 @@
 import { ArrowRight, ArrowLeft, CheckCircle2 } from 'lucide-react';
 import { getServiceBySlug } from '../data/servicesData';
+import ImageCarousel from '../components/ImageCarousel';
 
 interface ServiceDetailProps {
   slug: string;
@@ -9,8 +10,8 @@ interface ServiceDetailProps {
 
 const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
   const service = getServiceBySlug(slug);
-  const featured = service?.items.filter((item) => item.image) ?? [];
-  const rest = service?.items.filter((item) => !item.image) ?? [];
+  const featured = service?.items.filter((item) => item.image || item.images?.length) ?? [];
+  const rest = service?.items.filter((item) => !item.image && !item.images?.length) ?? [];
   const isMixed = featured.length > 0 && rest.length > 0;
 
   if (!service) {
@@ -84,8 +85,8 @@ const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
                     className="group bg-white/3 border border-white/10 overflow-hidden hover:bg-white/6 hover:border-yellow-400/40 transition-all duration-300"
                   >
                     <div className="h-52 overflow-hidden">
-                      <img
-                        src={item.image}
+                      <ImageCarousel
+                        images={item.images?.length ? item.images : [item.image!]}
                         alt={item.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />

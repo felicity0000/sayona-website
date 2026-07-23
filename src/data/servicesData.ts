@@ -7,6 +7,7 @@ export interface ServiceItem {
   title: string;
   desc: string;
   image?: string;
+  images?: string[];
 }
 
 export interface ServiceData {
@@ -88,7 +89,7 @@ export const services: ServiceData[] = [
     intro: "Our fiberglass construction systems combine durability, aesthetics, and low maintenance — delivering architectural solutions that stand up to Uganda's climate while elevating design.",
     items: [
       { title: 'Fiberglass Roofing Systems', desc: 'Complete roofing systems engineered for durability, insulation, and fast installation.', image: images.roofing_sheets_1 },
-      { title: 'Transparent Roofing Panels', desc: 'Light-transmitting roofing panels that bring natural daylight into covered spaces.'},
+      { title: 'Transparent Roofing Panels', desc: 'Light-transmitting roofing panels that bring natural daylight into covered spaces.', images: [images.transparent_roofing_panels_1, images.transparent_roofing_panels_2, images.transparent_roofing_panels_3] },
       { title: 'Corrugated Fiberglass Sheets', desc: 'Standard-profile corrugated sheets combining strength with weather resistance.' },
       { title: 'Skylight Systems', desc: 'Custom fiberglass skylights that flood interiors with natural light.' },
       { title: 'Decorative Ceilings', desc: 'Ornamental ceiling features and mouldings that add character to any interior.', image: images.decorativeCeiling1 },

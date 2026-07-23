@@ -11,6 +11,9 @@ import motorcycleCourierBox1 from "./motorcycle-box-courier-1.jpeg";
 import motorcycleCourierBox2 from "./motorcycle-box-courier-2.jpeg";
 import roofing_sheets_1 from "./roofing-systems-1.jpeg";
 import lighting_decorations_1 from "./lighting-decorations-1.jpeg"
+import transparent_roofing_panels_1 from "./transparent-roofing-panels-1.jpeg";
+import transparent_roofing_panels_2 from "./transparent-roofing-panels-2.jpeg";
+import transparent_roofing_panels_3 from "./transparent-roofing-panels-3.jpeg";
 
 const images = {
     logo,
@@ -25,7 +28,10 @@ const images = {
     motorcycleCourierBox1,
     motorcycleCourierBox2,
     roofing_sheets_1,
-    lighting_decorations_1
+    lighting_decorations_1,
+    transparent_roofing_panels_1,
+    transparent_roofing_panels_2,
+    transparent_roofing_panels_3,
 }
 
 export default images;
