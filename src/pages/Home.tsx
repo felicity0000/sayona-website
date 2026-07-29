@@ -79,7 +79,7 @@ function Counter({ end, suffix = "" }: { end: number; suffix?: string }) {
   );
 }
 
-export default function Home({ onNavigate, onSelectService, onQuote }: HomeProps) {
+export default function Home({ onNavigate, onQuote }: HomeProps) {
   const featuredServices = homeServiceSlugs
     .map((slug) => getServiceBySlug(slug))
     .filter((service) => service !== undefined);
