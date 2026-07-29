@@ -165,7 +165,7 @@ const ServiceDetail = ({ onQuote }: ServiceDetailProps) => {
                   </div>
                 </Reveal>
 
-                <RevealGroup className="grid grid-cols-2 gap-2" delay={0.1}>
+                <RevealGroup className="grid grid-cols-2 gap-2">
                   <RevealItem className="col-span-2">
                     <ShowcaseMedia
                       block={{ image: showcase.hero.mainImage, fit: showcase.hero.fit }}
