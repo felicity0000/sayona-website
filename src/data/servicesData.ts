@@ -1,4 +1,4 @@
-import { Layers, Droplet, Warehouse, Building2, Motorbike, Home as HomeIcon, Amphora, DoorClosed, Landmark, Sparkles } from 'lucide-react';
+import { Layers, Droplet, Warehouse, Building2, Motorbike, Home as HomeIcon, Amphora, DoorClosed, Landmark, Sparkles, Sofa, Paintbrush } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import images from '../assets/images';
 
@@ -25,6 +25,10 @@ import aluminiumProduct1 from '../assets/aluminium-product/aluminium-product-1.j
 import aluminiumProduct2 from '../assets/aluminium-product/aluminium-product-2.jpg';
 
 import decorativeCeilingMedallion from '../assets/architectural-works/decorative-celing.jpeg';
+import archway1 from '../assets/architectural-works/architecture-1.jpg';
+import archway2 from '../assets/architectural-works/architecture-2.jpg';
+import archMoulding1 from '../assets/architectural-works/architecture-3.jpg';
+import entrancePortico1 from '../assets/architectural-works/columns-1.jpg';
 
 import epoxy1 from '../assets/epoxy/epoxy-1.jpeg';
 import epoxy2 from '../assets/epoxy/epoxy-2.jpeg';
@@ -39,6 +43,18 @@ import lightingDecorations4 from '../assets/decorations/lighting-decorations-4.j
 
 import rawMaterialFiberglassMat from '../assets/raw-materials-supply-products/fiber-glass-mat-1.jpg';
 import rawMaterialResin from '../assets/raw-materials-supply-products/resin.jpg';
+
+import furniture1 from '../assets/furniture-products/furniture-1.jpg';
+import furniture2 from '../assets/furniture-products/furniture-2.jpg';
+import furniture3 from '../assets/furniture-products/furniture-3.jpg';
+import furniture4 from '../assets/furniture-products/furniture-4.jpg';
+import furniture5 from '../assets/furniture-products/furniture-5.jpg';
+
+import interiorDesign1 from '../assets/interior-design/interior-design-1.jpg';
+import interiorDesign2 from '../assets/interior-design/interior-design-2.jpg';
+import interiorDesign3 from '../assets/interior-design/interior-design-3.jpg';
+import interiorDesign4 from '../assets/interior-design/interior-design-4.jpg';
+import exteriorFacade1 from '../assets/interior-design/exterior-1.jpg';
 
 export interface ServiceItem {
   title: string;
@@ -178,7 +194,7 @@ export const products: ServiceData[] = [
     image: fibreBox15,
     title: 'Motorbike / Delivery Boxes',
     intro: "Weatherproof, lockable fiberglass delivery boxes built for boda-bodas, courier fleets, and utility vehicles — lightweight and secure, with custom branding available for your business.",
-    catalogue: '/catalogues/motorbike-delivery-boxes.pdf',
+    catalogue: '/catalogues/motorbike-boxes-courier.pdf',
     items: [
       { title: 'Motorcycle Courier Boxes', desc: 'Weatherproof fiberglass delivery boxes with secure locking lids and space for custom branding — built for boda-boda and courier fleets.', image: images.motorcycleCourierBox1 },
       { title: 'Delivery Boxes', desc: 'Durable, lockable fiberglass boxes for last-mile delivery, with your logo and contact details printed on request.', image: images.motorcycleCourierBox1 },
@@ -221,7 +237,7 @@ export const products: ServiceData[] = [
     image: roofing1,
     title: 'Roofing',
     intro: "Complete fiberglass roofing systems engineered for durability, insulation, and natural light — built to withstand Uganda's climate.",
-    catalogue: '/catalogues/roofing.pdf',
+    catalogue: '/catalogues/roofings.pdf',
     items: [
       { title: 'Fiberglass Roofing Systems', desc: 'Complete roofing systems engineered for durability, insulation, and fast installation.', image: images.roofing_sheets_1 },
       { title: 'Transparent Roofing Panels', desc: 'Light-transmitting roofing panels that bring natural daylight into covered spaces.', images: [images.transparent_roofing_panels_1, images.transparent_roofing_panels_2, images.transparent_roofing_panels_3] },
@@ -370,10 +386,12 @@ export const products: ServiceData[] = [
       {
         title: 'Decorative Cement Pillars & Columns',
         desc: 'Crafted to offer both load-bearing strength and ornamental detailing, perfect for enhancing entrances, corridors, or open verandas.',
+        image: entrancePortico1,
       },
       {
         title: 'Exterior Finishing & Garden Decor',
         desc: 'Resilient outdoor elements including edging, sculptures, and accent decor that withstand environmental exposure while elevating landscape aesthetics.',
+        image: archMoulding1,
       },
       {
         title: 'Ceiling Work – Domes, Trims & Mouldings',
@@ -409,9 +427,22 @@ export const products: ServiceData[] = [
           'Domed ceilings, trims & architectural mouldings',
           'Boundary walls, stamped concrete & wall relief art',
         ],
-        mainImage: decorativeCeilingMedallion,
-        sideImages: [],
+        mainImage: entrancePortico1,
+        sideImages: [archway2, archway1],
+        fit: 'contain',
+      },
+      secondary: {
+        tagline: 'Cast On-Site',
+        heading: 'Exterior Mouldings & Facade Details',
+        description: 'Beyond indoor columns and ceilings, we cast exterior window surrounds, cornices, and facade mouldings directly on-site — durable GRC and cement detailing built to hold its finish through years of weather.',
+        image: archMoulding1,
         fit: 'cover',
+      },
+      banner: {
+        tagline: 'Refined Interiors',
+        heading: 'Domed Ceilings & Ornamental Detail',
+        description: 'From medallion ceilings to fluted columns, every piece is moulded and finished to bring depth, luxury, and character to interior spaces.',
+        image: decorativeCeilingMedallion,
       },
     },
   },
@@ -488,6 +519,98 @@ export const products: ServiceData[] = [
         mainImage: rawMaterialFiberglassMat,
         sideImages: [rawMaterialResin],
         fit: 'cover',
+      },
+    },
+  },
+  {
+    slug: 'furniture',
+    icon: Sofa,
+    image: furniture3,
+    title: 'Furniture',
+    intro: 'From hand-carved wooden pieces to upholstered sofa sets, we design and craft furniture for homes, offices, and hospitality spaces — built to order and finished to a premium standard.',
+    catalogue: '/catalogues/furniture.pdf',
+    items: [
+      { title: 'Sofa Sets', desc: 'Upholstered 3+1+1 sofa sets in a range of fabrics and finishes, built for durability and everyday comfort.', image: furniture4 },
+      { title: 'Modern Wood-Frame Sofas', desc: 'Contemporary sofas with solid wood framing and premium cushioning for a clean, modern look.', image: furniture3 },
+      { title: 'Hand-Carved Armchairs', desc: 'Intricately carved solid-wood armchairs, upholstered for comfort — statement pieces for any interior.', image: furniture1 },
+      { title: 'Custom Carved Doors & Wood Panels', desc: 'Ornately hand-carved wooden doors and decorative panels, crafted to order for a distinctive entrance or feature wall.', image: furniture2 },
+      { title: 'Upholstery & Cushioning', desc: 'In-house upholstery services with a wide choice of fabrics, foams, and finishes to match any furniture piece.' },
+    ],
+    showcase: {
+      hero: {
+        tagline: 'Crafted Furniture',
+        heading: 'Furniture, Handcrafted for Every Room',
+        highlight: 'Handcrafted',
+        description: 'From solid wood-frame sofas to intricately carved accent chairs, every piece is built and upholstered in-house — combining comfort, craftsmanship, and a finish made to last.',
+        features: [
+          'Upholstered sofa sets in a range of fabrics',
+          'Solid wood-frame sofas and modern seating',
+          'Hand-carved armchairs and accent furniture',
+          'Custom carved doors and decorative wood panels',
+        ],
+        mainImage: furniture3,
+        sideImages: [furniture4, furniture5],
+        fit: 'contain',
+      },
+      secondary: {
+        tagline: 'Hand-Carved Detail',
+        heading: 'Carved Furniture & Woodwork',
+        description: 'Beyond upholstered seating, our craftsmen hand-carve solid wood armchairs, doors, and panels — intricate detailing finished to order for a distinctive, one-of-a-kind piece.',
+        image: furniture1,
+        fit: 'cover',
+      },
+      banner: {
+        tagline: 'Bespoke Woodwork',
+        heading: 'Carved Doors, Made to Order',
+        description: 'Every carved door and panel is designed and finished by hand in our own workshop — a striking centerpiece for any entrance or feature wall.',
+        image: furniture2,
+      },
+    },
+  },
+  {
+    slug: 'interior-exterior-craftsmanship',
+    icon: Paintbrush,
+    image: interiorDesign4,
+    title: 'Interior & Exterior Craftsmanship',
+    intro: 'End-to-end interior and exterior craftsmanship — from showroom design and fit-outs to façade works, modular kitchens, lighting, and landscaping — delivered as a single turnkey solution.',
+    catalogue: '/catalogues/interior-exterior-craftsmanship.pdf',
+    items: [
+      { title: 'Showroom Interiors & Facades', desc: 'Captivating showroom designs featuring branded displays, lighting, signage, and premium façade treatments to enhance visibility and attract customers.', image: interiorDesign4 },
+      { title: 'Interior Fit-Outs: Walls, Ceilings & Finishes', desc: 'Turnkey solutions including wall paneling, false ceilings, decorative trims, partitions, acoustics, paint, and wallpaper tailored to client aesthetics.', image: interiorDesign3 },
+      { title: 'Exterior Facade Works & Architectural Details', desc: 'Durable GRC and cement-based claddings, moldings, columns, parapets, and elevation features delivering elegance and weather resilience.', image: exteriorFacade1 },
+      { title: 'Modular Kitchens, Wardrobes & Storage', desc: 'Ergonomic, space-optimized storage and functional kitchen units designed for homes, offices, hospitality, and retail spaces.', image: interiorDesign1 },
+      { title: 'Custom Furniture & Display Installations', desc: 'Bespoke furniture, reception counters, product displays, and seating crafted for a seamless blend of form and function.', image: interiorDesign2 },
+      { title: 'Lighting, Electrical & Automation', desc: 'Integrated lighting and electrical systems with smart controls for both interior and exterior applications, ensuring aesthetic appeal and compliance.' },
+      { title: 'Landscaping & Outdoor Features', desc: 'Cement planters, benches, pergolas, fountains, lighting, and green elements designed to harmonize nature with architecture.' },
+    ],
+    showcase: {
+      hero: {
+        tagline: 'Turnkey Fit-Outs',
+        heading: 'Interiors & Facades, Crafted End-to-End',
+        highlight: 'Crafted',
+        description: 'From branded showroom interiors to weather-resilient facade works, our team delivers turnkey interior and exterior craftsmanship — design, fabrication, and installation handled by one team, start to finish.',
+        features: [
+          'Branded showroom interiors & premium facades',
+          'Wall paneling, false ceilings & decorative finishes',
+          'GRC & cement facade cladding and elevation details',
+          'Modular kitchens, wardrobes & custom furniture',
+        ],
+        mainImage: interiorDesign4,
+        sideImages: [interiorDesign2, interiorDesign3],
+        fit: 'cover',
+      },
+      secondary: {
+        tagline: 'Built to Withstand',
+        heading: 'Exterior Facade & Architectural Detail',
+        description: 'Durable GRC and cement-based claddings, mouldings, columns, and parapets — engineered to deliver elevation and elegance while standing up to the weather.',
+        image: exteriorFacade1,
+        fit: 'cover',
+      },
+      banner: {
+        tagline: 'One Team, Start to Finish',
+        heading: 'Design, Fit-Out & Install — Handled In-House',
+        description: 'From the first concept sketch to the final lighting fixture, every interior and exterior element is designed, fabricated, and installed by our own team.',
+        image: interiorDesign1,
       },
     },
   },

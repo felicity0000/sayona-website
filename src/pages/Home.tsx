@@ -30,6 +30,7 @@ const homeServiceSlugs = [
   "epoxy-products",
   "raw-materials-supply",
   "construction-architectural",
+  "furniture",
 ];
 
 function useInView<T extends HTMLElement>() {
@@ -241,7 +242,7 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
               craftsmanship.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {featuredServices.map((service, i) => (
               <div
                 key={i}
