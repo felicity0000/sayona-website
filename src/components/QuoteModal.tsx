@@ -67,12 +67,12 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
       onClick={onClose}
     >
       <div
-        className="relative bg-zinc-950 border border-yellow-400/20 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+        className="relative bg-white border border-yellow-400/30 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-white/50 hover:text-yellow-400 hover:bg-white/5 transition-all duration-200 rounded-full z-10"
+          className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-black/50 hover:text-yellow-400 hover:bg-black/5 transition-all duration-200 rounded-full z-10"
         >
           <X size={20} />
         </button>
@@ -82,10 +82,10 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
             <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-6 animate-[scaleIn_0.3s_ease-out]">
               <CheckCircle2 size={32} className="text-black" />
             </div>
-            <h3 className="text-2xl font-black text-white mb-2">
+            <h3 className="text-2xl font-black text-black mb-2">
               Quote Request Submitted!
             </h3>
-            <p className="text-white/60">
+            <p className="text-black/60">
               Thank you for your interest. Our team will review your request and
               get back to you within 24 hours.
             </p>
@@ -96,10 +96,10 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
               <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">
                 Request a Quote
               </span>
-              <h2 className="text-3xl font-black text-white mt-2 mb-2">
+              <h2 className="text-3xl font-black text-black mt-2 mb-2">
                 Let's Build Together
               </h2>
-              <p className="text-white/50 text-sm">
+              <p className="text-black/50 text-sm">
                 Fill out the form below and we'll provide a customized quote for
                 your project.
               </p>
@@ -114,13 +114,13 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-white/60 text-xs font-medium tracking-wide uppercase mb-2 block">
+                  <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">
                     Name *
                   </label>
                   <div className="relative">
                     <User
                       size={16}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 text-white/30"
+                      className="absolute left-3 top-1/2 -translate-y-1/2 text-black/30"
                     />
                     <input
                       required
@@ -129,19 +129,19 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
                       onChange={(e) =>
                         setForm({ ...form, name: e.target.value })
                       }
-                      className="w-full bg-black/50 border border-white/10 text-white pl-10 pr-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
+                      className="w-full bg-black/5 border border-black/10 text-black pl-10 pr-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
                       placeholder="Your name"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="text-white/60 text-xs font-medium tracking-wide uppercase mb-2 block">
+                  <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">
                     Company
                   </label>
                   <div className="relative">
                     <Building2
                       size={16}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 text-white/30"
+                      className="absolute left-3 top-1/2 -translate-y-1/2 text-black/30"
                     />
                     <input
                       type="text"
@@ -149,7 +149,7 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
                       onChange={(e) =>
                         setForm({ ...form, company: e.target.value })
                       }
-                      className="w-full bg-black/50 border border-white/10 text-white pl-10 pr-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
+                      className="w-full bg-black/5 border border-black/10 text-black pl-10 pr-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
                       placeholder="Company name"
                     />
                   </div>
@@ -158,13 +158,13 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-white/60 text-xs font-medium tracking-wide uppercase mb-2 block">
+                  <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">
                     Email *
                   </label>
                   <div className="relative">
                     <Mail
                       size={16}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 text-white/30"
+                      className="absolute left-3 top-1/2 -translate-y-1/2 text-black/30"
                     />
                     <input
                       required
@@ -173,19 +173,19 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
                       onChange={(e) =>
                         setForm({ ...form, email: e.target.value })
                       }
-                      className="w-full bg-black/50 border border-white/10 text-white pl-10 pr-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
+                      className="w-full bg-black/5 border border-black/10 text-black pl-10 pr-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
                       placeholder="you@example.com"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="text-white/60 text-xs font-medium tracking-wide uppercase mb-2 block">
+                  <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">
                     Phone
                   </label>
                   <div className="relative">
                     <Phone
                       size={16}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 text-white/30"
+                      className="absolute left-3 top-1/2 -translate-y-1/2 text-black/30"
                     />
                     <input
                       type="tel"
@@ -193,7 +193,7 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
                       onChange={(e) =>
                         setForm({ ...form, phone: e.target.value })
                       }
-                      className="w-full bg-black/50 border border-white/10 text-white pl-10 pr-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
+                      className="w-full bg-black/5 border border-black/10 text-black pl-10 pr-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
                       placeholder="+255 ..."
                     />
                   </div>
@@ -202,13 +202,13 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-white/60 text-xs font-medium tracking-wide uppercase mb-2 block">
+                  <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">
                     Service Needed *
                   </label>
                   <div className="relative">
                     <FileText
                       size={16}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 text-white/30 z-10"
+                      className="absolute left-3 top-1/2 -translate-y-1/2 text-black/30 z-10"
                     />
                     <select
                       required
@@ -216,13 +216,13 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
                       onChange={(e) =>
                         setForm({ ...form, service: e.target.value })
                       }
-                      className="w-full bg-black/50 border border-white/10 text-white pl-10 pr-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200 appearance-none"
+                      className="w-full bg-black/5 border border-black/10 text-black pl-10 pr-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200 appearance-none"
                     >
-                      <option value="" className="bg-zinc-950">
+                      <option value="" className="bg-white text-black">
                         Select a service
                       </option>
                       {services.map((s) => (
-                        <option key={s} value={s} className="bg-zinc-950">
+                        <option key={s} value={s} className="bg-white text-black">
                           {s}
                         </option>
                       ))}
@@ -230,7 +230,7 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
                   </div>
                 </div>
                 <div>
-                  <label className="text-white/60 text-xs font-medium tracking-wide uppercase mb-2 block">
+                  <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">
                     Project Type
                   </label>
                   <input
@@ -239,27 +239,27 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
                     onChange={(e) =>
                       setForm({ ...form, projectType: e.target.value })
                     }
-                    className="w-full bg-black/50 border border-white/10 text-white px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
+                    className="w-full bg-black/5 border border-black/10 text-black px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
                     placeholder="e.g. Building, Bridge, Factory"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="text-white/60 text-xs font-medium tracking-wide uppercase mb-2 block">
+                <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">
                   Estimated Budget
                 </label>
                 <input
                   type="text"
                   value={form.budget}
                   onChange={(e) => setForm({ ...form, budget: e.target.value })}
-                  className="w-full bg-black/50 border border-white/10 text-white px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
+                  className="w-full bg-black/5 border border-black/10 text-black px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
                   placeholder="e.g. $50,000 - $100,000"
                 />
               </div>
 
               <div>
-                <label className="text-white/60 text-xs font-medium tracking-wide uppercase mb-2 block">
+                <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">
                   Project Details *
                 </label>
                 <textarea
@@ -269,7 +269,7 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
                   onChange={(e) =>
                     setForm({ ...form, message: e.target.value })
                   }
-                  className="w-full bg-black/50 border border-white/10 text-white px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200 resize-none"
+                  className="w-full bg-black/5 border border-black/10 text-black px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200 resize-none"
                   placeholder="Describe your project, timeline, and any specific requirements..."
                 />
               </div>

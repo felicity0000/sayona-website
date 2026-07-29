@@ -40,10 +40,10 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-black">
-      <Navbar currentPage={page === 'service-detail' ? 'services' : page} onNavigate={setPage} onQuote={() => setQuoteOpen(true)} />
+    <div className="min-h-screen bg-white">
+      <Navbar currentPage={page === 'service-detail' ? 'services' : page} onNavigate={setPage} onSelectProduct={handleSelectService} onQuote={() => setQuoteOpen(true)} />
       <main>{renderPage()}</main>
-      <Footer onNavigate={setPage} />
+      <Footer onNavigate={setPage} onSelectProduct={handleSelectService} />
       <QuoteModal open={quoteOpen} onClose={() => setQuoteOpen(false)} />
       <WhatsAppButton />
     </div>

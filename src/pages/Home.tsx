@@ -64,7 +64,7 @@ function Counter({ end, suffix = "" }: { end: number; suffix?: string }) {
     return () => clearInterval(timer);
   }, [inView, end]);
   return (
-    <div ref={ref} className="text-4xl md:text-5xl font-black text-white">
+    <div ref={ref} className="text-4xl md:text-5xl font-black text-black">
       {count}
       {suffix}
     </div>
@@ -115,7 +115,7 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
   ];
 
   return (
-    <div className="bg-black">
+    <div className="bg-white">
       {/* Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Background */}
@@ -190,7 +190,7 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
       </section>
 
       {/* Stats */}
-      <section className="relative bg-black border-y border-white/10 py-16">
+      <section className="relative bg-white border-y border-black/10 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
@@ -206,7 +206,7 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
                   />
                 </div>
                 <Counter end={stat.value} suffix={stat.suffix} />
-                <div className="text-white/40 text-sm mt-1 tracking-wide">
+                <div className="text-black/40 text-sm mt-1 tracking-wide">
                   {stat.label}
                 </div>
               </div>
@@ -216,16 +216,16 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
       </section>
 
       {/* Services Preview */}
-      <section className="bg-black py-24">
+      <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">
               What We Do
             </span>
-            <h2 className="text-4xl md:text-5xl font-black text-white mt-3 mb-4">
+            <h2 className="text-4xl md:text-5xl font-black text-black mt-3 mb-4">
               Our Core <span className="text-yellow-400">Services</span>
             </h2>
-            <p className="text-white/50 max-w-2xl mx-auto">
+            <p className="text-black/50 max-w-2xl mx-auto">
               Fiberglass manufacturing, epoxy solutions, and raw material
               supply, delivered with in-house manufacturing and skilled
               craftsmanship.
@@ -235,7 +235,7 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
             {featuredServices.map((service, i) => (
               <div
                 key={i}
-                className="group relative bg-white/3 border border-white/10 overflow-hidden hover:border-yellow-400/40 transition-all duration-300 cursor-pointer"
+                className="group relative bg-black/3 border border-black/10 overflow-hidden hover:border-yellow-400/40 transition-all duration-300 cursor-pointer"
                 onClick={() => onNavigate("services")}
               >
                 <div className="relative h-40 overflow-hidden">
@@ -256,10 +256,10 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-white font-bold text-lg mb-2 group-hover:text-yellow-400 transition-colors">
+                  <h3 className="text-black font-bold text-lg mb-2 group-hover:text-yellow-400 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-white/50 text-sm leading-relaxed mb-4 line-clamp-3">
+                  <p className="text-black/50 text-sm leading-relaxed mb-4 line-clamp-3">
                     {service.intro}
                   </p>
                   <span className="inline-flex items-center gap-1 text-yellow-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -273,16 +273,16 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
       </section>
 
       {/* Why Choose Us */}
-      <section className="bg-black py-24 border-t border-white/10">
+      <section className="bg-white py-24 border-t border-black/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">
               Why Choose
             </span>
-            <h2 className="text-4xl md:text-5xl font-black text-white mt-3 mb-6">
+            <h2 className="text-4xl md:text-5xl font-black text-black mt-3 mb-6">
               Sayona <span className="text-yellow-400">International</span>
             </h2>
-            <p className="text-white/60 leading-relaxed">
+            <p className="text-black/60 leading-relaxed">
               "Perform With Purpose" is more than a motto — it's the mindset
               behind everything we do. From precision manufacturing to customer
               collaboration, every project reflects our commitment to
@@ -328,7 +328,7 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
               {whyChooseUs.map((item, i) => (
                 <div
                   key={i}
-                  className="group bg-white/3 border border-white/10 p-6 hover:bg-white/6 hover:border-yellow-400/40 transition-all duration-300"
+                  className="group bg-black/3 border border-black/10 p-6 hover:bg-black/6 hover:border-yellow-400/40 transition-all duration-300"
                 >
                   <div className="w-12 h-12 bg-yellow-400/10 flex items-center justify-center mb-4 group-hover:bg-yellow-400 transition-all duration-300">
                     <item.icon
@@ -336,8 +336,8 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
                       className="text-yellow-400 group-hover:text-black transition-colors"
                     />
                   </div>
-                  <h3 className="text-white font-bold mb-2">{item.title}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed">
+                  <h3 className="text-black font-bold mb-2">{item.title}</h3>
+                  <p className="text-black/50 text-sm leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -345,7 +345,7 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
             </div>
           </div>
 
-          <p className="text-white/60 text-center max-w-3xl mx-auto mt-16 leading-relaxed">
+          <p className="text-black/60 text-center max-w-3xl mx-auto mt-16 leading-relaxed">
             Together, these strengths make Sayona International a partner of
             choice for clients seeking precision-crafted, future-ready design
             and fabrication solutions.
@@ -354,18 +354,18 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
       </section>
 
       {/* About Teaser */}
-      <section className="bg-linear-to-b from-black to-zinc-950 py-24">
+      <section className="bg-zinc-50 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">
                 Who We Are
               </span>
-              <h2 className="text-4xl md:text-5xl font-black text-white mt-3 mb-6">
+              <h2 className="text-4xl md:text-5xl font-black text-black mt-3 mb-6">
                 A Legacy of <span className="text-yellow-400">Engineering</span>{" "}
                 Excellence
               </h2>
-              <p className="text-white/60 leading-relaxed mb-6">
+              <p className="text-black/60 leading-relaxed mb-6">
                 Founded in 2009, Sayona International has grown into one of
                 Uganda's most trusted engineering and construction firms. We
                 combine decades of expertise with modern technology to deliver
@@ -378,7 +378,7 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
                   "Commitment to safety and sustainability",
                   "On-time, on-budget delivery",
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-white/70">
+                  <li key={i} className="flex items-center gap-3 text-black/70">
                     <CheckCircle2
                       size={20}
                       className="text-yellow-400 shrink-0"
@@ -407,11 +407,11 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className={`bg-white/3 border border-white/10 p-8 hover:border-yellow-400/40 transition-all duration-300 ${i % 2 === 1 ? "mt-8" : ""}`}
+                  className={`bg-black/3 border border-black/10 p-8 hover:border-yellow-400/40 transition-all duration-300 ${i % 2 === 1 ? "mt-8" : ""}`}
                 >
                   <item.icon size={32} className="text-yellow-400 mb-4" />
-                  <div className="text-white font-bold text-lg">{item.val}</div>
-                  <div className="text-white/40 text-sm">{item.label}</div>
+                  <div className="text-black font-bold text-lg">{item.val}</div>
+                  <div className="text-black/40 text-sm">{item.label}</div>
                 </div>
               ))}
             </div>
@@ -420,21 +420,21 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
       </section>
 
       {/* Partners */}
-      <section className="bg-black py-24">
+      <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">
               Trusted By
             </span>
-            <h2 className="text-4xl md:text-5xl font-black text-white mt-3 mb-4">
+            <h2 className="text-4xl md:text-5xl font-black text-black mt-3 mb-4">
               Our <span className="text-yellow-400">Partners</span> & Clients
             </h2>
-            <p className="text-white/50 max-w-2xl mx-auto">
+            <p className="text-black/50 max-w-2xl mx-auto">
               We are proud to have delivered projects for leading organizations
               across Uganda and East Africa.
             </p>
           </div>
-          <div className="border border-white/10 p-8 md:p-12">
+          <div className="border border-black/10 p-8 md:p-12">
             <img
               src={images.clients_and_partners}
               alt="Sayona International clients and partners"

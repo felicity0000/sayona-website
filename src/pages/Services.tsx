@@ -8,7 +8,7 @@ interface ServicesProps {
 
 export default function Services({ onQuote, onSelectService }: ServicesProps) {
   return (
-    <div className="bg-black">
+    <div className="bg-white">
       {/* Hero */}
       <section className="relative pt-40 pb-20 overflow-hidden">
         <div className="absolute inset-0">
@@ -27,14 +27,14 @@ export default function Services({ onQuote, onSelectService }: ServicesProps) {
       </section>
 
       {/* Services Grid */}
-      <section className="bg-black py-20">
+      <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, i) => (
               <div
                 key={i}
                 onClick={() => onSelectService(service.slug)}
-                className="group relative bg-white/3 border border-white/10 overflow-hidden hover:border-yellow-400/40 transition-all duration-300 cursor-pointer"
+                className="group relative bg-black/3 border border-black/10 overflow-hidden hover:border-yellow-400/40 transition-all duration-300 cursor-pointer"
               >
                 <div className="relative h-48 overflow-hidden">
                   {service.image ? (
@@ -60,11 +60,11 @@ export default function Services({ onQuote, onSelectService }: ServicesProps) {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-white font-bold text-lg mb-3 group-hover:text-yellow-400 transition-colors">{service.title}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed mb-5 line-clamp-3">{service.intro}</p>
+                  <h3 className="text-black font-bold text-lg mb-3 group-hover:text-yellow-400 transition-colors">{service.title}</h3>
+                  <p className="text-black/50 text-sm leading-relaxed mb-5 line-clamp-3">{service.intro}</p>
                   <ul className="space-y-2 mb-5">
                     {service.items.slice(0, 4).map((item, j) => (
-                      <li key={j} className="flex items-start gap-2 text-white/60 text-sm">
+                      <li key={j} className="flex items-start gap-2 text-black/60 text-sm">
                         <CheckCircle2 size={16} className="text-yellow-400 mt-0.5 shrink-0" />
                         {item.title}
                       </li>
@@ -81,11 +81,11 @@ export default function Services({ onQuote, onSelectService }: ServicesProps) {
       </section>
 
       {/* Process */}
-      <section className="bg-linear-to-b from-black to-zinc-950 py-20">
+      <section className="bg-zinc-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">How We Work</span>
-            <h2 className="text-4xl font-black text-white mt-3">Our Project <span className="text-yellow-400">Process</span></h2>
+            <h2 className="text-4xl font-black text-black mt-3">Our Project <span className="text-yellow-400">Process</span></h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
@@ -98,8 +98,8 @@ export default function Services({ onQuote, onSelectService }: ServicesProps) {
                 <div className="text-6xl font-black text-yellow-400/20 group-hover:text-yellow-400/40 transition-colors duration-300 mb-2">
                   {p.step}
                 </div>
-                <h3 className="text-white font-bold text-lg mb-2">{p.title}</h3>
-                <p className="text-white/50 text-sm leading-relaxed">{p.desc}</p>
+                <h3 className="text-black font-bold text-lg mb-2">{p.title}</h3>
+                <p className="text-black/50 text-sm leading-relaxed">{p.desc}</p>
                 {i < 3 && (
                   <div className="hidden md:block absolute top-8 -right-3 text-yellow-400/30">
                     <ArrowRight size={20} />

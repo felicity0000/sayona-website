@@ -20,7 +20,7 @@ const Contact =() => {
   ];
 
   return (
-    <div className="bg-black">
+    <div className="bg-white">
       {/* Hero */}
       <section className="relative pt-40 pb-20 overflow-hidden">
         <div className="absolute inset-0">
@@ -39,27 +39,27 @@ const Contact =() => {
       </section>
 
       {/* Contact Info & Form */}
-      <section className="bg-black py-20">
+      <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Info */}
             <div>
-              <h2 className="text-3xl font-black text-white mb-6">Get in Touch</h2>
-              <p className="text-white/60 leading-relaxed mb-8">
+              <h2 className="text-3xl font-black text-black mb-6">Get in Touch</h2>
+              <p className="text-black/60 leading-relaxed mb-8">
                 We're here to answer any questions you may have about our services, products, or projects. Reach out through any of the channels below or fill out the contact form.
               </p>
               <div className="space-y-4">
                 {contactInfo.map((info, i) => (
                   <div
                     key={i}
-                    className="group flex items-start gap-4 bg-white/3 border border-white/10 p-5 hover:border-yellow-400/40 transition-all duration-300"
+                    className="group flex items-start gap-4 bg-black/3 border border-black/10 p-5 hover:border-yellow-400/40 transition-all duration-300"
                   >
                     <div className="w-12 h-12 bg-yellow-400/10 flex items-center justify-center shrink-0 group-hover:bg-yellow-400 transition-all duration-300">
                       <info.icon size={22} className="text-yellow-400 group-hover:text-black transition-colors" />
                     </div>
                     <div>
                       <div className="text-yellow-400 text-xs font-medium tracking-wide uppercase mb-1">{info.label}</div>
-                      <div className="text-white/70 text-sm">{info.value}</div>
+                      <div className="text-black/70 text-sm">{info.value}</div>
                     </div>
                   </div>
                 ))}
@@ -67,19 +67,19 @@ const Contact =() => {
             </div>
 
             {/* Form */}
-            <div className="bg-white/3 border border-white/10 p-8">
+            <div className="bg-black/3 border border-black/10 p-8">
               {status === 'success' ? (
                 <div className="flex flex-col items-center justify-center h-full text-center py-20">
                   <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-6 animate-[scaleIn_0.3s_ease-out]">
                     <CheckCircle2 size={32} className="text-black" />
                   </div>
-                  <h3 className="text-2xl font-black text-white mb-2">Message Sent!</h3>
-                  <p className="text-white/60">Thank you for reaching out. We'll get back to you soon.</p>
+                  <h3 className="text-2xl font-black text-black mb-2">Message Sent!</h3>
+                  <p className="text-black/60">Thank you for reaching out. We'll get back to you soon.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  <h2 className="text-2xl font-black text-white mb-2">Send Us a Message</h2>
-                  <p className="text-white/50 text-sm mb-6">Fill out the form below and we'll respond within 24 hours.</p>
+                  <h2 className="text-2xl font-black text-black mb-2">Send Us a Message</h2>
+                  <p className="text-black/50 text-sm mb-6">Fill out the form below and we'll respond within 24 hours.</p>
 
                   {error && (
                     <div className="bg-red-500/10 border border-red-500/30 text-red-400 text-sm p-3">
@@ -89,57 +89,57 @@ const Contact =() => {
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-white/60 text-xs font-medium tracking-wide uppercase mb-2 block">Name *</label>
+                      <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">Name *</label>
                       <input
                         required
                         type="text"
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        className="w-full bg-black/50 border border-white/10 text-white px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
+                        className="w-full bg-black/5 border border-black/10 text-black px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
                         placeholder="Your full name"
                       />
                     </div>
                     <div>
-                      <label className="text-white/60 text-xs font-medium tracking-wide uppercase mb-2 block">Phone</label>
+                      <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">Phone</label>
                       <input
                         type="tel"
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                        className="w-full bg-black/50 border border-white/10 text-white px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
+                        className="w-full bg-black/5 border border-black/10 text-black px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
                         placeholder="+256 ..."
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="text-white/60 text-xs font-medium tracking-wide uppercase mb-2 block">Email *</label>
+                    <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">Email *</label>
                     <input
                       required
                       type="email"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full bg-black/50 border border-white/10 text-white px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
+                      className="w-full bg-black/5 border border-black/10 text-black px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
                       placeholder="you@example.com"
                     />
                   </div>
                   <div>
-                    <label className="text-white/60 text-xs font-medium tracking-wide uppercase mb-2 block">Subject *</label>
+                    <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">Subject *</label>
                     <input
                       required
                       type="text"
                       value={form.subject}
                       onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                      className="w-full bg-black/50 border border-white/10 text-white px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
+                      className="w-full bg-black/5 border border-black/10 text-black px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
                       placeholder="What is this about?"
                     />
                   </div>
                   <div>
-                    <label className="text-white/60 text-xs font-medium tracking-wide uppercase mb-2 block">Message *</label>
+                    <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">Message *</label>
                     <textarea
                       required
                       rows={4}
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className="w-full bg-black/50 border border-white/10 text-white px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200 resize-none"
+                      className="w-full bg-black/5 border border-black/10 text-black px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200 resize-none"
                       placeholder="Tell us about your project or inquiry..."
                     />
                   </div>
@@ -168,15 +168,15 @@ const Contact =() => {
       </section>
 
       {/* Map */}
-      <section className="bg-black pb-20">
+      <section className="bg-white pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative h-80 border border-white/10 overflow-hidden bg-zinc-900">
+          <div className="relative h-80 border border-black/10 overflow-hidden bg-zinc-100">
             <iframe
               title="Sayona International Limited location"
               src="https://www.google.com/maps?q=Plot+17+Enterprise+Road,+Ntinda+Industrial+Area,+Kampala,+Uganda&output=embed"
               width="100%"
               height="100%"
-              style={{ border: 0, filter: 'invert(92%) hue-rotate(180deg) brightness(0.9) contrast(0.9)' }}
+              style={{ border: 0 }}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
