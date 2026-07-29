@@ -80,7 +80,7 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
         {status === "success" ? (
           <div className="flex flex-col items-center justify-center text-center py-20 px-8">
             <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-6 animate-[scaleIn_0.3s_ease-out]">
-              <CheckCircle2 size={32} className="text-black" />
+              <CheckCircle2 size={32} className="text-black " />
             </div>
             <h3 className="text-2xl font-black text-black mb-2">
               Quote Request Submitted!
