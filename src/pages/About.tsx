@@ -1,4 +1,7 @@
 import { Target, Eye, Award, Users, TrendingUp, ShieldCheck, Hammer, Lightbulb, Handshake, Quote } from 'lucide-react';
+import Seo from '../components/Seo';
+import { Reveal, RevealGroup, RevealItem } from '../components/Reveal';
+import images from '../assets/images';
 
 const About =() => {
   const values = [
@@ -10,13 +13,19 @@ const About =() => {
 
   return (
     <div className="bg-white">
+      <Seo
+        title="About Us"
+        description="Established in 2009 in Kampala, Sayona International is a Ugandan manufacturing and interior solutions company specializing in fiberglass, epoxy, and architectural craftsmanship across East Africa."
+        path="/about"
+        image={images.heroApproved}
+      />
       {/* Hero */}
       <section className="relative pt-40 pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-linear-to-b from-yellow-900/10 to-black" />
           <div className="absolute top-20 -right-32 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl" />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <Reveal className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">About Us</span>
           <h1 className="text-5xl md:text-6xl font-black text-white mt-3 mb-6">
             Engineering Trust, <span className="text-yellow-400">Building</span> Tomorrow
@@ -24,14 +33,14 @@ const About =() => {
           <p className="text-white/60 max-w-2xl mx-auto text-lg leading-relaxed">
             Sayona international limited was established in 2009 and based in Kampala plot 17 enterprise road, Ntinda industrial area, Uganda.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Story */}
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <Reveal>
               <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">Our Story</span>
               <h2 className="text-3xl md:text-4xl font-black text-black mt-3 mb-6">
                 From Humble Beginnings to Industry Leaders
@@ -45,29 +54,29 @@ const About =() => {
                   We also provide epoxy flooring, and interior and exterior finishing services. Our products combine innovation, durability, functionality, and modern design to enhance residential, commercial, hospitality, and public spaces across East Africa.
                 </p>
               </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-yellow-400 p-8 text-black">
+            </Reveal>
+            <RevealGroup className="grid grid-cols-2 gap-4">
+              <RevealItem className="bg-yellow-400 p-8 text-black">
                 <TrendingUp size={40} className="mb-4" />
                 <div className="text-4xl font-black">12+</div>
                 <div className="text-sm font-medium mt-1">Years of Excellence</div>
-              </div>
-              <div className="bg-black/3 border border-black/10 p-8 mt-8">
+              </RevealItem>
+              <RevealItem className="bg-black/3 border border-black/10 p-8 mt-8">
                 <BuildingIcon />
                 <div className="text-4xl font-black text-black mt-4">10+</div>
                 <div className="text-black/40 text-sm mt-1">Projects Delivered</div>
-              </div>
-              <div className="bg-black/3 border border-black/10 p-8">
+              </RevealItem>
+              <RevealItem className="bg-black/3 border border-black/10 p-8">
                 <Users size={40} className="text-yellow-400 mb-4" />
                 <div className="text-4xl font-black text-black">500+</div>
                 <div className="text-black/40 text-sm mt-1">Skilled Workforce</div>
-              </div>
-              <div className="bg-yellow-400/10 border border-yellow-400/20 p-8 mt-8">
+              </RevealItem>
+              <RevealItem className="bg-yellow-400/10 border border-yellow-400/20 p-8 mt-8">
                 <Award size={40} className="text-yellow-400 mb-4" />
                 <div className="text-4xl font-black text-black">10+</div>
                 <div className="text-black/40 text-sm mt-1">Partners & Clients</div>
-              </div>
-            </div>
+              </RevealItem>
+            </RevealGroup>
           </div>
         </div>
       </section>
@@ -75,8 +84,8 @@ const About =() => {
       {/* Mission & Vision */}
       <section className="bg-zinc-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="group bg-white border border-black/10 p-10 hover:border-yellow-400/40 transition-all duration-300">
+          <RevealGroup className="grid md:grid-cols-2 gap-8">
+            <RevealItem className="group bg-white border border-black/10 p-10 hover:border-yellow-400/40 transition-all duration-300">
               <div className="w-14 h-14 bg-yellow-400/10 flex items-center justify-center mb-6 group-hover:bg-yellow-400 transition-all duration-300">
                 <Target size={28} className="text-yellow-400 group-hover:text-black transition-colors" />
               </div>
@@ -84,8 +93,8 @@ const About =() => {
               <p className="text-black/60 leading-relaxed">
                 To design and manufacture innovative, high-quality fiberglass products and deliver exceptional finishing solutions that transform spaces while exceeding customer expectations through craftsmanship, sustainability, and innovation.egion.
               </p>
-            </div>
-            <div className="group bg-white border border-black/10 p-10 hover:border-yellow-400/40 transition-all duration-300">
+            </RevealItem>
+            <RevealItem className="group bg-white border border-black/10 p-10 hover:border-yellow-400/40 transition-all duration-300">
               <div className="w-14 h-14 bg-yellow-400/10 flex items-center justify-center mb-6 group-hover:bg-yellow-400 transition-all duration-300">
                 <Eye size={28} className="text-yellow-400 group-hover:text-black transition-colors" />
               </div>
@@ -93,20 +102,20 @@ const About =() => {
               <p className="text-black/60 leading-relaxed">
                 To become East Africa’s leading manufacturer of premium fiberglass products and a trusted provider of world-class interior and exterior finishing solutions recognized for quality, creativity, and excellence.
               </p>
-            </div>
-          </div>
+            </RevealItem>
+          </RevealGroup>
         </div>
       </section>
 
       {/* Leadership */}
       <section className="bg-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <Reveal className="text-center mb-12">
             <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">Leadership</span>
             <h2 className="text-4xl font-black text-black mt-3">Voices Behind <span className="text-yellow-400">Sayona</span></h2>
-          </div>
+          </Reveal>
 
-          <div className="relative bg-black/3 border border-black/10 p-10 md:p-14 mb-8">
+          <Reveal className="relative bg-black/3 border border-black/10 p-10 md:p-14 mb-8">
             <Quote size={48} className="text-yellow-400/20 mb-4" />
             <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">CEO Statement</span>
             <h3 className="text-3xl md:text-4xl font-black text-black mt-3 mb-6">"Perform With Purpose"</h3>
@@ -128,9 +137,9 @@ const About =() => {
               <div className="text-black font-bold text-lg">Jignesh Panchal</div>
               <div className="text-yellow-400 text-sm tracking-wide">Founder & CEO</div>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="relative bg-black/3 border border-black/10 p-10 md:p-14">
+          <Reveal className="relative bg-black/3 border border-black/10 p-10 md:p-14">
             <Quote size={48} className="text-yellow-400/20 mb-4" />
             <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">COO Statement</span>
             <h3 className="text-3xl md:text-4xl font-black text-black mt-3 mb-6">Greatest Achievement</h3>
@@ -141,20 +150,20 @@ const About =() => {
               <div className="text-black font-bold text-lg">Tilak Panchal</div>
               <div className="text-yellow-400 text-sm tracking-wide">Chief Operations Officer</div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Values */}
       <section className="bg-zinc-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <Reveal className="text-center mb-16">
             <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">What Drives Us</span>
             <h2 className="text-4xl font-black text-black mt-3">Our Core <span className="text-yellow-400">Values</span></h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          </Reveal>
+          <RevealGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, i) => (
-              <div
+              <RevealItem
                 key={i}
                 className="group bg-white border border-black/10 p-8 hover:bg-zinc-50 hover:border-yellow-400/40 transition-all duration-300"
               >
@@ -163,14 +172,11 @@ const About =() => {
                 </div>
                 <h3 className="text-black font-bold text-lg mb-3 group-hover:text-yellow-400 transition-colors">{value.title}</h3>
                 <p className="text-black/50 text-sm leading-relaxed">{value.desc}</p>
-              </div>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
-
-      {/* Timeline */}
-     
     </div>
   );
 }

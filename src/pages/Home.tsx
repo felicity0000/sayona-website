@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import {
   Building2,
   Wrench,
@@ -18,10 +19,10 @@ import {
 } from "lucide-react";
 import { getServiceBySlug } from "../data/servicesData";
 import images from "../assets/images";
+import Seo from "../components/Seo";
+import { Reveal, RevealGroup, RevealItem } from "../components/Reveal";
 
 interface HomeProps {
-  onNavigate: (page: string) => void;
-  onSelectService: (slug: string) => void;
   onQuote: () => void;
 }
 
@@ -80,7 +81,7 @@ function Counter({ end, suffix = "" }: { end: number; suffix?: string }) {
   );
 }
 
-export default function Home({ onNavigate, onQuote }: HomeProps) {
+export default function Home({ onQuote }: HomeProps) {
   const featuredServices = homeServiceSlugs
     .map((slug) => getServiceBySlug(slug))
     .filter((service) => service !== undefined);
@@ -127,6 +128,12 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
 
   return (
     <div className="bg-white">
+      <Seo
+        title="Fiberglass, Epoxy & Interior Solutions in Uganda"
+        description="Sayona International is Uganda's trusted manufacturer of fiberglass products, epoxy flooring, aluminium fabrication, furniture, and interior & exterior finishing — serving Kampala and East Africa since 2009."
+        path="/"
+        image={images.heroApproved}
+      />
       {/* Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Background */}
@@ -178,8 +185,8 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
                   className="group-hover:translate-x-1 transition-transform"
                 />
               </button>
-              <button
-                onClick={() => onNavigate("projects")}
+              <Link
+                to="/contact"
                 className="group border border-white/30 hover:border-yellow-400 hover:text-yellow-400 text-white font-bold px-8 py-4 tracking-wider uppercase text-sm transition-all duration-200 active:scale-95 flex items-center gap-2"
               >
                 Our Projects
@@ -187,7 +194,7 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
                   size={18}
                   className="group-hover:translate-x-1 transition-transform"
                 />
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -242,55 +249,57 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
               craftsmanship.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <RevealGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {featuredServices.map((service, i) => (
-              <div
-                key={i}
-                className="relative bg-black/3 border border-black/10 overflow-hidden"
-              >
-                <div className="relative h-40 overflow-hidden">
-                  {service.image ? (
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="relative w-full h-full bg-linear-to-br from-zinc-900 to-black flex items-center justify-center">
-                      <service.icon size={40} className="text-yellow-400/30" />
-                    </div>
-                  )}
-                  <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent" />
-                  <div className="absolute top-4 left-4 w-11 h-11 bg-yellow-400 flex items-center justify-center">
-                    <service.icon size={20} className="text-black" />
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-black font-bold text-lg mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-black/50 text-sm leading-relaxed mb-4 line-clamp-2">
-                    {service.intro}
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {service.items.slice(0, 5).map((item) => (
-                      <span
-                        key={item.title}
-                        className="text-[11px] leading-none px-2 py-1.5 bg-yellow-400/10 text-black/70 border border-black/10"
-                      >
-                        {item.title}
-                      </span>
-                    ))}
-                    {service.items.length > 5 && (
-                      <span className="text-[11px] leading-none px-2 py-1.5 text-black/40">
-                        +{service.items.length - 5} more
-                      </span>
+              <RevealItem key={i}>
+                <Link
+                  to={`/services/${service.slug}`}
+                  className="group relative flex flex-col h-full bg-black/3 border border-black/10 overflow-hidden hover:border-yellow-400/40 hover:bg-black/6 transition-all duration-300"
+                >
+                  <div className="relative h-40 overflow-hidden">
+                    {service.image ? (
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    ) : (
+                      <div className="relative w-full h-full bg-linear-to-br from-zinc-900 to-black flex items-center justify-center">
+                        <service.icon size={40} className="text-yellow-400/30" />
+                      </div>
                     )}
+                    <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent" />
+                    <div className="absolute top-4 left-4 w-11 h-11 bg-yellow-400 flex items-center justify-center">
+                      <service.icon size={20} className="text-black" />
+                    </div>
                   </div>
-                </div>
-              </div>
+                  <div className="p-6 flex-1 flex flex-col">
+                    <h3 className="text-black font-bold text-lg mb-2">
+                      {service.title}
+                    </h3>
+                    <p className="text-black/50 text-sm leading-relaxed mb-4 line-clamp-2">
+                      {service.intro}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5 mt-auto">
+                      {service.items.slice(0, 5).map((item) => (
+                        <span
+                          key={item.title}
+                          className="text-[11px] leading-none px-2 py-1.5 bg-yellow-400/10 text-black/70 border border-black/10"
+                        >
+                          {item.title}
+                        </span>
+                      ))}
+                      {service.items.length > 5 && (
+                        <span className="text-[11px] leading-none px-2 py-1.5 text-black/40">
+                          +{service.items.length - 5} more
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </Link>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 
@@ -316,7 +325,7 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
 
           <div className="grid lg:grid-cols-5 gap-12 items-center">
             {/* Visual panel */}
-            <div className="lg:col-span-2 relative aspect-square lg:aspect-auto lg:h-130 bg-zinc-50 border border-black/10 overflow-hidden">
+            <Reveal className="lg:col-span-2 relative aspect-square lg:aspect-auto lg:h-130 bg-zinc-50 border border-black/10 overflow-hidden">
               <div
                 className="absolute inset-0 opacity-40"
                 style={{
@@ -343,12 +352,12 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
                   Perform With Purpose
                 </span>
               </div>
-            </div>
+            </Reveal>
 
             {/* Feature grid */}
-            <div className="lg:col-span-3 grid sm:grid-cols-2 gap-6">
+            <RevealGroup className="lg:col-span-3 grid sm:grid-cols-2 gap-6">
               {whyChooseUs.map((item, i) => (
-                <div
+                <RevealItem
                   key={i}
                   className="group bg-black/3 border border-black/10 p-6 hover:bg-black/6 hover:border-yellow-400/40 transition-all duration-300"
                 >
@@ -362,9 +371,9 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
                   <p className="text-black/50 text-sm leading-relaxed">
                     {item.desc}
                   </p>
-                </div>
+                </RevealItem>
               ))}
-            </div>
+            </RevealGroup>
           </div>
 
           <p className="text-black/60 text-center max-w-3xl mx-auto mt-16 leading-relaxed">
@@ -379,7 +388,7 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
       <section className="bg-zinc-50 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <Reveal>
               <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">
                 Who We Are
               </span>
@@ -409,8 +418,8 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
                   </li>
                 ))}
               </ul>
-              <button
-                onClick={() => onNavigate("about")}
+              <Link
+                to="/about"
                 className="group inline-flex items-center gap-2 text-yellow-400 font-bold text-sm tracking-wider uppercase border-b border-yellow-400 pb-1 hover:gap-4 transition-all duration-200"
               >
                 Learn More About Us
@@ -418,25 +427,25 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
                   size={16}
                   className="group-hover:translate-x-1 transition-transform"
                 />
-              </button>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
+              </Link>
+            </Reveal>
+            <RevealGroup className="grid grid-cols-2 gap-4">
               {[
                 { icon: Hammer, label: "Construction", val: "Expertise" },
                 { icon: Wrench, label: "Engineering", val: "Solutions" },
                 { icon: ShieldCheck, label: "Safety", val: "First" },
                 { icon: Award, label: "Quality", val: "Assured" },
               ].map((item, i) => (
-                <div
+                <RevealItem
                   key={i}
                   className={`bg-black/3 border border-black/10 p-8 hover:border-yellow-400/40 transition-all duration-300 ${i % 2 === 1 ? "mt-8" : ""}`}
                 >
                   <item.icon size={32} className="text-yellow-400 mb-4" />
                   <div className="text-black font-bold text-lg">{item.val}</div>
                   <div className="text-black/40 text-sm">{item.label}</div>
-                </div>
+                </RevealItem>
               ))}
-            </div>
+            </RevealGroup>
           </div>
         </div>
       </section>
@@ -444,7 +453,7 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
       {/* Partners */}
       <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <Reveal className="text-center mb-16">
             <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">
               Trusted By
             </span>
@@ -455,14 +464,14 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
               We are proud to have delivered projects for leading organizations
               across Uganda and East Africa.
             </p>
-          </div>
-          <div className="border border-black/10 p-8 md:p-12">
+          </Reveal>
+          <Reveal className="border border-black/10 p-8 md:p-12">
             <img
               src={images.clients_and_partners}
               alt="Sayona International clients and partners"
               className="w-full h-auto"
             />
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -475,7 +484,7 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-8">
+        <Reveal className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-8">
           <div>
             <h2 className="text-3xl md:text-4xl font-black text-black mb-3">
               Ready to Start Your Project?
@@ -495,7 +504,7 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
               className="group-hover:translate-x-1 transition-transform"
             />
           </button>
-        </div>
+        </Reveal>
       </section>
     </div>
   );

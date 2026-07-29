@@ -1,11 +1,12 @@
 import { Fragment } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { ArrowRight, ArrowLeft, CheckCircle2, Download } from 'lucide-react';
 import { getServiceBySlug, type ShowcaseBlock } from '../data/servicesData';
 import ImageCarousel from '../components/ImageCarousel';
+import Seo from '../components/Seo';
+import { Reveal, RevealGroup, RevealItem } from '../components/Reveal';
 
 interface ServiceDetailProps {
-  slug: string;
-  onNavigate: (page: string) => void;
   onQuote: () => void;
 }
 
@@ -42,7 +43,8 @@ function ShowcaseTextBlock({ block }: { block: ShowcaseBlock }) {
   );
 }
 
-const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
+const ServiceDetail = ({ onQuote }: ServiceDetailProps) => {
+  const { slug = '' } = useParams();
   const service = getServiceBySlug(slug);
   const featured = service?.items.filter((item) => item.image || item.images?.length) ?? [];
   const rest = service?.items.filter((item) => !item.image && !item.images?.length) ?? [];
@@ -51,13 +53,14 @@ const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
   if (!service) {
     return (
       <div className="bg-white min-h-screen pt-40 pb-20 text-center">
+        <Seo title="Service Not Found" description="This service or product could not be found." path={`/services/${slug}`} noindex />
         <p className="text-black/60">Service not found.</p>
-        <button
-          onClick={() => onNavigate('services')}
+        <Link
+          to="/"
           className="mt-6 inline-flex items-center gap-2 text-yellow-400 font-bold text-sm tracking-wider uppercase"
         >
           <ArrowLeft size={16} /> Back to Home
-        </button>
+        </Link>
       </div>
     );
   }
@@ -66,6 +69,12 @@ const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
 
   return (
     <div className="bg-white">
+      <Seo
+        title={service.title}
+        description={service.intro}
+        path={`/services/${service.slug}`}
+        image={service.image}
+      />
       {/* Hero */}
       <section className="relative pt-40 pb-24 overflow-hidden">
         {service.image && (
@@ -80,14 +89,14 @@ const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
         />
         <div className="absolute top-20 -left-32 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl" />
 
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <button
-            onClick={() => onNavigate('services')}
+        <Reveal className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Link
+            to="/"
             className="group inline-flex items-center gap-2 text-white/50 hover:text-yellow-400 text-sm font-medium tracking-wide mb-8 transition-colors duration-200"
           >
             <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
             Back to Home
-          </button>
+          </Link>
 
           <div className="w-16 h-16 bg-yellow-400 flex items-center justify-center mb-6">
             <service.icon size={30} className="text-black" />
@@ -109,7 +118,7 @@ const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
               Download Catalogue
             </a>
           )}
-        </div>
+        </Reveal>
       </section>
 
       {/* Items */}
@@ -119,7 +128,7 @@ const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
           <section className="bg-white py-20">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
-                <div>
+                <Reveal>
                   <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">{showcase.hero.tagline}</span>
                   <Heading
                     text={showcase.hero.heading}
@@ -154,21 +163,24 @@ const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
                       </a>
                     )}
                   </div>
-                </div>
+                </Reveal>
 
-                <div className="grid grid-cols-2 gap-2">
-                  <ShowcaseMedia
-                    block={{ image: showcase.hero.mainImage, fit: showcase.hero.fit }}
-                    className={showcase.hero.fit === 'cover' ? 'col-span-2 h-72 md:h-96' : 'col-span-2'}
-                  />
-                  {showcase.hero.sideImages.map((src, i) => (
+                <RevealGroup className="grid grid-cols-2 gap-2" delay={0.1}>
+                  <RevealItem className="col-span-2">
                     <ShowcaseMedia
-                      key={i}
-                      block={{ image: src, fit: showcase.hero.fit }}
-                      className={showcase.hero.fit === 'cover' ? 'h-48' : ''}
+                      block={{ image: showcase.hero.mainImage, fit: showcase.hero.fit }}
+                      className={showcase.hero.fit === 'cover' ? 'h-72 md:h-96' : ''}
                     />
+                  </RevealItem>
+                  {showcase.hero.sideImages.map((src, i) => (
+                    <RevealItem key={i}>
+                      <ShowcaseMedia
+                        block={{ image: src, fit: showcase.hero.fit }}
+                        className={showcase.hero.fit === 'cover' ? 'h-48' : ''}
+                      />
+                    </RevealItem>
                   ))}
-                </div>
+                </RevealGroup>
               </div>
             </div>
           </section>
@@ -178,15 +190,15 @@ const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
             <section className="bg-zinc-50 py-20">
               <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
-                  <div className="order-2 lg:order-1">
+                  <Reveal className="order-2 lg:order-1">
                     <ShowcaseMedia
                       block={showcase.secondary}
                       className={`max-w-md mx-auto ${showcase.secondary.fit === 'cover' ? 'h-80' : ''}`}
                     />
-                  </div>
-                  <div className="order-1 lg:order-2">
+                  </Reveal>
+                  <Reveal className="order-1 lg:order-2" delay={0.1}>
                     <ShowcaseTextBlock block={showcase.secondary} />
-                  </div>
+                  </Reveal>
                 </div>
               </div>
             </section>
@@ -197,23 +209,23 @@ const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
             <section className="relative py-24 overflow-hidden">
               <img src={showcase.banner.image} alt="" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-black/20" />
-              <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <Reveal className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">{showcase.banner.tagline}</span>
                 <h2 className="text-3xl md:text-4xl font-black text-white mt-3">{showcase.banner.heading}</h2>
                 <p className="text-white/70 max-w-2xl mx-auto mt-4">{showcase.banner.description}</p>
-              </div>
+              </Reveal>
             </section>
           )}
         </Fragment>
       ) : (
         <section className="bg-white py-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
+            <Reveal className="text-center mb-16">
               <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">What's Included</span>
               <h2 className="text-3xl md:text-4xl font-black text-black mt-3">
                 Products & <span className="text-yellow-400">Capabilities</span>
               </h2>
-            </div>
+            </Reveal>
             {featured.length > 0 && (
               <div className={rest.length > 0 ? 'mb-16' : ''}>
                 {isMixed && (
@@ -221,9 +233,9 @@ const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
                     Highlights
                   </h3>
                 )}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <RevealGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {featured.map((item, i) => (
-                    <div
+                    <RevealItem
                       key={i}
                       className="group bg-black/3 border border-black/10 overflow-hidden hover:bg-black/6 hover:border-yellow-400/40 transition-all duration-300"
                     >
@@ -238,9 +250,9 @@ const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
                         <h3 className="text-black font-bold leading-snug mb-2">{item.title}</h3>
                         <p className="text-black/50 text-sm leading-relaxed">{item.desc}</p>
                       </div>
-                    </div>
+                    </RevealItem>
                   ))}
-                </div>
+                </RevealGroup>
               </div>
             )}
 
@@ -251,9 +263,9 @@ const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
                     Complete Range
                   </h3>
                 )}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <RevealGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {rest.map((item, i) => (
-                    <div
+                    <RevealItem
                       key={i}
                       className="group flex items-start gap-3 bg-black/3 border border-black/10 p-5 hover:bg-black/6 hover:border-yellow-400/40 transition-all duration-300"
                     >
@@ -262,9 +274,9 @@ const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
                         <h3 className="text-black font-bold text-sm leading-snug mb-1">{item.title}</h3>
                         <p className="text-black/50 text-xs leading-relaxed">{item.desc}</p>
                       </div>
-                    </div>
+                    </RevealItem>
                   ))}
-                </div>
+                </RevealGroup>
               </div>
             )}
           </div>
@@ -279,7 +291,7 @@ const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
             backgroundSize: '40px 40px',
           }}
         />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-8">
+        <Reveal className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-8">
           <div>
             <h2 className="text-3xl md:text-4xl font-black text-black mb-3">Interested in {service.title}?</h2>
             <p className="text-black/70 text-lg">Tell us about your project and we'll provide a tailored solution.</p>
@@ -291,7 +303,7 @@ const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
             Get a Quote
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </button>
-        </div>
+        </Reveal>
       </section>
     </div>
   );

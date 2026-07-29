@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
 import sayonaLogo from '../assets/sayona-logo.png';
 import { products } from '../data/servicesData';
@@ -9,11 +10,6 @@ import {
   WhatsappIcon,
   TiktokIcon,
 } from './SocialIcons';
-
-interface FooterProps {
-  onNavigate: (page: string) => void;
-  onSelectProduct: (slug: string) => void;
-}
 
 const socialLinks = [
   { Icon: FacebookIcon, href: '#', label: 'Facebook' },
@@ -27,21 +23,15 @@ const socialLinks = [
   },
   { Icon: TiktokIcon, href: 'https://www.tiktok.com/@sayonaintltd?_r=1&_t=ZS-98FABjis0vK', label: 'TikTok' },
 ];
-const  Footer = ({ onNavigate, onSelectProduct }: FooterProps) => {
-  const links = ['Home', 'About', 'Products', 'Contact'];
 
-  const pageFor = (link: string) => (link === 'Products' ? 'services' : link.toLowerCase());
+const quickLinks = [
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' },
+  { label: 'Products', path: '/' },
+  { label: 'Contact', path: '/contact' },
+];
 
-  const handleNav = (link: string) => {
-    onNavigate(pageFor(link));
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleProduct = (slug: string) => {
-    onSelectProduct(slug);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
+const Footer = () => {
   return (
     <footer className="bg-white text-black/70 border-t border-black/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -82,14 +72,14 @@ const  Footer = ({ onNavigate, onSelectProduct }: FooterProps) => {
           <div>
             <h4 className="text-black font-bold text-sm tracking-widest uppercase mb-5">Quick Links</h4>
             <ul className="space-y-3">
-              {links.map((link) => (
-                <li key={link}>
-                  <button
-                    onClick={() => handleNav(link)}
+              {quickLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    to={link.path}
                     className="text-sm text-black/50 hover:text-yellow-400 transition-colors duration-200"
                   >
-                    {link}
-                  </button>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -101,12 +91,12 @@ const  Footer = ({ onNavigate, onSelectProduct }: FooterProps) => {
             <ul className="space-y-3">
               {products.map((p) => (
                 <li key={p.slug}>
-                  <button
-                    onClick={() => handleProduct(p.slug)}
+                  <Link
+                    to={`/services/${p.slug}`}
                     className="text-sm text-black/50 hover:text-yellow-400 transition-colors duration-200"
                   >
                     {p.title}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>

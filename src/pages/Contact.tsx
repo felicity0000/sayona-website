@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
+import Seo from '../components/Seo';
+import { Reveal } from '../components/Reveal';
 
 const Contact =() => {
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
@@ -21,13 +23,18 @@ const Contact =() => {
 
   return (
     <div className="bg-white">
+      <Seo
+        title="Contact Us"
+        description="Get in touch with Sayona International in Kampala, Uganda. Request a quote for fiberglass, epoxy, aluminium, furniture, or interior and exterior craftsmanship projects."
+        path="/contact"
+      />
       {/* Hero */}
       <section className="relative pt-40 pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-linear-to-b from-yellow-900/10 to-black" />
           <div className="absolute top-20 -right-32 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl" />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <Reveal className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">Contact Us</span>
           <h1 className="text-5xl md:text-6xl font-black text-white mt-3 mb-6">
             Let's <span className="text-yellow-400">Connect</span>
@@ -35,7 +42,7 @@ const Contact =() => {
           <p className="text-white/60 max-w-2xl mx-auto text-lg leading-relaxed">
             Have a project in mind or need more information? Reach out to us and our team will get back to you promptly.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Contact Info & Form */}
@@ -43,7 +50,7 @@ const Contact =() => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Info */}
-            <div>
+            <Reveal>
               <h2 className="text-3xl font-black text-black mb-6">Get in Touch</h2>
               <p className="text-black/60 leading-relaxed mb-8">
                 We're here to answer any questions you may have about our services, products, or projects. Reach out through any of the channels below or fill out the contact form.
@@ -64,10 +71,10 @@ const Contact =() => {
                   </div>
                 ))}
               </div>
-            </div>
+            </Reveal>
 
             {/* Form */}
-            <div className="bg-black/3 border border-black/10 p-8">
+            <Reveal className="bg-black/3 border border-black/10 p-8" delay={0.1}>
               {status === 'success' ? (
                 <div className="flex flex-col items-center justify-center h-full text-center py-20">
                   <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-6 animate-[scaleIn_0.3s_ease-out]">
@@ -162,7 +169,7 @@ const Contact =() => {
                   </button>
                 </form>
               )}
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -170,7 +177,7 @@ const Contact =() => {
       {/* Map */}
       <section className="bg-white pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative h-80 border border-black/10 overflow-hidden bg-zinc-100">
+          <Reveal className="relative h-80 border border-black/10 overflow-hidden bg-zinc-100">
             <iframe
               title="Sayona International Limited location"
               src="https://www.google.com/maps?q=Plot+17+Enterprise+Road,+Ntinda+Industrial+Area,+Kampala,+Uganda&output=embed"
@@ -181,7 +188,7 @@ const Contact =() => {
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
             />
-          </div>
+          </Reveal>
         </div>
       </section>
     </div>
