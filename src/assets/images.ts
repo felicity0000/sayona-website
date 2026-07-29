@@ -17,6 +17,8 @@ import transparent_roofing_panels_2 from "./transparent-roofing-panels-2.jpeg";
 import transparent_roofing_panels_3 from "./transparent-roofing-panels-3.jpeg";
 import fiberglass_mat from "./fiber-glass-mat.jpg";
 import epoxy from "./epoxy.jpeg";
+import aboutUsHero from "./about-us.jpg";
+import contactUsHero from "./contact-us.jpg";
 
 const images = {
     logo,
@@ -38,6 +40,8 @@ const images = {
     transparent_roofing_panels_3,
     fiberglass_mat,
     epoxy,
+    aboutUsHero,
+    contactUsHero,
 }
 
 export default images;

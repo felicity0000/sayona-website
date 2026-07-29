@@ -17,12 +17,13 @@ const About =() => {
         title="About Us"
         description="Established in 2009 in Kampala, Sayona International is a Ugandan manufacturing and interior solutions company specializing in fiberglass, epoxy, and architectural craftsmanship across East Africa."
         path="/about"
-        image={images.heroApproved}
+        image={images.aboutUsHero}
       />
       {/* Hero */}
       <section className="relative pt-40 pb-20 overflow-hidden">
+        <img src={images.aboutUsHero} alt="" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-linear-to-b from-yellow-900/10 to-black" />
+          <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/85 to-black" />
           <div className="absolute top-20 -right-32 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl" />
         </div>
         <Reveal className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

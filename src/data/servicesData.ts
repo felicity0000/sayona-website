@@ -145,7 +145,7 @@ export const products: ServiceData[] = [
     image: epoxy3,
     title: 'Epoxy Products',
     intro: 'We provide premium epoxy systems suitable for industrial and decorative applications — from protective flooring to designer resin finishes — serving warehouses, hospitals, manufacturing plants, commercial buildings, hotels, offices, and residential homes.',
-    catalogue: '/catalogues/epoxy-products.pdf',
+    catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
       { title: 'Clear Casting Epoxy Resin', desc: 'High-clarity casting resin for art, furniture, and decorative pours.' },
       { title: 'Industrial Epoxy Resin', desc: 'Heavy-duty epoxy resin engineered for demanding industrial applications.' },
@@ -281,7 +281,7 @@ export const products: ServiceData[] = [
     image: pots1,
     title: 'Pots',
     intro: 'Fiberglass pots in a wide range of shapes, sizes, and colors — lightweight, weatherproof, and finished to match any space, indoors or out.',
-    catalogue: '/catalogues/pots.pdf',
+    catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
       { title: 'Round Pots', desc: 'Classic rounded pots in a range of sizes, glazed in bold, weatherproof colors.', image: pots3 },
       { title: 'Geometric Pots', desc: 'Modern faceted pot designs for contemporary interiors and spaces.', image: pots5 },
@@ -324,7 +324,7 @@ export const products: ServiceData[] = [
     image: aluminiumOfficePartitions,
     title: 'Aluminium Product Fabrication & Assembly',
     intro: 'We fabricate aluminium doors, windows, partitions, and structural glazing systems — engineered for strength, energy efficiency, and a clean architectural finish across residential and commercial spaces.',
-    catalogue: '/catalogues/aluminium-fabrication.pdf',
+    catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
       {
         title: 'Aluminium Doors (Sliding, Casement, Folding)',
@@ -381,7 +381,7 @@ export const products: ServiceData[] = [
     image: decorativeCeilingMedallion,
     title: 'GRC & Cement Architectural Works',
     intro: 'We blend traditional elegance with modern engineering—crafting facades, columns, furniture, and temple elements that endure weather and time. Each piece is designed for structural strength and visual impact, enhancing residential, commercial, and public spaces with refined, lasting architectural beauty.',
-    catalogue: '/catalogues/grc-cement-architectural.pdf',
+    catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
       {
         title: 'Decorative Cement Pillars & Columns',
@@ -452,7 +452,7 @@ export const products: ServiceData[] = [
     image: lightingDecorations3,
     title: 'Lighting Decorations',
     intro: 'Custom lighting installations and festive décor for buildings, events, and public spaces — from full facade illuminations to holiday displays that transform a space after dark.',
-    catalogue: '/catalogues/lighting-decorations.pdf',
+    catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
       { title: 'Building Facade Lighting', desc: 'Full-height LED string light installations that outline and illuminate entire building facades.', image: lightingDecorations3 },
       { title: 'Festive Holiday Displays', desc: 'Custom Christmas and holiday-season lighting, signage, and decorative motifs for storefronts and offices.', image: lightingDecorations1 },
@@ -489,7 +489,7 @@ export const products: ServiceData[] = [
     image: rawMaterialFiberglassMat,
     title: 'Raw Materials Supply',
     intro: 'Sayona International supplies premium-quality composite raw materials for manufacturers, contractors, fabricators, and artisans across Uganda and East Africa.',
-    catalogue: '/catalogues/raw-materials-supply.pdf',
+    catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
       { title: 'General Purpose Polyester Resin', desc: 'Versatile resin suited for a wide range of fiberglass fabrication needs.', image: rawMaterialResin },
       { title: 'Epoxy Resin', desc: 'High-performance resin for casting, coating, and composite lamination.' },
@@ -528,7 +528,7 @@ export const products: ServiceData[] = [
     image: furniture3,
     title: 'Furniture',
     intro: 'From hand-carved wooden pieces to upholstered sofa sets, we design and craft furniture for homes, offices, and hospitality spaces — built to order and finished to a premium standard.',
-    catalogue: '/catalogues/furniture.pdf',
+    catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
       { title: 'Sofa Sets', desc: 'Upholstered 3+1+1 sofa sets in a range of fabrics and finishes, built for durability and everyday comfort.', image: furniture4 },
       { title: 'Modern Wood-Frame Sofas', desc: 'Contemporary sofas with solid wood framing and premium cushioning for a clean, modern look.', image: furniture3 },
@@ -573,7 +573,7 @@ export const products: ServiceData[] = [
     image: interiorDesign4,
     title: 'Interior & Exterior Craftsmanship',
     intro: 'End-to-end interior and exterior craftsmanship — from showroom design and fit-outs to façade works, modular kitchens, lighting, and landscaping — delivered as a single turnkey solution.',
-    catalogue: '/catalogues/interior-exterior-craftsmanship.pdf',
+    catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
       { title: 'Showroom Interiors & Facades', desc: 'Captivating showroom designs featuring branded displays, lighting, signage, and premium façade treatments to enhance visibility and attract customers.', image: interiorDesign4 },
       { title: 'Interior Fit-Outs: Walls, Ceilings & Finishes', desc: 'Turnkey solutions including wall paneling, false ceilings, decorative trims, partitions, acoustics, paint, and wallpaper tailored to client aesthetics.', image: interiorDesign3 },
