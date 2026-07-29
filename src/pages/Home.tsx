@@ -121,7 +121,7 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
         {/* Background */}
         <div className="absolute inset-0">
           <img
-            src={images.decorativeCeiling1}
+            src={images.heroApproved}
             alt=""
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -294,11 +294,11 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
 
           <div className="grid lg:grid-cols-5 gap-12 items-center">
             {/* Visual panel */}
-            <div className="lg:col-span-2 relative aspect-square lg:aspect-auto lg:h-130 bg-linear-to-br from-zinc-900 to-black border border-white/10 overflow-hidden">
+            <div className="lg:col-span-2 relative aspect-square lg:aspect-auto lg:h-130 bg-zinc-50 border border-black/10 overflow-hidden">
               <div
-                className="absolute inset-0 opacity-25"
+                className="absolute inset-0 opacity-40"
                 style={{
-                  backgroundImage: `linear-gradient(rgba(234,179,8,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(234,179,8,0.15) 1px, transparent 1px)`,
+                  backgroundImage: `linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px)`,
                   backgroundSize: "36px 36px",
                 }}
               />
@@ -311,13 +311,13 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
                   {[Factory, Settings2, BadgeCheck].map((Icon, i) => (
                     <div
                       key={i}
-                      className="w-14 h-14 bg-white/4 border border-yellow-400/30 flex items-center justify-center"
+                      className="w-14 h-14 bg-white border border-yellow-400/40 flex items-center justify-center"
                     >
                       <Icon size={22} className="text-yellow-400" />
                     </div>
                   ))}
                 </div>
-                <span className="text-yellow-400 text-xs tracking-[0.3em] uppercase font-medium">
+                <span className="text-black/70 text-xs tracking-[0.3em] uppercase font-medium">
                   Perform With Purpose
                 </span>
               </div>

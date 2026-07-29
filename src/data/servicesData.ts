@@ -146,6 +146,7 @@ export const products: ServiceData[] = [
   {
     slug: 'motorbike-delivery-boxes',
     icon: Motorbike,
+    image: fibreBox15,
     title: 'Motorbike / Delivery Boxes',
     intro: "Weatherproof, lockable fiberglass delivery boxes built for boda-bodas, courier fleets, and utility vehicles — lightweight and secure, with custom branding available for your business.",
     catalogue: '/catalogues/motorbike-delivery-boxes.pdf',
@@ -188,6 +189,7 @@ export const products: ServiceData[] = [
   {
     slug: 'roofing',
     icon: HomeIcon,
+    image: roofing1,
     title: 'Roofing',
     intro: "Complete fiberglass roofing systems engineered for durability, insulation, and natural light — built to withstand Uganda's climate.",
     catalogue: '/catalogues/roofing.pdf',
@@ -231,6 +233,7 @@ export const products: ServiceData[] = [
   {
     slug: 'pots',
     icon: Amphora,
+    image: pots1,
     title: 'Pots',
     intro: 'Fiberglass pots in a wide range of shapes, sizes, and colors — lightweight, weatherproof, and finished to match any space, indoors or out.',
     catalogue: '/catalogues/pots.pdf',

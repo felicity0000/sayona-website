@@ -67,14 +67,17 @@ const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="relative pt-40 pb-20 overflow-hidden">
+      <section className="relative pt-40 pb-24 overflow-hidden">
         {service.image && (
-          <>
-            <img src={service.image} alt="" className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-black/85" />
-          </>
+          <img src={service.image} alt="" className="absolute inset-0 w-full h-full object-cover" />
         )}
-        <div className="absolute inset-0 bg-linear-to-b from-yellow-900/10 to-black" />
+        <div
+          className={
+            service.image
+              ? 'absolute inset-0 bg-linear-to-b from-black/60 via-black/75 via-75% to-white'
+              : 'absolute inset-0 bg-linear-to-b from-yellow-900/10 via-black via-75% to-white'
+          }
+        />
         <div className="absolute top-20 -left-32 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl" />
 
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
