@@ -1,4 +1,4 @@
-import { Layers, Droplet, Warehouse, Building2, Motorbike, Home as HomeIcon, Amphora } from 'lucide-react';
+import { Layers, Droplet, Warehouse, Building2, Motorbike, Home as HomeIcon, Amphora, DoorClosed, Landmark, Sparkles } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import images from '../assets/images';
 
@@ -19,6 +19,26 @@ import pots2 from '../assets/pots/pots-2.jpg';
 import pots3 from '../assets/pots/pots-3.jpg';
 import pots4 from '../assets/pots/pots-4.jpg';
 import pots5 from '../assets/pots/pots-5.jpg';
+
+import aluminiumOfficePartitions from '../assets/aluminium-product/industrial-component-1.jpeg';
+import aluminiumProduct1 from '../assets/aluminium-product/aluminium-product-1.jpg';
+import aluminiumProduct2 from '../assets/aluminium-product/aluminium-product-2.jpg';
+
+import decorativeCeilingMedallion from '../assets/architectural-works/decorative-celing.jpeg';
+
+import epoxy1 from '../assets/epoxy/epoxy-1.jpeg';
+import epoxy2 from '../assets/epoxy/epoxy-2.jpeg';
+import epoxy3 from '../assets/epoxy/epoxy-3.jpeg';
+import epoxy4 from '../assets/epoxy/epoxy-4.jpeg';
+import epoxyTable1 from '../assets/epoxy/epoxy-table-1.jpg';
+
+import lightingDecorations1 from '../assets/decorations/lighting-decorations-1.jpeg';
+import lightingDecorations2 from '../assets/decorations/lighting-decorations-2.jpg';
+import lightingDecorations3 from '../assets/decorations/lighting-decorations-3.jpg';
+import lightingDecorations4 from '../assets/decorations/lighting-decorations-4.jpg';
+
+import rawMaterialFiberglassMat from '../assets/raw-materials-supply-products/fiber-glass-mat-1.jpg';
+import rawMaterialResin from '../assets/raw-materials-supply-products/resin.jpg';
 
 export interface ServiceItem {
   title: string;
@@ -77,51 +97,11 @@ export const services: ServiceData[] = [
       { title: 'Kiosks', desc: 'Compact, durable fiberglass kiosks for retail, vending, and security applications.' },
       { title: 'Architectural Mouldings', desc: 'Ornamental fiberglass mouldings and trims for ceilings, columns, and facades.'},
       { title: 'Custom Industrial Components', desc: 'Precision-molded fiberglass parts and components built to client specifications for industrial use.' },
-      { title: 'Christmas Lighting & Decorations', desc: 'Festive lighting installations and decorative displays for the holiday season.', image: images.lighting_decorations_1},
       { title: 'CNC Wood Carving', desc: 'Precision CNC-carved woodwork for interiors, signage, and furniture.' },
       { title: 'CNC Plasma Metal Designs', desc: 'Laser-precise plasma-cut metal designs for gates, railings, and decorative features.' },
       { title: '3D Printed Products', desc: 'Custom 3D-printed prototypes, models, and decorative pieces.' },
-      { title: 'Aluminium Works', desc: 'Aluminium fabrication for doors, windows, and architectural fittings.' },
       { title: 'Gypsum Works', desc: 'Gypsum ceiling and partition installations for interior finishing.' },
-      { title: 'GRC / Cement Works', desc: 'GRC and cement-based architectural mouldings and facades.' },
       { title: 'Decorative Products', desc: 'Custom decorative pieces tailored for interior and exterior spaces.' },
-    ],
-  },
-  {
-    slug: 'epoxy-solutions',
-    icon: Droplet,
-    title: 'Epoxy Solutions',
-    intro: 'We provide premium epoxy systems suitable for industrial and decorative applications — from protective flooring to designer resin finishes — serving warehouses, hospitals, manufacturing plants, commercial buildings, hotels, offices, and residential homes.',
-    items: [
-      { title: 'Clear Casting Epoxy Resin', desc: 'High-clarity casting resin for art, furniture, and decorative pours.' },
-      { title: 'Industrial Epoxy Resin', desc: 'Heavy-duty epoxy resin engineered for demanding industrial applications.' },
-      { title: 'Epoxy Hardener Systems', desc: 'Precision-formulated hardeners for reliable curing and long-term durability.' },
-      { title: 'Metallic Epoxy Flooring', desc: 'Striking, seamless metallic-effect epoxy floors for showrooms and commercial spaces.' },
-      { title: 'Self-Leveling Epoxy Floors', desc: 'Smooth, high-strength flooring ideal for warehouses and manufacturing plants.' },
-      { title: 'Protective Industrial Coatings', desc: 'Chemical- and abrasion-resistant coatings that extend the life of industrial surfaces.' },
-      { title: 'Decorative Resin Finishes', desc: 'Custom resin finishes that add texture, depth, and color to interior surfaces.' },
-      { title: 'Countertop Coatings', desc: 'Durable, glossy epoxy coatings for kitchen and commercial countertops.' },
-      { title: 'Table Top Epoxy Systems', desc: 'Crystal-clear epoxy systems for tabletops, bars, and furniture surfaces.' },
-    ],
-  },
-  {
-    slug: 'raw-materials-supply',
-    icon: Warehouse,
-    title: 'Raw Materials Supply',
-    intro: 'Sayona International supplies premium-quality composite raw materials for manufacturers, contractors, fabricators, and artisans across Uganda and East Africa.',
-    items: [
-      { title: 'General Purpose Polyester Resin', desc: 'Versatile resin suited for a wide range of fiberglass fabrication needs.' },
-      { title: 'Epoxy Resin', desc: 'High-performance resin for casting, coating, and composite lamination.' },
-      { title: 'Vinyl Ester Resin', desc: 'Corrosion-resistant resin for demanding structural and chemical applications.' },
-      { title: 'Gelcoat', desc: 'Protective, high-gloss finish coat for fiberglass moulded products.' },
-      { title: 'Hardeners & Catalysts', desc: 'Curing agents formulated for consistent, reliable resin performance.' },
-      { title: 'Fiberglass Chopped Strand Mat', desc: 'Randomly oriented glass fiber mat for reinforcing moulded laminates.' },
-      { title: 'Woven Roving', desc: 'Heavy, woven glass fabric for high-strength structural laminates.' },
-      { title: 'Fiberglass Cloth', desc: 'Fine woven glass cloth for smooth surface finishes and reinforcement.' },
-      { title: 'Surface Tissue', desc: 'Lightweight veil that delivers a smooth, resin-rich surface finish.' },
-      { title: 'Pigments', desc: 'Color concentrates for tinting resins to any custom shade.' },
-      { title: 'Fillers', desc: 'Extenders and fillers that adjust resin viscosity, weight, and cost.' },
-      { title: 'Release Wax', desc: 'Mould release wax ensuring clean, damage-free part removal.' },
     ],
   },
   {
@@ -143,6 +123,55 @@ export const services: ServiceData[] = [
 // Featured product lines, shown in the navbar/footer "Products" dropdown.
 // Add more entries here to extend the dropdown.
 export const products: ServiceData[] = [
+  {
+    slug: 'epoxy-products',
+    icon: Droplet,
+    image: epoxy3,
+    title: 'Epoxy Products',
+    intro: 'We provide premium epoxy systems suitable for industrial and decorative applications — from protective flooring to designer resin finishes — serving warehouses, hospitals, manufacturing plants, commercial buildings, hotels, offices, and residential homes.',
+    catalogue: '/catalogues/epoxy-products.pdf',
+    items: [
+      { title: 'Clear Casting Epoxy Resin', desc: 'High-clarity casting resin for art, furniture, and decorative pours.' },
+      { title: 'Industrial Epoxy Resin', desc: 'Heavy-duty epoxy resin engineered for demanding industrial applications.' },
+      { title: 'Epoxy Hardener Systems', desc: 'Precision-formulated hardeners for reliable curing and long-term durability.' },
+      { title: 'Metallic Epoxy Flooring', desc: 'Striking, seamless metallic-effect epoxy floors for showrooms and commercial spaces.', image: epoxy4 },
+      { title: 'Self-Leveling Epoxy Floors', desc: 'Smooth, high-strength flooring ideal for warehouses and manufacturing plants.', image: epoxy2 },
+      { title: 'Protective Industrial Coatings', desc: 'Chemical- and abrasion-resistant coatings that extend the life of industrial surfaces.' },
+      { title: 'Decorative Resin Finishes', desc: 'Custom resin finishes that add texture, depth, and color to interior surfaces.' },
+      { title: 'Countertop Coatings', desc: 'Durable, glossy epoxy coatings for kitchen and commercial countertops.' },
+      { title: 'Table Top Epoxy Systems', desc: 'Crystal-clear epoxy systems for tabletops, bars, and furniture surfaces.', image: epoxyTable1 },
+    ],
+    showcase: {
+      hero: {
+        tagline: 'Seamless Resin Finishes',
+        heading: 'Epoxy Floors, Poured to Perform',
+        highlight: 'Poured',
+        description: 'From marbled decorative floors to heavy-duty industrial coatings, every epoxy system is mixed and poured on-site for a seamless, durable finish — engineered to handle daily traffic while looking like a work of art.',
+        features: [
+          'Seamless, high-gloss marbled & metallic finishes',
+          'Heavy-duty industrial & warehouse coatings',
+          'Self-leveling floors for a perfectly smooth surface',
+          'Custom colors and patterns to match any space',
+        ],
+        mainImage: epoxy3,
+        sideImages: [epoxy2, epoxy4],
+        fit: 'cover',
+      },
+      secondary: {
+        tagline: 'Custom Resin Furniture',
+        heading: 'Epoxy River Tables & Furniture',
+        description: 'Beyond flooring, we cast custom epoxy furniture — river tables, countertops, and bar tops that combine natural wood with crystal-clear or tinted resin for a one-of-a-kind centerpiece.',
+        image: epoxyTable1,
+        fit: 'cover',
+      },
+      banner: {
+        tagline: 'Built to Last',
+        heading: 'Durable Finishes for Every Space',
+        description: 'From residential living rooms to commercial showrooms, every floor is finished for long-term durability without compromising on design.',
+        image: epoxy1,
+      },
+    },
+  },
   {
     slug: 'motorbike-delivery-boxes',
     icon: Motorbike,
@@ -270,6 +299,195 @@ export const products: ServiceData[] = [
         heading: 'Produced in Bulk, Finished by Hand',
         description: 'Every batch is molded, glazed, and finished in our own workshop — consistent color and quality whether you need one piece or a hundred.',
         image: pots2,
+      },
+    },
+  },
+  {
+    slug: 'aluminium-fabrication',
+    icon: DoorClosed,
+    image: aluminiumOfficePartitions,
+    title: 'Aluminium Product Fabrication & Assembly',
+    intro: 'We fabricate aluminium doors, windows, partitions, and structural glazing systems — engineered for strength, energy efficiency, and a clean architectural finish across residential and commercial spaces.',
+    catalogue: '/catalogues/aluminium-fabrication.pdf',
+    items: [
+      {
+        title: 'Aluminium Doors (Sliding, Casement, Folding)',
+        desc: 'We fabricate aluminium doors in sliding, casement, and folding styles — designed for strength, seamless movement, and long-term performance. Custom finishes, hardware, and locking systems ensure these doors meet both aesthetic and security standards for residential and commercial spaces.',
+      },
+      {
+        title: 'Windows and Ventilators',
+        desc: 'Our aluminium windows and ventilators deliver optimal airflow, noise reduction, and energy efficiency. Built with precision-cut frames and corrosion-resistant coatings, they suit both modern and traditional structures requiring durable, low-maintenance solutions with clean, contemporary design.',
+      },
+      {
+        title: 'Office Partitions and Cubicles',
+        desc: 'We design and fabricate aluminium office partitions and cubicles that enhance workspace flexibility, privacy, and visual appeal. Lightweight yet sturdy, these systems support glass, acrylic, or laminate panels, and are ideal for modular setups with integrated wiring and minimal disruption during installation.',
+        image: aluminiumOfficePartitions,
+      },
+      {
+        title: 'Shopfronts, Curtain Walls, and Structural Glazing',
+        desc: 'Our aluminium shopfronts, curtain walls, and structural glazing systems feature expansive glass surfaces supported by durable frames. Designed to maximize natural light and visibility, these systems provide a sleek façade with excellent weatherproofing, thermal performance, and architectural elegance.',
+      },
+    ],
+    showcase: {
+      hero: {
+        tagline: 'Precision Aluminium Systems',
+        heading: 'Aluminium Systems, Fabricated for Every Space',
+        highlight: 'Fabricated',
+        description: 'From sliding doors to full curtain-wall façades, every system is fabricated in-house and finished to fit — precision-cut aluminium framing built for strength, energy efficiency, and a clean architectural look.',
+        features: [
+          'Sliding, casement & folding aluminium doors',
+          'Precision-cut, corrosion-resistant window frames',
+          'Modular office partitions & cubicle systems',
+          'Structural glazing & curtain wall façades',
+        ],
+        mainImage: aluminiumProduct1,
+        sideImages: [aluminiumProduct2],
+        fit: 'cover',
+      },
+      secondary: {
+        tagline: 'Real Installations',
+        heading: 'Built and Installed On-Site',
+        description: "From directors' offices to open-plan floors, our aluminium partition systems are fabricated to spec and installed with minimal disruption — supporting glass, acrylic, or laminate panels and integrated wiring.",
+        image: aluminiumOfficePartitions,
+        fit: 'cover',
+      },
+      banner: {
+        tagline: 'Precision Fabrication',
+        heading: 'Engineered for Strength, Finished for Design',
+        description: 'Every frame is cut, assembled, and finished in our own workshop — from single doors to full structural glazing systems.',
+        image: aluminiumProduct2,
+      },
+    },
+  },
+  {
+    slug: 'grc-cement-architectural',
+    icon: Landmark,
+    image: decorativeCeilingMedallion,
+    title: 'GRC & Cement Architectural Works',
+    intro: 'We blend traditional elegance with modern engineering—crafting facades, columns, furniture, and temple elements that endure weather and time. Each piece is designed for structural strength and visual impact, enhancing residential, commercial, and public spaces with refined, lasting architectural beauty.',
+    catalogue: '/catalogues/grc-cement-architectural.pdf',
+    items: [
+      {
+        title: 'Decorative Cement Pillars & Columns',
+        desc: 'Crafted to offer both load-bearing strength and ornamental detailing, perfect for enhancing entrances, corridors, or open verandas.',
+      },
+      {
+        title: 'Exterior Finishing & Garden Decor',
+        desc: 'Resilient outdoor elements including edging, sculptures, and accent decor that withstand environmental exposure while elevating landscape aesthetics.',
+      },
+      {
+        title: 'Ceiling Work – Domes, Trims & Mouldings',
+        desc: 'Architectural ceiling accents with refined detailing, adding depth, luxury, and cultural character to indoor environments.',
+        image: decorativeCeilingMedallion,
+      },
+      {
+        title: 'Designer Boundary Walls & Concrete Fencing',
+        desc: 'Modern and classic fence designs molded in cement to offer privacy, perimeter security, and curb appeal.',
+      },
+      {
+        title: 'Stamped Concrete Flooring – Driveways, Walkways',
+        desc: 'Durable, slip-resistant surfaces with stone, tile, or wood textures that bring artistic flair to functional outdoor paths and vehicle zones.',
+      },
+      {
+        title: 'Planters, Benches & Outdoor Furniture (Cement-Based)',
+        desc: 'Robust and stylish cement furnishings that integrate seamlessly with garden layouts or public seating zones, offering high durability and low upkeep.',
+      },
+      {
+        title: 'Artistic Wall Relief Panels & Murals',
+        desc: 'Custom-designed cement panels and relief art that bring storytelling, symbolism, or branding into architectural surfaces.',
+      },
+    ],
+    showcase: {
+      hero: {
+        tagline: 'Architectural Craftsmanship',
+        heading: 'GRC & Cement Works, Cast for Lasting Beauty',
+        highlight: 'Cast',
+        description: 'We blend traditional elegance with modern engineering — crafting facades, columns, furniture, and temple elements that endure weather and time, designed for structural strength and visual impact.',
+        features: [
+          'Load-bearing decorative pillars & columns',
+          'Weatherproof exterior finishing & garden decor',
+          'Domed ceilings, trims & architectural mouldings',
+          'Boundary walls, stamped concrete & wall relief art',
+        ],
+        mainImage: decorativeCeilingMedallion,
+        sideImages: [],
+        fit: 'cover',
+      },
+    },
+  },
+  {
+    slug: 'lighting-decorations',
+    icon: Sparkles,
+    image: lightingDecorations3,
+    title: 'Lighting Decorations',
+    intro: 'Custom lighting installations and festive décor for buildings, events, and public spaces — from full facade illuminations to holiday displays that transform a space after dark.',
+    catalogue: '/catalogues/lighting-decorations.pdf',
+    items: [
+      { title: 'Building Facade Lighting', desc: 'Full-height LED string light installations that outline and illuminate entire building facades.', image: lightingDecorations3 },
+      { title: 'Festive Holiday Displays', desc: 'Custom Christmas and holiday-season lighting, signage, and decorative motifs for storefronts and offices.', image: lightingDecorations1 },
+      { title: 'Event & Hospitality Lighting', desc: 'Elegant string lighting for hotels, event venues, and public spaces.', image: lightingDecorations4 },
+    ],
+    showcase: {
+      hero: {
+        tagline: 'Custom Lighting Installations',
+        heading: 'Lighting Decorations, Designed to Shine',
+        highlight: 'Shine',
+        description: "From full building facades to festive holiday displays, we design, install, and maintain custom lighting that transforms a space after dark — built to run reliably through every season.",
+        features: [
+          'Custom LED & string light installations',
+          'Full building facade & rooftop lighting',
+          'Festive displays for the holiday season',
+          'Designed, installed & maintained by our team',
+        ],
+        mainImage: lightingDecorations3,
+        sideImages: [lightingDecorations2, lightingDecorations4],
+        fit: 'cover',
+      },
+      secondary: {
+        tagline: 'Festive Displays',
+        heading: 'Custom Holiday Décor',
+        description: 'Beyond facade lighting, we design custom festive motifs, signage, and seasonal displays that turn any building into a landmark for the holidays.',
+        image: lightingDecorations1,
+        fit: 'cover',
+      },
+    },
+  },
+  {
+    slug: 'raw-materials-supply',
+    icon: Warehouse,
+    image: rawMaterialFiberglassMat,
+    title: 'Raw Materials Supply',
+    intro: 'Sayona International supplies premium-quality composite raw materials for manufacturers, contractors, fabricators, and artisans across Uganda and East Africa.',
+    catalogue: '/catalogues/raw-materials-supply.pdf',
+    items: [
+      { title: 'General Purpose Polyester Resin', desc: 'Versatile resin suited for a wide range of fiberglass fabrication needs.', image: rawMaterialResin },
+      { title: 'Epoxy Resin', desc: 'High-performance resin for casting, coating, and composite lamination.' },
+      { title: 'Vinyl Ester Resin', desc: 'Corrosion-resistant resin for demanding structural and chemical applications.' },
+      { title: 'Gelcoat', desc: 'Protective, high-gloss finish coat for fiberglass moulded products.' },
+      { title: 'Hardeners & Catalysts', desc: 'Curing agents formulated for consistent, reliable resin performance.' },
+      { title: 'Fiberglass Chopped Strand Mat', desc: 'Randomly oriented glass fiber mat for reinforcing moulded laminates.', image: rawMaterialFiberglassMat },
+      { title: 'Woven Roving', desc: 'Heavy, woven glass fabric for high-strength structural laminates.' },
+      { title: 'Fiberglass Cloth', desc: 'Fine woven glass cloth for smooth surface finishes and reinforcement.' },
+      { title: 'Surface Tissue', desc: 'Lightweight veil that delivers a smooth, resin-rich surface finish.' },
+      { title: 'Pigments', desc: 'Color concentrates for tinting resins to any custom shade.' },
+      { title: 'Fillers', desc: 'Extenders and fillers that adjust resin viscosity, weight, and cost.' },
+      { title: 'Release Wax', desc: 'Mould release wax ensuring clean, damage-free part removal.' },
+    ],
+    showcase: {
+      hero: {
+        tagline: 'Composite Raw Materials',
+        heading: 'Raw Materials, Supplied for Every Build',
+        highlight: 'Supplied',
+        description: 'We supply premium-quality resins, mats, and composite materials to manufacturers, contractors, fabricators, and artisans across Uganda and East Africa — consistent quality, ready to work with.',
+        features: [
+          'Polyester, epoxy & vinyl ester resins',
+          'Fiberglass chopped strand mat, cloth & woven roving',
+          'Gelcoat, hardeners, catalysts & release wax',
+          'Pigments and fillers for custom finishes',
+        ],
+        mainImage: rawMaterialFiberglassMat,
+        sideImages: [rawMaterialResin],
+        fit: 'cover',
       },
     },
   },

@@ -87,15 +87,32 @@ const Navbar = ({ currentPage, onNavigate, onSelectProduct, onQuote }: NavbarPro
                       }`}
                     />
                   </button>
-                  <div className="absolute left-0 top-full pt-3 opacity-0 invisible translate-y-1 group-hover/products:opacity-100 group-hover/products:visible group-hover/products:translate-y-0 transition-all duration-200">
-                    <div className="bg-white border border-black/10 shadow-xl min-w-64 py-2">
+                  <div
+                    className={`fixed inset-x-0 ${scrolled ? 'top-16' : 'top-20'} opacity-0 invisible -translate-y-1 group-hover/products:opacity-100 group-hover/products:visible group-hover/products:translate-y-0 transition-all duration-200 ${
+                      scrolled
+                        ? 'bg-white border-b border-black/10 shadow-xl'
+                        : 'bg-black/90 backdrop-blur-md border-b border-white/10'
+                    }`}
+                  >
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-2">
                       {products.map((p) => (
                         <button
                           key={p.slug}
                           onClick={() => handleProduct(p.slug)}
-                          className="w-full text-left px-5 py-3 text-sm text-black/70 hover:text-black hover:bg-yellow-400/10 transition-colors duration-150"
+                          className={`group/item flex items-center gap-3 p-3 text-left transition-colors duration-150 ${
+                            scrolled ? 'hover:bg-yellow-400/10' : 'hover:bg-white/10'
+                          }`}
                         >
-                          {p.title}
+                          <span
+                            className={`w-10 h-10 flex items-center justify-center shrink-0 transition-colors duration-150 group-hover/item:bg-yellow-400 ${
+                              scrolled ? 'bg-black/5' : 'bg-white/10'
+                            }`}
+                          >
+                            <p.icon size={18} className="text-yellow-400 group-hover/item:text-black transition-colors" />
+                          </span>
+                          <span className={`text-sm font-medium ${scrolled ? 'text-black/80' : 'text-white/90'}`}>
+                            {p.title}
+                          </span>
                         </button>
                       ))}
                     </div>

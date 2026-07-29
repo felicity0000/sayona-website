@@ -16,13 +16,21 @@ import {
   Clock,
   HeartHandshake,
 } from "lucide-react";
-import { services } from "../data/servicesData";
+import { getServiceBySlug } from "../data/servicesData";
 import images from "../assets/images";
 
 interface HomeProps {
   onNavigate: (page: string) => void;
+  onSelectService: (slug: string) => void;
   onQuote: () => void;
 }
+
+const homeServiceSlugs = [
+  "fiberglass-manufacturing",
+  "epoxy-products",
+  "raw-materials-supply",
+  "construction-architectural",
+];
 
 function useInView<T extends HTMLElement>() {
   const ref = useRef<T>(null);
@@ -71,8 +79,10 @@ function Counter({ end, suffix = "" }: { end: number; suffix?: string }) {
   );
 }
 
-export default function Home({ onNavigate, onQuote }: HomeProps) {
-  const featuredServices = services.slice(0, 4);
+export default function Home({ onNavigate, onSelectService, onQuote }: HomeProps) {
+  const featuredServices = homeServiceSlugs
+    .map((slug) => getServiceBySlug(slug))
+    .filter((service) => service !== undefined);
 
   const stats = [
     { icon: Award, value: 10, suffix: "+", label: "Years Experience" },
@@ -235,19 +245,18 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
             {featuredServices.map((service, i) => (
               <div
                 key={i}
-                className="group relative bg-black/3 border border-black/10 overflow-hidden hover:border-yellow-400/40 transition-all duration-300 cursor-pointer"
-                onClick={() => onNavigate("services")}
+                className="relative bg-black/3 border border-black/10 overflow-hidden"
               >
                 <div className="relative h-40 overflow-hidden">
                   {service.image ? (
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover"
                     />
                   ) : (
                     <div className="relative w-full h-full bg-linear-to-br from-zinc-900 to-black flex items-center justify-center">
-                      <service.icon size={40} className="text-yellow-400/30 group-hover:text-yellow-400/50 group-hover:scale-110 transition-all duration-300" />
+                      <service.icon size={40} className="text-yellow-400/30" />
                     </div>
                   )}
                   <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent" />
@@ -256,15 +265,27 @@ export default function Home({ onNavigate, onQuote }: HomeProps) {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-black font-bold text-lg mb-2 group-hover:text-yellow-400 transition-colors">
+                  <h3 className="text-black font-bold text-lg mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-black/50 text-sm leading-relaxed mb-4 line-clamp-3">
+                  <p className="text-black/50 text-sm leading-relaxed mb-4 line-clamp-2">
                     {service.intro}
                   </p>
-                  <span className="inline-flex items-center gap-1 text-yellow-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    Learn more <ArrowRight size={14} />
-                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {service.items.slice(0, 5).map((item) => (
+                      <span
+                        key={item.title}
+                        className="text-[11px] leading-none px-2 py-1.5 bg-yellow-400/10 text-black/70 border border-black/10"
+                      >
+                        {item.title}
+                      </span>
+                    ))}
+                    {service.items.length > 5 && (
+                      <span className="text-[11px] leading-none px-2 py-1.5 text-black/40">
+                        +{service.items.length - 5} more
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}

@@ -56,7 +56,7 @@ const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
           onClick={() => onNavigate('services')}
           className="mt-6 inline-flex items-center gap-2 text-yellow-400 font-bold text-sm tracking-wider uppercase"
         >
-          <ArrowLeft size={16} /> Back to Services
+          <ArrowLeft size={16} /> Back to Home
         </button>
       </div>
     );
@@ -86,7 +86,7 @@ const ServiceDetail = ({ slug, onNavigate, onQuote }: ServiceDetailProps) => {
             className="group inline-flex items-center gap-2 text-white/50 hover:text-yellow-400 text-sm font-medium tracking-wide mb-8 transition-colors duration-200"
           >
             <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-            Back to Services
+            Back to Home
           </button>
 
           <div className="w-16 h-16 bg-yellow-400 flex items-center justify-center mb-6">
