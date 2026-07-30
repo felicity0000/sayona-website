@@ -183,7 +183,7 @@ const Contact =() => {
           <Reveal className="relative h-80 border border-black/10 overflow-hidden bg-zinc-100">
             <iframe
               title="Sayona International Limited location"
-              src="https://www.google.com/maps?q=Plot+17+Enterprise+Road,+Ntinda+Industrial+Area,+Kampala,+Uganda&output=embed"
+              src="https://www.google.com/maps?q=0.3386159837245941,32.6229362487793&z=17&hl=en&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
