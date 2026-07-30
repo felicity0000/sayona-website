@@ -1,4 +1,4 @@
-import { Layers, Droplet, Warehouse, Building2, Motorbike, Home as HomeIcon, Amphora, DoorClosed, Landmark, Sparkles, Sofa, Paintbrush } from 'lucide-react';
+import { Layers, Droplet, Warehouse, Building2, Motorbike, Home as HomeIcon, Amphora, DoorClosed, Landmark, Sparkles, Sofa, Paintbrush, Axe, Flame } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import images from '../assets/images';
 
@@ -43,12 +43,22 @@ import lightingDecorations4 from '../assets/decorations/lighting-decorations-4.j
 
 import rawMaterialFiberglassMat from '../assets/raw-materials-supply-products/fiber-glass-mat-1.jpg';
 import rawMaterialResin from '../assets/raw-materials-supply-products/resin.jpg';
+import rawMaterialWovenRoving from '../assets/raw-materials-supply-products/fiber-glass-mat-2.jpg';
+import rawMaterialChoppedStrandRoll from '../assets/raw-materials-supply-products/fiber-glass-mat-3.jpg';
+import rawMaterialFiberglassCloth from '../assets/raw-materials-supply-products/fiber-glass-mat-4.jpg';
 
-import furniture1 from '../assets/furniture-products/furniture-1.jpg';
-import furniture2 from '../assets/furniture-products/furniture-2.jpg';
-import furniture3 from '../assets/furniture-products/furniture-3.jpg';
-import furniture4 from '../assets/furniture-products/furniture-4.jpg';
-import furniture5 from '../assets/furniture-products/furniture-5.jpg';
+import furnitureEpoxyTables from '../assets/furniture-products/epoxy-table-furniture-1.jpg';
+import furnitureEpoxyChairs from '../assets/furniture-products/epoxy-chair-furniture-2.jpg';
+import furnitureWardrobe from '../assets/furniture-products/Wardrobe-furniture-3.jpg';
+
+import cncCarvingApplique1 from '../assets/cnc-wood-products/carving-1.jpg';
+import cncCarvingCorner1 from '../assets/cnc-wood-products/carving-2.jpg';
+import cncCarvingHeadboard1 from '../assets/cnc-wood-products/carving-3.jpg';
+
+import metalCutTable1 from '../assets/metal-fabrication-products/metal-works-1.jpg';
+import metalDividerPanel1 from '../assets/metal-fabrication-products/metal-works-2.jpg';
+import metalPlanters1 from '../assets/metal-fabrication-products/metal-works-3.jpg';
+import metalWallArt1 from '../assets/metal-fabrication-products/metal-works-4.jpg';
 
 import interiorDesign1 from '../assets/interior-design/interior-design-1.jpg';
 import interiorDesign2 from '../assets/interior-design/interior-design-2.jpg';
@@ -496,9 +506,9 @@ export const products: ServiceData[] = [
       { title: 'Vinyl Ester Resin', desc: 'Corrosion-resistant resin for demanding structural and chemical applications.' },
       { title: 'Gelcoat', desc: 'Protective, high-gloss finish coat for fiberglass moulded products.' },
       { title: 'Hardeners & Catalysts', desc: 'Curing agents formulated for consistent, reliable resin performance.' },
-      { title: 'Fiberglass Chopped Strand Mat', desc: 'Randomly oriented glass fiber mat for reinforcing moulded laminates.', image: rawMaterialFiberglassMat },
-      { title: 'Woven Roving', desc: 'Heavy, woven glass fabric for high-strength structural laminates.' },
-      { title: 'Fiberglass Cloth', desc: 'Fine woven glass cloth for smooth surface finishes and reinforcement.' },
+      { title: 'Fiberglass Chopped Strand Mat', desc: 'Randomly oriented glass fiber mat for reinforcing moulded laminates.', image: rawMaterialChoppedStrandRoll },
+      { title: 'Woven Roving', desc: 'Heavy, woven glass fabric for high-strength structural laminates.', image: rawMaterialWovenRoving },
+      { title: 'Fiberglass Cloth', desc: 'Fine woven glass cloth for smooth surface finishes and reinforcement.', image: rawMaterialFiberglassCloth },
       { title: 'Surface Tissue', desc: 'Lightweight veil that delivers a smooth, resin-rich surface finish.' },
       { title: 'Pigments', desc: 'Color concentrates for tinting resins to any custom shade.' },
       { title: 'Fillers', desc: 'Extenders and fillers that adjust resin viscosity, weight, and cost.' },
@@ -517,53 +527,65 @@ export const products: ServiceData[] = [
           'Pigments and fillers for custom finishes',
         ],
         mainImage: rawMaterialFiberglassMat,
-        sideImages: [rawMaterialResin],
+        sideImages: [rawMaterialResin, rawMaterialWovenRoving],
         fit: 'cover',
+      },
+      secondary: {
+        tagline: 'Ready to Laminate',
+        heading: 'Chopped Strand Mat, Rolled and Ready',
+        description: 'Randomly oriented glass fiber mat, rolled and packed for consistent weight and easy handling — supplied in bulk to fabricators, contractors, and artisans across Uganda and East Africa.',
+        image: rawMaterialChoppedStrandRoll,
+        fit: 'cover',
+      },
+      banner: {
+        tagline: 'Fine Surface Finish',
+        heading: 'Fiberglass Cloth, Stocked in Bulk',
+        description: 'Smooth, fine-woven fiberglass cloth for reinforcement and clean surface finishes — stocked and rolled to order for fabricators across Uganda and East Africa.',
+        image: rawMaterialFiberglassCloth,
       },
     },
   },
   {
     slug: 'furniture',
     icon: Sofa,
-    image: furniture3,
+    image: furnitureEpoxyChairs,
     title: 'Furniture',
-    intro: 'From hand-carved wooden pieces to upholstered sofa sets, we design and craft furniture for homes, offices, and hospitality spaces — built to order and finished to a premium standard.',
+    intro: 'From resin-cast epoxy tables to live-edge wood seating and fitted wardrobes, we design and craft furniture for homes, offices, and hospitality spaces — built to order and finished to a premium standard.',
     catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
-      { title: 'Sofa Sets', desc: 'Upholstered 3+1+1 sofa sets in a range of fabrics and finishes, built for durability and everyday comfort.', image: furniture4 },
-      { title: 'Modern Wood-Frame Sofas', desc: 'Contemporary sofas with solid wood framing and premium cushioning for a clean, modern look.', image: furniture3 },
-      { title: 'Hand-Carved Armchairs', desc: 'Intricately carved solid-wood armchairs, upholstered for comfort — statement pieces for any interior.', image: furniture1 },
-      { title: 'Custom Carved Doors & Wood Panels', desc: 'Ornately hand-carved wooden doors and decorative panels, crafted to order for a distinctive entrance or feature wall.', image: furniture2 },
-      { title: 'Upholstery & Cushioning', desc: 'In-house upholstery services with a wide choice of fabrics, foams, and finishes to match any furniture piece.' },
+      { title: 'Epoxy Resin Tables', desc: 'Statement side and coffee tables cast with colorful resin tops and finished on solid wood legs — no two pieces alike.', image: furnitureEpoxyTables },
+      { title: 'Live-Edge Epoxy Chairs', desc: 'Solid wood chairs finished with white epoxy fill along the natural live edge, for indoor or outdoor use.', image: furnitureEpoxyChairs },
+      { title: 'Wardrobes & Storage Units', desc: 'Custom-built wardrobes and storage units with a high-gloss finish, designed to fit any bedroom, office, or retail space.', image: furnitureWardrobe },
+      { title: 'Custom Furniture & Upholstery', desc: 'Bespoke furniture pieces built and upholstered to order, finished to match any interior.' },
     ],
     showcase: {
       hero: {
         tagline: 'Crafted Furniture',
-        heading: 'Furniture, Handcrafted for Every Room',
-        highlight: 'Handcrafted',
-        description: 'From solid wood-frame sofas to intricately carved accent chairs, every piece is built and upholstered in-house — combining comfort, craftsmanship, and a finish made to last.',
+        heading: 'Furniture, Cast and Built to Order',
+        highlight: 'Cast',
+        description: 'From colour-cast epoxy resin tables to live-edge wood seating and fitted wardrobes, every piece is designed, built, and finished in-house — combining our epoxy expertise with solid craftsmanship.',
         features: [
-          'Upholstered sofa sets in a range of fabrics',
-          'Solid wood-frame sofas and modern seating',
-          'Hand-carved armchairs and accent furniture',
-          'Custom carved doors and decorative wood panels',
+          'Resin-cast epoxy side and coffee tables',
+          'Live-edge wood chairs finished with epoxy fill',
+          'Custom wardrobes and storage units',
+          'Bespoke furniture built and upholstered to order',
         ],
-        mainImage: furniture3,
-        sideImages: [furniture4, furniture5],
+        mainImage: furnitureEpoxyChairs,
+        sideImages: [furnitureEpoxyTables, furnitureWardrobe],
         fit: 'contain',
       },
       secondary: {
-        tagline: 'Hand-Carved Detail',
-        heading: 'Carved Furniture & Woodwork',
-        description: 'Beyond upholstered seating, our craftsmen hand-carve solid wood armchairs, doors, and panels — intricate detailing finished to order for a distinctive, one-of-a-kind piece.',
-        image: furniture1,
-        fit: 'cover',
+        tagline: 'Resin Craftsmanship',
+        heading: 'Epoxy Tables, Cast In-House',
+        description: 'We pour and cast custom epoxy furniture in-house — colourful resin tabletops finished on solid wood legs, each piece one of a kind.',
+        image: furnitureEpoxyTables,
+        fit: 'contain',
       },
       banner: {
-        tagline: 'Bespoke Woodwork',
-        heading: 'Carved Doors, Made to Order',
-        description: 'Every carved door and panel is designed and finished by hand in our own workshop — a striking centerpiece for any entrance or feature wall.',
-        image: furniture2,
+        tagline: 'Fitted Storage',
+        heading: 'Wardrobes & Storage, Built to Fit',
+        description: 'Custom-built wardrobes and storage units finished to a high-gloss standard — designed and installed to fit any bedroom, office, or retail space.',
+        image: furnitureWardrobe,
       },
     },
   },
@@ -611,6 +633,104 @@ export const products: ServiceData[] = [
         heading: 'Design, Fit-Out & Install — Handled In-House',
         description: 'From the first concept sketch to the final lighting fixture, every interior and exterior element is designed, fabricated, and installed by our own team.',
         image: interiorDesign1,
+      },
+    },
+  },
+  {
+    slug: 'cnc-wood-carving',
+    icon: Axe,
+    image: cncCarvingHeadboard1,
+    title: 'CNC Wood Carving & Cutting',
+    intro: 'Precision CNC 2D/3D wood carving and cutting for architectural, furniture, and spiritual pieces — from decorative jalis and wall panels to carved beds, mandaps, and bespoke signage.',
+    catalogue: '/catalogues/Sayona%20-works.pdf',
+    items: [
+      { title: 'Designer Wooden Partitions & Decorative Jalis', desc: 'Intricately carved panels and screens that serve as elegant space dividers and aesthetic highlights — ideal for homes, offices, hotels, and religious spaces.', image: cncCarvingCorner1 },
+      { title: 'Customized Signage & Nameplates', desc: 'Personalized CNC-engraved signs and nameplates in wood or composite materials, offering refined branding with durability and visual impact.' },
+      { title: 'Home Temples, Pooja Mandirs & Spiritual Structures', desc: 'Beautifully carved spiritual units tailored to cultural and religious significance — customizable in size, ornamentation, and traditional detailing.' },
+      { title: 'Carved Wooden Beds, Doors & Headboards', desc: 'Luxurious, heritage-inspired pieces that combine aesthetic artistry with functional strength — suitable for upscale homes and hospitality settings.', image: cncCarvingHeadboard1 },
+      { title: 'Custom Wooden Wardrobes, Cabinets & Shelving', desc: 'Tailored storage solutions featuring elegant carvings and modular designs for living spaces, retail environments, and boutique interiors.' },
+      { title: 'Designer Wall Panels & Wooden Claddings', desc: 'Dimensional wooden cladding that adds depth, acoustic warmth, and visual richness to walls in homes, lobbies, or executive spaces.', image: cncCarvingApplique1 },
+      { title: 'Carved Wedding Mandaps & Stage Elements', desc: 'Artisanal mandaps and stage backdrops handcrafted with ornate carvings — offering grandeur, modularity, and cultural authenticity for events.' },
+      { title: 'Custom Frames, Panel Doors & Door Designs', desc: 'Bespoke door panels and decorative frames featuring traditional or modern motifs — crafted to elevate any architectural theme.' },
+      { title: 'Retail & Restaurant Interiors – Counters & Displays', desc: 'Functionally elegant display counters and fixtures aligned to your theme and brand — enhancing user experience and retail aesthetics.' },
+      { title: 'Artisan Wooden Furniture – Chairs, Tables & Cabinets', desc: 'Handcrafted furniture with CNC-precision carvings, blending sophistication and durability for dining, lounge, and workspace environments.' },
+    ],
+    showcase: {
+      hero: {
+        tagline: 'Precision Wood Craft',
+        heading: 'CNC Wood Carving, Cut for Every Detail',
+        highlight: 'Cut',
+        description: 'From ornate decorative panels to carved headboards and spiritual structures, every piece is precision-cut on CNC and hand-finished — combining intricate detailing with structural strength.',
+        features: [
+          'Decorative jalis, partitions & wall panels',
+          'Carved beds, doors & heritage headboards',
+          'Home temples & spiritual structures',
+          'Custom signage, frames & retail displays',
+        ],
+        mainImage: cncCarvingHeadboard1,
+        sideImages: [cncCarvingApplique1, cncCarvingCorner1],
+        fit: 'contain',
+      },
+      secondary: {
+        tagline: 'Dimensional Detail',
+        heading: 'Wall Panels & Decorative Appliqués',
+        description: 'Beyond partitions and jalis, we CNC-carve dimensional wall panels and decorative appliqués that add depth and texture to any interior surface.',
+        image: cncCarvingApplique1,
+        fit: 'contain',
+      },
+      banner: {
+        tagline: 'Heritage Craftsmanship',
+        heading: 'Carved Beds, Mandaps & Spiritual Structures',
+        description: 'From heritage-inspired headboards to home temples and wedding mandaps, every carved structure is finished by hand for lasting detail and cultural authenticity.',
+        image: cncCarvingHeadboard1,
+      },
+    },
+  },
+  {
+    slug: 'cnc-plasma-metal',
+    icon: Flame,
+    image: metalDividerPanel1,
+    title: 'CNC Plasma Metal Design & Cutting',
+    intro: 'Precision plasma-cut metalwork for gates, railings, signage, and decorative installations — combining structural strength with intricate, custom-cut detailing.',
+    catalogue: '/catalogues/Sayona%20-works.pdf',
+    items: [
+      { title: 'Tailored Entrance Gates (Residential & Commercial)', desc: 'Custom-designed gates combining robust security with artistic plasma-cut patterns for standout first impressions.' },
+      { title: 'Security Grills & Burglar-Proofing Structures', desc: 'Reinforced metalworks offering dependable protection for homes and businesses without compromising on aesthetics.' },
+      { title: 'Metal Furniture Components', desc: 'Fabricated frames, legs, and structures for industrial-style furniture with precision-cut details and structural integrity.', image: metalCutTable1 },
+      { title: 'Balcony Railings, Stair Handrails & Window Grills', desc: 'Elegant, custom profiles that elevate safety and design coherence across interior and exterior settings.' },
+      { title: 'Architectural Signage & Business Boards', desc: 'Laser-precise cut signage tailored for impactful branding in both corporate and hospitality environments.' },
+      { title: 'Decorative Metal Dividers & Installations', desc: 'Functional art panels for partitions and ambient features — designed to blend form, privacy, and light play.', images: [metalDividerPanel1, metalWallArt1, metalPlanters1] },
+      { title: 'Industrial Racks, Shelving & Support Frames', desc: 'Heavy-duty, load-bearing solutions engineered for warehouses, factories, and high-traffic commercial zones.' },
+      { title: 'Custom Nameplates & Directional Boards', desc: 'Etched or cut designs on durable metals for premium, long-lasting identity and wayfinding.' },
+    ],
+    showcase: {
+      hero: {
+        tagline: 'Precision Metal Craft',
+        heading: 'Plasma-Cut Metalwork, Designed to Impress',
+        highlight: 'Designed',
+        description: 'From tailored entrance gates to decorative dividers and industrial frames, every piece is plasma-cut to precise patterns and fabricated for lasting strength.',
+        features: [
+          'Custom entrance gates & security grills',
+          'Railings, handrails & window grills',
+          'Decorative dividers & architectural signage',
+          'Industrial racks, shelving & support frames',
+        ],
+        mainImage: metalDividerPanel1,
+        sideImages: [metalWallArt1, metalCutTable1],
+        fit: 'contain',
+      },
+      secondary: {
+        tagline: 'Fabricated Furniture',
+        heading: 'Metal Furniture Components',
+        description: 'Beyond gates and grills, we plasma-cut frames, legs, and structural components for industrial-style furniture — precision-cut detail with structural integrity.',
+        image: metalCutTable1,
+        fit: 'contain',
+      },
+      banner: {
+        tagline: 'Functional Art',
+        heading: 'Decorative Dividers & Installations',
+        description: 'Plasma-cut panels that double as functional art — partitions, screens, and ambient features designed to blend form, privacy, and light.',
+        image: metalPlanters1,
       },
     },
   },
