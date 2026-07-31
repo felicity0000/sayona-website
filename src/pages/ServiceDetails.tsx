@@ -204,10 +204,39 @@ const ServiceDetail = ({ onQuote }: ServiceDetailProps) => {
             </section>
           )}
 
+          {/* Real-world / in-use photo gallery */}
+          {showcase.gallery && (
+            <section className="bg-white py-20">
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <Reveal className="text-center mb-12 max-w-2xl mx-auto">
+                  <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">{showcase.gallery.tagline}</span>
+                  <Heading
+                    text={showcase.gallery.heading}
+                    highlight={showcase.gallery.highlight}
+                    className="text-3xl md:text-4xl font-black text-black mt-3 mb-4"
+                  />
+                  <p className="text-black/60 leading-relaxed">{showcase.gallery.description}</p>
+                </Reveal>
+                <RevealGroup className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                  {showcase.gallery.images.map((src, i) => (
+                    <RevealItem key={i} className="aspect-3/4 overflow-hidden rounded-lg border border-black/10">
+                      <img src={src} alt="" className="w-full h-full object-cover" />
+                    </RevealItem>
+                  ))}
+                </RevealGroup>
+              </div>
+            </section>
+          )}
+
           {/* Production / closing banner */}
           {showcase.banner && (
             <section className="relative py-24 overflow-hidden">
-              <img src={showcase.banner.image} alt="" className="absolute inset-0 w-full h-full object-cover" />
+              <img
+                src={showcase.banner.image}
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{ objectPosition: showcase.banner.imagePosition ?? 'center' }}
+              />
               <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-black/20" />
               <Reveal className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">{showcase.banner.tagline}</span>

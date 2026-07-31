@@ -8,27 +8,37 @@ import fibreBox03 from '../assets/fibre-boxes/fibre-box-03.png';
 import fibreBox04 from '../assets/fibre-boxes/fibre-box-04.png';
 import fibreBox15 from '../assets/fibre-boxes/fibre-box-15.png';
 
+import motorbikeBox1 from '../assets/fibre-boxes/motor-bike-with-box-1.jpeg';
+import motorbikeBox2 from '../assets/fibre-boxes/motor-bike-with-box-2.jpeg';
+import motorbikeBox3 from '../assets/fibre-boxes/motor-bike-with-box-3.jpeg';
+import motorbikeBox4 from '../assets/fibre-boxes/motor-bike-with-box-4.jpeg';
+import motorbikeBox5 from '../assets/fibre-boxes/motor-bike-with-box-5.jpeg';
+
 import roofing1 from '../assets/roofings/roofings-1.jpg';
 import roofing2 from '../assets/roofings/roofings-2.jpg';
 import roofing3 from '../assets/roofings/roofings-3.jpg';
 import roofing4 from '../assets/roofings/roofings-4.jpg';
-import roofing5 from '../assets/roofings/roofings-5.jpg';
+import roofingsBetter2 from '../assets/roofings/roofings-better-2.jpeg';
 
-import pots1 from '../assets/pots/pots-1.jpg';
-import pots2 from '../assets/pots/pots-2.jpg';
-import pots3 from '../assets/pots/pots-3.jpg';
-import pots4 from '../assets/pots/pots-4.jpg';
-import pots5 from '../assets/pots/pots-5.jpg';
+import pots1 from '../assets/pots/new-pots-1.jpeg';
+import pots2 from '../assets/pots/new-pots-2.jpeg';
+import pots3 from '../assets/pots/new-pots-3.jpeg';
 
-import aluminiumOfficePartitions from '../assets/aluminium-product/industrial-component-1.jpeg';
-import aluminiumProduct1 from '../assets/aluminium-product/aluminium-product-1.jpg';
-import aluminiumProduct2 from '../assets/aluminium-product/aluminium-product-2.jpg';
+import industrialComponent1 from '../assets/aluminium-product/industrial-component-1.jpeg';
+import industrialComponent2 from '../assets/aluminium-product/industrial-component-2.jpeg';
+import industrialComponent3 from '../assets/aluminium-product/industrial-component-3.jpeg';
+import industrialComponent4 from '../assets/aluminium-product/industrial-component-4.jpeg';
 
 import decorativeCeilingMedallion from '../assets/architectural-works/decorative-celing.jpeg';
-import archway1 from '../assets/architectural-works/architecture-1.jpg';
-import archway2 from '../assets/architectural-works/architecture-2.jpg';
-import archMoulding1 from '../assets/architectural-works/architecture-3.jpg';
-import entrancePortico1 from '../assets/architectural-works/columns-1.jpg';
+import archYardJaliColumns from '../assets/architectural-works/arch-new-1.jpeg';
+import archCornicesStack from '../assets/architectural-works/arch-new-2.jpeg';
+import archYardWide from '../assets/architectural-works/arch-new-3.jpeg';
+import archJaliCircular from '../assets/architectural-works/arch-new-5.jpeg';
+import archFlutedColumns from '../assets/architectural-works/arch-new-6.jpeg';
+import archJaliStar from '../assets/architectural-works/arch-new-7.jpeg';
+import archCarvedPillar from '../assets/architectural-works/arch-new-8.jpeg';
+import archTempleSpires from '../assets/architectural-works/arch-new-9.jpeg';
+import archTempleFacade from '../assets/architectural-works/arch-new-10.jpeg';
 
 import epoxy1 from '../assets/epoxy/epoxy-1.jpeg';
 import epoxy2 from '../assets/epoxy/epoxy-2.jpeg';
@@ -36,10 +46,10 @@ import epoxy3 from '../assets/epoxy/epoxy-3.jpeg';
 import epoxy4 from '../assets/epoxy/epoxy-4.jpeg';
 import epoxyTable1 from '../assets/epoxy/epoxy-table-1.jpg';
 
-import lightingDecorations1 from '../assets/decorations/lighting-decorations-1.jpeg';
-import lightingDecorations2 from '../assets/decorations/lighting-decorations-2.jpg';
-import lightingDecorations3 from '../assets/decorations/lighting-decorations-3.jpg';
-import lightingDecorations4 from '../assets/decorations/lighting-decorations-4.jpg';
+import lightingFence from '../assets/decorations/new-lightings-1.jpeg';
+import lightingBuildingWide from '../assets/decorations/new-lightings-2.jpeg';
+import lightingFacadeSanta from '../assets/decorations/new-lightings-3.jpeg';
+import lightingXmasGate from '../assets/decorations/new-lightings-4.jpeg';
 
 import rawMaterialFiberglassMat from '../assets/raw-materials-supply-products/fiber-glass-mat-1.jpg';
 import rawMaterialResin from '../assets/raw-materials-supply-products/resin.jpg';
@@ -47,18 +57,20 @@ import rawMaterialWovenRoving from '../assets/raw-materials-supply-products/fibe
 import rawMaterialChoppedStrandRoll from '../assets/raw-materials-supply-products/fiber-glass-mat-3.jpg';
 import rawMaterialFiberglassCloth from '../assets/raw-materials-supply-products/fiber-glass-mat-4.jpg';
 
-import furnitureEpoxyTables from '../assets/furniture-products/epoxy-table-furniture-1.jpg';
-import furnitureEpoxyChairs from '../assets/furniture-products/epoxy-chair-furniture-2.jpg';
 import furnitureWardrobe from '../assets/furniture-products/Wardrobe-furniture-3.jpg';
+import furnitureReceptionDesk from '../assets/furniture-products/furni-2.jpeg';
+import furnitureDisplayCounter from '../assets/furniture-products/furni-1.jpeg';
+import furnitureDeskDetail from '../assets/furniture-products/furni-3.jpeg';
+import furnitureLobbyWide from '../assets/furniture-products/furni-4.jpeg';
 
-import cncCarvingApplique1 from '../assets/cnc-wood-products/carving-1.jpg';
-import cncCarvingCorner1 from '../assets/cnc-wood-products/carving-2.jpg';
-import cncCarvingHeadboard1 from '../assets/cnc-wood-products/carving-3.jpg';
+import cncWoodCutting1 from '../assets/cnc-wood-products/cnc-wood-1.jpeg';
+import cncWoodMachine1 from '../assets/cnc-wood-products/cnc-wood-2.jpeg';
+import cncWoodPanel1 from '../assets/cnc-wood-products/cnc-wood-3.jpeg';
 
-import metalCutTable1 from '../assets/metal-fabrication-products/metal-works-1.jpg';
-import metalDividerPanel1 from '../assets/metal-fabrication-products/metal-works-2.jpg';
-import metalPlanters1 from '../assets/metal-fabrication-products/metal-works-3.jpg';
-import metalWallArt1 from '../assets/metal-fabrication-products/metal-works-4.jpg';
+import metalPlasmaFloral1 from '../assets/metal-fabrication-products/new-metal-works-1.jpeg';
+import metalCutterMachine1 from '../assets/metal-fabrication-products/new-metal-works-2.jpeg';
+import metalLaserSparks1 from '../assets/metal-fabrication-products/new-metal-works-3.jpeg';
+import metalGate1 from '../assets/metal-fabrication-products/new-metal-works-4.jpeg';
 
 import interiorDesign1 from '../assets/interior-design/interior-design-1.jpg';
 import interiorDesign2 from '../assets/interior-design/interior-design-2.jpg';
@@ -80,6 +92,7 @@ export interface ShowcaseBlock {
   highlight?: string; // substring of `heading` to render in yellow
   description: string;
   image: string;
+  imagePosition?: string; // CSS object-position for the banner image; defaults to 'center'
 }
 
 // Bespoke "text left, images right, no cards" product page — used instead of
@@ -96,6 +109,14 @@ export interface ServiceShowcase {
     fit: 'contain' | 'cover'; // 'contain': transparent PNG cutouts (floating, drop-shadow). 'cover': real photos (rounded, cropped).
   };
   secondary?: ShowcaseBlock & { fit: 'contain' | 'cover' };
+  // Grid of real-world / in-use photos, shown as its own section (e.g. customer installs).
+  gallery?: {
+    tagline: string;
+    heading: string;
+    highlight?: string;
+    description: string;
+    images: string[];
+  };
   banner?: ShowcaseBlock;
 }
 
@@ -153,7 +174,7 @@ export const products: ServiceData[] = [
     slug: 'epoxy-products',
     icon: Droplet,
     image: epoxy3,
-    title: 'Epoxy Products',
+    title: 'Epoxy Solutions',
     intro: 'We provide premium epoxy systems suitable for industrial and decorative applications — from protective flooring to designer resin finishes — serving warehouses, hospitals, manufacturing plants, commercial buildings, hotels, offices, and residential homes.',
     catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
@@ -233,6 +254,13 @@ export const products: ServiceData[] = [
         image: fibreBox04,
         fit: 'contain',
       },
+      gallery: {
+        tagline: 'On the Road',
+        heading: 'Real Boxes, Riding for Real Businesses',
+        highlight: 'Riding',
+        description: 'From courier fleets to restaurant delivery riders, here are boxes we’ve built and branded out on the road across Kampala.',
+        images: [motorbikeBox1, motorbikeBox2, motorbikeBox3, motorbikeBox4, motorbikeBox5],
+      },
       banner: {
         tagline: 'In-House Manufacturing',
         heading: 'Made in Uganda, Built for Every Fleet',
@@ -281,7 +309,8 @@ export const products: ServiceData[] = [
         tagline: 'Freshly Fabricated',
         heading: 'Manufactured On-Site, Ready to Install',
         description: 'Every sheet is cast, cured, and finished in our own workshop before it reaches your site — consistent quality, batch after batch.',
-        image: roofing5,
+        image: roofingsBetter2,
+        imagePosition: 'bottom',
       },
     },
   },
@@ -290,19 +319,19 @@ export const products: ServiceData[] = [
     icon: Amphora,
     image: pots1,
     title: 'Pots',
-    intro: 'Fiberglass pots in a wide range of shapes, sizes, and colors — lightweight, weatherproof, and finished to match any space, indoors or out.',
+    intro: 'Fiberglass pots in a wide range of shapes, sizes, and finishes — lightweight, weatherproof, and finished to match any space, indoors or out.',
     catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
-      { title: 'Round Pots', desc: 'Classic rounded pots in a range of sizes, glazed in bold, weatherproof colors.', image: pots3 },
-      { title: 'Geometric Pots', desc: 'Modern faceted pot designs for contemporary interiors and spaces.', image: pots5 },
-      { title: 'Decorative Vases', desc: 'Sculptural fiberglass vases finished for hospitality, retail, and residential interiors.', image: pots4 },
+      { title: 'Round Pots', desc: 'Classic rounded planters in a range of sizes, finished in a smooth, high-gloss glaze.', image: pots1 },
+      { title: 'Tall Planters', desc: 'Statement tall planters for lobbies, entrances, and feature corners, indoors or out.', image: pots2 },
+      { title: 'Decorative Vases', desc: 'Sculptural fiberglass vases finished for hospitality, retail, and residential interiors.', image: pots3 },
     ],
     showcase: {
       hero: {
         tagline: 'Handcrafted in Fiberglass',
         heading: 'Pots, Styled for Every Space',
         highlight: 'Styled',
-        description: 'From classic rounded pots to bold geometric designs, every piece is hand-finished in fiberglass — lightweight enough to move, tough enough to live outdoors year-round.',
+        description: 'From classic rounded pots to tall statement planters and sculptural vases, every piece is hand-finished in fiberglass — lightweight enough to move, tough enough to live outdoors year-round.',
         features: [
           'Lightweight, weatherproof fiberglass build',
           'Wide range of shapes, sizes, and finishes',
@@ -310,15 +339,15 @@ export const products: ServiceData[] = [
           'Built for both indoor and outdoor use',
         ],
         mainImage: pots1,
-        sideImages: [pots3, pots5],
-        fit: 'cover',
+        sideImages: [pots2, pots3],
+        fit: 'contain',
       },
       secondary: {
         tagline: 'Decorative Finishes',
         heading: 'Sculptural Pieces for Interiors',
         description: 'Beyond standard pots, we craft decorative vases and sculptural pieces finished for hotels, showrooms, and residences — form and function shaped to order.',
-        image: pots4,
-        fit: 'cover',
+        image: pots3,
+        fit: 'contain',
       },
       banner: {
         tagline: 'Made to Order',
@@ -331,7 +360,7 @@ export const products: ServiceData[] = [
   {
     slug: 'aluminium-fabrication',
     icon: DoorClosed,
-    image: aluminiumOfficePartitions,
+    image: industrialComponent2,
     title: 'Aluminium Product Fabrication & Assembly',
     intro: 'We fabricate aluminium doors, windows, partitions, and structural glazing systems — engineered for strength, energy efficiency, and a clean architectural finish across residential and commercial spaces.',
     catalogue: '/catalogues/Sayona%20-works.pdf',
@@ -339,6 +368,7 @@ export const products: ServiceData[] = [
       {
         title: 'Aluminium Doors (Sliding, Casement, Folding)',
         desc: 'We fabricate aluminium doors in sliding, casement, and folding styles — designed for strength, seamless movement, and long-term performance. Custom finishes, hardware, and locking systems ensure these doors meet both aesthetic and security standards for residential and commercial spaces.',
+        image: industrialComponent1,
       },
       {
         title: 'Windows and Ventilators',
@@ -347,11 +377,12 @@ export const products: ServiceData[] = [
       {
         title: 'Office Partitions and Cubicles',
         desc: 'We design and fabricate aluminium office partitions and cubicles that enhance workspace flexibility, privacy, and visual appeal. Lightweight yet sturdy, these systems support glass, acrylic, or laminate panels, and are ideal for modular setups with integrated wiring and minimal disruption during installation.',
-        image: aluminiumOfficePartitions,
+        image: industrialComponent2,
       },
       {
         title: 'Shopfronts, Curtain Walls, and Structural Glazing',
         desc: 'Our aluminium shopfronts, curtain walls, and structural glazing systems feature expansive glass surfaces supported by durable frames. Designed to maximize natural light and visibility, these systems provide a sleek façade with excellent weatherproofing, thermal performance, and architectural elegance.',
+        image: industrialComponent4,
       },
     ],
     showcase: {
@@ -366,29 +397,29 @@ export const products: ServiceData[] = [
           'Modular office partitions & cubicle systems',
           'Structural glazing & curtain wall façades',
         ],
-        mainImage: aluminiumProduct1,
-        sideImages: [aluminiumProduct2],
+        mainImage: industrialComponent2,
+        sideImages: [industrialComponent3, industrialComponent4],
         fit: 'cover',
       },
       secondary: {
         tagline: 'Real Installations',
         heading: 'Built and Installed On-Site',
         description: "From directors' offices to open-plan floors, our aluminium partition systems are fabricated to spec and installed with minimal disruption — supporting glass, acrylic, or laminate panels and integrated wiring.",
-        image: aluminiumOfficePartitions,
+        image: industrialComponent1,
         fit: 'cover',
       },
       banner: {
         tagline: 'Precision Fabrication',
         heading: 'Engineered for Strength, Finished for Design',
         description: 'Every frame is cut, assembled, and finished in our own workshop — from single doors to full structural glazing systems.',
-        image: aluminiumProduct2,
+        image: industrialComponent4,
       },
     },
   },
   {
     slug: 'grc-cement-architectural',
     icon: Landmark,
-    image: decorativeCeilingMedallion,
+    image: archTempleFacade,
     title: 'GRC & Cement Architectural Works',
     intro: 'We blend traditional elegance with modern engineering—crafting facades, columns, furniture, and temple elements that endure weather and time. Each piece is designed for structural strength and visual impact, enhancing residential, commercial, and public spaces with refined, lasting architectural beauty.',
     catalogue: '/catalogues/Sayona%20-works.pdf',
@@ -396,12 +427,12 @@ export const products: ServiceData[] = [
       {
         title: 'Decorative Cement Pillars & Columns',
         desc: 'Crafted to offer both load-bearing strength and ornamental detailing, perfect for enhancing entrances, corridors, or open verandas.',
-        image: entrancePortico1,
+        image: archFlutedColumns,
       },
       {
         title: 'Exterior Finishing & Garden Decor',
         desc: 'Resilient outdoor elements including edging, sculptures, and accent decor that withstand environmental exposure while elevating landscape aesthetics.',
-        image: archMoulding1,
+        image: archYardWide,
       },
       {
         title: 'Ceiling Work – Domes, Trims & Mouldings',
@@ -411,10 +442,12 @@ export const products: ServiceData[] = [
       {
         title: 'Designer Boundary Walls & Concrete Fencing',
         desc: 'Modern and classic fence designs molded in cement to offer privacy, perimeter security, and curb appeal.',
+        image: archJaliCircular,
       },
       {
         title: 'Stamped Concrete Flooring – Driveways, Walkways',
         desc: 'Durable, slip-resistant surfaces with stone, tile, or wood textures that bring artistic flair to functional outdoor paths and vehicle zones.',
+        image: archCornicesStack,
       },
       {
         title: 'Planters, Benches & Outdoor Furniture (Cement-Based)',
@@ -423,6 +456,7 @@ export const products: ServiceData[] = [
       {
         title: 'Artistic Wall Relief Panels & Murals',
         desc: 'Custom-designed cement panels and relief art that bring storytelling, symbolism, or branding into architectural surfaces.',
+        image: archJaliStar,
       },
     ],
     showcase: {
@@ -437,36 +471,36 @@ export const products: ServiceData[] = [
           'Domed ceilings, trims & architectural mouldings',
           'Boundary walls, stamped concrete & wall relief art',
         ],
-        mainImage: entrancePortico1,
-        sideImages: [archway2, archway1],
+        mainImage: archTempleFacade,
+        sideImages: [archTempleSpires, archCarvedPillar],
         fit: 'contain',
       },
       secondary: {
         tagline: 'Cast On-Site',
-        heading: 'Exterior Mouldings & Facade Details',
-        description: 'Beyond indoor columns and ceilings, we cast exterior window surrounds, cornices, and facade mouldings directly on-site — durable GRC and cement detailing built to hold its finish through years of weather.',
-        image: archMoulding1,
-        fit: 'cover',
+        heading: 'Cast in Our Own Production Yard',
+        description: 'Beyond temples and facades, we cast decorative jalis, columns, and mouldings directly in our own yard — durable GRC and cement detailing built to hold its finish through years of weather.',
+        image: archYardJaliColumns,
+        fit: 'contain',
       },
       banner: {
-        tagline: 'Refined Interiors',
-        heading: 'Domed Ceilings & Ornamental Detail',
-        description: 'From medallion ceilings to fluted columns, every piece is moulded and finished to bring depth, luxury, and character to interior spaces.',
-        image: decorativeCeilingMedallion,
+        tagline: 'Manufactured in Bulk',
+        heading: 'A Yard Full of Craftsmanship',
+        description: 'From balusters and cornices to fluted columns, every piece is cast, cured, and stocked in our own production yard — ready to fabricate and install at scale.',
+        image: archYardWide,
       },
     },
   },
   {
     slug: 'lighting-decorations',
     icon: Sparkles,
-    image: lightingDecorations3,
+    image: lightingFacadeSanta,
     title: 'Lighting Decorations',
     intro: 'Custom lighting installations and festive décor for buildings, events, and public spaces — from full facade illuminations to holiday displays that transform a space after dark.',
     catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
-      { title: 'Building Facade Lighting', desc: 'Full-height LED string light installations that outline and illuminate entire building facades.', image: lightingDecorations3 },
-      { title: 'Festive Holiday Displays', desc: 'Custom Christmas and holiday-season lighting, signage, and decorative motifs for storefronts and offices.', image: lightingDecorations1 },
-      { title: 'Event & Hospitality Lighting', desc: 'Elegant string lighting for hotels, event venues, and public spaces.', image: lightingDecorations4 },
+      { title: 'Building Facade Lighting', desc: 'Full-height LED string light installations that outline and illuminate entire building facades.', image: lightingFacadeSanta },
+      { title: 'Festive Holiday Displays', desc: 'Custom Christmas and holiday-season lighting, signage, and decorative motifs for storefronts and offices.', image: lightingXmasGate },
+      { title: 'Event & Hospitality Lighting', desc: 'Elegant string lighting for hotels, event venues, and public spaces.', image: lightingBuildingWide },
     ],
     showcase: {
       hero: {
@@ -480,16 +514,16 @@ export const products: ServiceData[] = [
           'Festive displays for the holiday season',
           'Designed, installed & maintained by our team',
         ],
-        mainImage: lightingDecorations3,
-        sideImages: [lightingDecorations2, lightingDecorations4],
-        fit: 'cover',
+        mainImage: lightingFacadeSanta,
+        sideImages: [lightingBuildingWide, lightingFence],
+        fit: 'contain',
       },
       secondary: {
         tagline: 'Festive Displays',
         heading: 'Custom Holiday Décor',
         description: 'Beyond facade lighting, we design custom festive motifs, signage, and seasonal displays that turn any building into a landmark for the holidays.',
-        image: lightingDecorations1,
-        fit: 'cover',
+        image: lightingXmasGate,
+        fit: 'contain',
       },
     },
   },
@@ -548,38 +582,38 @@ export const products: ServiceData[] = [
   {
     slug: 'furniture',
     icon: Sofa,
-    image: furnitureEpoxyChairs,
+    image: furnitureReceptionDesk,
     title: 'Furniture',
-    intro: 'From resin-cast epoxy tables to live-edge wood seating and fitted wardrobes, we design and craft furniture for homes, offices, and hospitality spaces — built to order and finished to a premium standard.',
+    intro: 'From reception counters and office desks to fitted wardrobes, we design and craft furniture for homes, offices, and hospitality spaces — built to order and finished to a premium standard.',
     catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
-      { title: 'Epoxy Resin Tables', desc: 'Statement side and coffee tables cast with colorful resin tops and finished on solid wood legs — no two pieces alike.', image: furnitureEpoxyTables },
-      { title: 'Live-Edge Epoxy Chairs', desc: 'Solid wood chairs finished with white epoxy fill along the natural live edge, for indoor or outdoor use.', image: furnitureEpoxyChairs },
+      { title: 'Reception Counters & Office Desks', desc: 'Custom-built reception counters and office desks with a high-gloss finish, designed and installed for corporate lobbies and showrooms.', image: furnitureReceptionDesk },
+      { title: 'Display Counters & Product Stands', desc: 'Glossy display counters and product stands built for exhibitions, showrooms, and retail spaces.', image: furnitureDisplayCounter },
       { title: 'Wardrobes & Storage Units', desc: 'Custom-built wardrobes and storage units with a high-gloss finish, designed to fit any bedroom, office, or retail space.', image: furnitureWardrobe },
       { title: 'Custom Furniture & Upholstery', desc: 'Bespoke furniture pieces built and upholstered to order, finished to match any interior.' },
     ],
     showcase: {
       hero: {
         tagline: 'Crafted Furniture',
-        heading: 'Furniture, Cast and Built to Order',
-        highlight: 'Cast',
-        description: 'From colour-cast epoxy resin tables to live-edge wood seating and fitted wardrobes, every piece is designed, built, and finished in-house — combining our epoxy expertise with solid craftsmanship.',
+        heading: 'Furniture, Built and Installed to Order',
+        highlight: 'Built',
+        description: 'From reception counters and office desks to display stands and fitted wardrobes, every piece is designed, built, and installed in-house — finished to a premium, high-gloss standard.',
         features: [
-          'Resin-cast epoxy side and coffee tables',
-          'Live-edge wood chairs finished with epoxy fill',
+          'Reception counters & corporate office desks',
+          'Display counters & product stands',
           'Custom wardrobes and storage units',
           'Bespoke furniture built and upholstered to order',
         ],
-        mainImage: furnitureEpoxyChairs,
-        sideImages: [furnitureEpoxyTables, furnitureWardrobe],
-        fit: 'contain',
+        mainImage: furnitureReceptionDesk,
+        sideImages: [furnitureDisplayCounter, furnitureDeskDetail],
+        fit: 'cover',
       },
       secondary: {
-        tagline: 'Resin Craftsmanship',
-        heading: 'Epoxy Tables, Cast In-House',
-        description: 'We pour and cast custom epoxy furniture in-house — colourful resin tabletops finished on solid wood legs, each piece one of a kind.',
-        image: furnitureEpoxyTables,
-        fit: 'contain',
+        tagline: 'Real Installations',
+        heading: 'Reception Furniture, Built and Installed',
+        description: 'From corporate lobbies to showroom counters, every piece is measured, built, and installed on-site — finished to match the space it\'s built for.',
+        image: furnitureLobbyWide,
+        fit: 'cover',
       },
       banner: {
         tagline: 'Fitted Storage',
@@ -639,17 +673,17 @@ export const products: ServiceData[] = [
   {
     slug: 'cnc-wood-carving',
     icon: Axe,
-    image: cncCarvingHeadboard1,
+    image: cncWoodPanel1,
     title: 'CNC Wood Carving & Cutting',
     intro: 'Precision CNC 2D/3D wood carving and cutting for architectural, furniture, and spiritual pieces — from decorative jalis and wall panels to carved beds, mandaps, and bespoke signage.',
     catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
-      { title: 'Designer Wooden Partitions & Decorative Jalis', desc: 'Intricately carved panels and screens that serve as elegant space dividers and aesthetic highlights — ideal for homes, offices, hotels, and religious spaces.', image: cncCarvingCorner1 },
+      { title: 'Designer Wooden Partitions & Decorative Jalis', desc: 'Intricately carved panels and screens that serve as elegant space dividers and aesthetic highlights — ideal for homes, offices, hotels, and religious spaces.', image: cncWoodMachine1 },
       { title: 'Customized Signage & Nameplates', desc: 'Personalized CNC-engraved signs and nameplates in wood or composite materials, offering refined branding with durability and visual impact.' },
       { title: 'Home Temples, Pooja Mandirs & Spiritual Structures', desc: 'Beautifully carved spiritual units tailored to cultural and religious significance — customizable in size, ornamentation, and traditional detailing.' },
-      { title: 'Carved Wooden Beds, Doors & Headboards', desc: 'Luxurious, heritage-inspired pieces that combine aesthetic artistry with functional strength — suitable for upscale homes and hospitality settings.', image: cncCarvingHeadboard1 },
+      { title: 'Carved Wooden Beds, Doors & Headboards', desc: 'Luxurious, heritage-inspired pieces that combine aesthetic artistry with functional strength — suitable for upscale homes and hospitality settings.' },
       { title: 'Custom Wooden Wardrobes, Cabinets & Shelving', desc: 'Tailored storage solutions featuring elegant carvings and modular designs for living spaces, retail environments, and boutique interiors.' },
-      { title: 'Designer Wall Panels & Wooden Claddings', desc: 'Dimensional wooden cladding that adds depth, acoustic warmth, and visual richness to walls in homes, lobbies, or executive spaces.', image: cncCarvingApplique1 },
+      { title: 'Designer Wall Panels & Wooden Claddings', desc: 'Dimensional wooden cladding that adds depth, acoustic warmth, and visual richness to walls in homes, lobbies, or executive spaces.', image: cncWoodPanel1 },
       { title: 'Carved Wedding Mandaps & Stage Elements', desc: 'Artisanal mandaps and stage backdrops handcrafted with ornate carvings — offering grandeur, modularity, and cultural authenticity for events.' },
       { title: 'Custom Frames, Panel Doors & Door Designs', desc: 'Bespoke door panels and decorative frames featuring traditional or modern motifs — crafted to elevate any architectural theme.' },
       { title: 'Retail & Restaurant Interiors – Counters & Displays', desc: 'Functionally elegant display counters and fixtures aligned to your theme and brand — enhancing user experience and retail aesthetics.' },
@@ -660,46 +694,46 @@ export const products: ServiceData[] = [
         tagline: 'Precision Wood Craft',
         heading: 'CNC Wood Carving, Cut for Every Detail',
         highlight: 'Cut',
-        description: 'From ornate decorative panels to carved headboards and spiritual structures, every piece is precision-cut on CNC and hand-finished — combining intricate detailing with structural strength.',
+        description: 'Every piece starts on our CNC router — precision-cut from panels and solid timber, then hand-finished into jalis, wall panels, signage, and spiritual structures.',
         features: [
           'Decorative jalis, partitions & wall panels',
           'Carved beds, doors & heritage headboards',
           'Home temples & spiritual structures',
           'Custom signage, frames & retail displays',
         ],
-        mainImage: cncCarvingHeadboard1,
-        sideImages: [cncCarvingApplique1, cncCarvingCorner1],
+        mainImage: cncWoodPanel1,
+        sideImages: [cncWoodCutting1, cncWoodMachine1],
         fit: 'contain',
       },
       secondary: {
-        tagline: 'Dimensional Detail',
-        heading: 'Wall Panels & Decorative Appliqués',
-        description: 'Beyond partitions and jalis, we CNC-carve dimensional wall panels and decorative appliqués that add depth and texture to any interior surface.',
-        image: cncCarvingApplique1,
+        tagline: 'Precision Cutting',
+        heading: 'Cut, Piece by Piece, on CNC',
+        description: 'Each design is programmed and cut on our CNC router — clean, repeatable precision for even the most intricate patterns, before every piece is hand-finished.',
+        image: cncWoodCutting1,
         fit: 'contain',
       },
       banner: {
-        tagline: 'Heritage Craftsmanship',
-        heading: 'Carved Beds, Mandaps & Spiritual Structures',
-        description: 'From heritage-inspired headboards to home temples and wedding mandaps, every carved structure is finished by hand for lasting detail and cultural authenticity.',
-        image: cncCarvingHeadboard1,
+        tagline: 'Advanced Equipment',
+        heading: 'Cut on Precision CNC Machines',
+        description: 'From compact routers to multi-axis CNC systems, our equipment is built for detail — delivering clean, repeatable cuts across wood, board, and composite materials.',
+        image: cncWoodMachine1,
       },
     },
   },
   {
     slug: 'cnc-plasma-metal',
     icon: Flame,
-    image: metalDividerPanel1,
+    image: metalGate1,
     title: 'CNC Plasma Metal Design & Cutting',
     intro: 'Precision plasma-cut metalwork for gates, railings, signage, and decorative installations — combining structural strength with intricate, custom-cut detailing.',
     catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
-      { title: 'Tailored Entrance Gates (Residential & Commercial)', desc: 'Custom-designed gates combining robust security with artistic plasma-cut patterns for standout first impressions.' },
+      { title: 'Tailored Entrance Gates (Residential & Commercial)', desc: 'Custom-designed gates combining robust security with artistic plasma-cut metal patterns and fiberglass panel infills for standout first impressions.', image: metalGate1 },
       { title: 'Security Grills & Burglar-Proofing Structures', desc: 'Reinforced metalworks offering dependable protection for homes and businesses without compromising on aesthetics.' },
-      { title: 'Metal Furniture Components', desc: 'Fabricated frames, legs, and structures for industrial-style furniture with precision-cut details and structural integrity.', image: metalCutTable1 },
+      { title: 'Metal Furniture Components', desc: 'Fabricated frames, legs, and structures for industrial-style furniture with precision-cut details and structural integrity.' },
       { title: 'Balcony Railings, Stair Handrails & Window Grills', desc: 'Elegant, custom profiles that elevate safety and design coherence across interior and exterior settings.' },
       { title: 'Architectural Signage & Business Boards', desc: 'Laser-precise cut signage tailored for impactful branding in both corporate and hospitality environments.' },
-      { title: 'Decorative Metal Dividers & Installations', desc: 'Functional art panels for partitions and ambient features — designed to blend form, privacy, and light play.', images: [metalDividerPanel1, metalWallArt1, metalPlanters1] },
+      { title: 'Decorative Metal Dividers & Installations', desc: 'Functional art panels for partitions and ambient features — designed to blend form, privacy, and light play.', images: [metalPlasmaFloral1, metalCutterMachine1] },
       { title: 'Industrial Racks, Shelving & Support Frames', desc: 'Heavy-duty, load-bearing solutions engineered for warehouses, factories, and high-traffic commercial zones.' },
       { title: 'Custom Nameplates & Directional Boards', desc: 'Etched or cut designs on durable metals for premium, long-lasting identity and wayfinding.' },
     ],
@@ -708,29 +742,29 @@ export const products: ServiceData[] = [
         tagline: 'Precision Metal Craft',
         heading: 'Plasma-Cut Metalwork, Designed to Impress',
         highlight: 'Designed',
-        description: 'From tailored entrance gates to decorative dividers and industrial frames, every piece is plasma-cut to precise patterns and fabricated for lasting strength.',
+        description: 'From tailored entrance gates to decorative dividers and industrial frames, every piece is plasma-cut to precise patterns and fabricated for lasting strength — gates can also be finished with fiberglass panel infills for extra privacy and a clean, seamless look.',
         features: [
-          'Custom entrance gates & security grills',
+          'Custom entrance gates with metal & fiberglass detailing',
           'Railings, handrails & window grills',
           'Decorative dividers & architectural signage',
           'Industrial racks, shelving & support frames',
         ],
-        mainImage: metalDividerPanel1,
-        sideImages: [metalWallArt1, metalCutTable1],
+        mainImage: metalGate1,
+        sideImages: [metalPlasmaFloral1, metalLaserSparks1],
         fit: 'contain',
       },
       secondary: {
-        tagline: 'Fabricated Furniture',
-        heading: 'Metal Furniture Components',
-        description: 'Beyond gates and grills, we plasma-cut frames, legs, and structural components for industrial-style furniture — precision-cut detail with structural integrity.',
-        image: metalCutTable1,
+        tagline: 'Precision Equipment',
+        heading: 'Cut on Advanced CNC Plasma Machines',
+        description: 'From compact cutters to multi-axis CNC plasma systems, our equipment delivers clean, repeatable cuts across steel and metal sheet — precise patterns, every time.',
+        image: metalCutterMachine1,
         fit: 'contain',
       },
       banner: {
-        tagline: 'Functional Art',
-        heading: 'Decorative Dividers & Installations',
-        description: 'Plasma-cut panels that double as functional art — partitions, screens, and ambient features designed to blend form, privacy, and light.',
-        image: metalPlanters1,
+        tagline: 'Precision Cutting',
+        heading: 'Sparks Fly, Precision Follows',
+        description: 'Every plasma-cut piece starts with a precise, computer-guided cut — clean lines and intricate detail, fabricated to spec in our own workshop.',
+        image: metalLaserSparks1,
       },
     },
   },

@@ -49,7 +49,7 @@ const About =() => {
               <div className="space-y-4 text-black/60 leading-relaxed">
               
                 <p>
-                  Sayona International Limited is a Ugandan manufacturing and interior solutions company specializing in premium fiberglass products, including decorative fiber glass planters, fiber glass sheets, fiberglass courier boxes, custom furniture, sculptures, architectural elements, construction of temples, CNC 2D AND 3D wood curving,3D printing elements, CNC plasma machine works, Architectural pillars, cornices and ceilings and thematic event decorations especially in Christmas.
+                  Sayona International Limited is a Ugandan manufacturing and interior solutions company specializing in premium fiberglass products, including decorative fiber glass planters, fiber glass sheets, fiber glass transparent sheets, fiberglass courier boxes, custom furniture, sculptures, architectural elements, construction of temples, CNC 2D AND 3D wood curving,3D printing elements, CNC plasma machine works, Architectural pillars, cornices and ceilings and thematic event decorations especially in Christmas.
                 </p>
                 <p>
                   We also provide epoxy flooring, and interior and exterior finishing services. Our products combine innovation, durability, functionality, and modern design to enhance residential, commercial, hospitality, and public spaces across East Africa.
@@ -92,7 +92,7 @@ const About =() => {
               </div>
               <h3 className="text-2xl font-black text-black mb-4">Our Mission</h3>
               <p className="text-black/60 leading-relaxed">
-                To design and manufacture innovative, high-quality fiberglass products and deliver exceptional finishing solutions that transform spaces while exceeding customer expectations through craftsmanship, sustainability, and innovation.egion.
+                To design and manufacture innovative, high-quality fiberglass products and deliver exceptional finishing solutions that transform spaces while exceeding customer expectations through craftsmanship, sustainability, and innovation.
               </p>
             </RevealItem>
             <RevealItem className="group bg-white border border-black/10 p-10 hover:border-yellow-400/40 transition-all duration-300">

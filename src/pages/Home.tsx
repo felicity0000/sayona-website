@@ -404,7 +404,6 @@ export default function Home({ onQuote }: HomeProps) {
               </p>
               <ul className="space-y-3 mb-8">
                 {[
-                  "ISO-certified quality management",
                   "Experienced multidisciplinary team",
                   "Commitment to safety and sustainability",
                   "On-time, on-budget delivery",
@@ -465,13 +464,34 @@ export default function Home({ onQuote }: HomeProps) {
               across Uganda and East Africa.
             </p>
           </Reveal>
-          <Reveal className="border border-black/10 p-8 md:p-12">
-            <img
-              src={images.clients_and_partners}
-              alt="Sayona International clients and partners"
-              className="w-full h-auto"
-            />
-          </Reveal>
+          <RevealGroup className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+            {[
+              { src: images.simbaCementLogo, alt: "Simba Cement" },
+              { src: images.toyotaLogo, alt: "Toyota" },
+              { src: images.nileBatteriesLogo, alt: "Nile Batteries Limited" },
+              { src: images.airtelLogo, alt: "Airtel" },
+              { src: images.mtnLogo, alt: "MTN" },
+              { src: images.gentexLogo, alt: "Gentex" },
+              { src: images.steelTubeLogo, alt: "Steel & Tube" },
+              { src: images.sgaSecurityLogo, alt: "SGA Security" },
+              { src: images.propertyServicesLogo, alt: "Property Services Limited" },
+              { src: images.eapsLogo, alt: "East African Packaging Solutions" },
+              { src: images.g4sLogo, alt: "G4S" },
+              { src: images.keshwalaGroupLogo, alt: "Keshwala Group" },
+              { src: images.meeraInvestmentsLogo, alt: "Meera Investments Ltd" },
+            ].map((partner) => (
+              <RevealItem
+                key={partner.alt}
+                className="group bg-white border border-black/10 h-32 md:h-36 flex items-center justify-center p-8 hover:border-yellow-400/40 transition-all duration-300"
+              >
+                <img
+                  src={partner.src}
+                  alt={partner.alt}
+                  className="max-w-full max-h-full object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                />
+              </RevealItem>
+            ))}
+          </RevealGroup>
         </div>
       </section>
 
