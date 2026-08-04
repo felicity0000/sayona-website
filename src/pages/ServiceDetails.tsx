@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowRight, ArrowLeft, CheckCircle2, Download } from 'lucide-react';
-import { getServiceBySlug, type ShowcaseBlock } from '../data/servicesData';
+import { getServiceBySlug, type ShowcaseBlock } from '../data/productsData';
 import ImageCarousel from '../components/ImageCarousel';
 import Seo from '../components/Seo';
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal';
@@ -166,17 +166,17 @@ const ServiceDetail = ({ onQuote }: ServiceDetailProps) => {
                 </Reveal>
 
                 <RevealGroup className="grid grid-cols-2 gap-2">
-                  <RevealItem className="col-span-2">
+                  <RevealItem className={showcase.hero.sideImages.length === 1 ? '' : 'col-span-2'}>
                     <ShowcaseMedia
                       block={{ image: showcase.hero.mainImage, fit: showcase.hero.fit }}
-                      className={showcase.hero.fit === 'cover' ? 'h-72 md:h-96' : ''}
+                      className={showcase.hero.fit === 'cover' ? (showcase.hero.sideImages.length === 1 ? 'h-64' : 'h-72 md:h-96') : ''}
                     />
                   </RevealItem>
                   {showcase.hero.sideImages.map((src, i) => (
                     <RevealItem key={i}>
                       <ShowcaseMedia
                         block={{ image: src, fit: showcase.hero.fit }}
-                        className={showcase.hero.fit === 'cover' ? 'h-48' : ''}
+                        className={showcase.hero.fit === 'cover' ? (showcase.hero.sideImages.length === 2 ? 'h-48' : 'h-64') : ''}
                       />
                     </RevealItem>
                   ))}
@@ -191,10 +191,23 @@ const ServiceDetail = ({ onQuote }: ServiceDetailProps) => {
               <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                   <Reveal className="order-2 lg:order-1">
-                    <ShowcaseMedia
-                      block={showcase.secondary}
-                      className={`max-w-md mx-auto ${showcase.secondary.fit === 'cover' ? 'h-80' : ''}`}
-                    />
+                    {showcase.secondary.secondImage ? (
+                      <div className="grid grid-cols-2 gap-3 max-w-md mx-auto">
+                        <ShowcaseMedia
+                          block={showcase.secondary}
+                          className={showcase.secondary.fit === 'cover' ? 'h-64' : ''}
+                        />
+                        <ShowcaseMedia
+                          block={{ image: showcase.secondary.secondImage, fit: showcase.secondary.fit }}
+                          className={showcase.secondary.fit === 'cover' ? 'h-64' : ''}
+                        />
+                      </div>
+                    ) : (
+                      <ShowcaseMedia
+                        block={showcase.secondary}
+                        className={`max-w-md mx-auto ${showcase.secondary.fit === 'cover' ? 'h-80' : ''}`}
+                      />
+                    )}
                   </Reveal>
                   <Reveal className="order-1 lg:order-2" delay={0.1}>
                     <ShowcaseTextBlock block={showcase.secondary} />

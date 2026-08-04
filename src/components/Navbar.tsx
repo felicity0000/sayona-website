@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import sayonaLogo from '../assets/sayona-logo.png';
-import { products } from '../data/servicesData';
+import { products } from '../data/productsData';
 
 interface NavbarProps {
   onQuote: () => void;

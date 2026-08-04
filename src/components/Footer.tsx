@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
 import sayonaLogo from '../assets/sayona-logo.png';
-import { products } from '../data/servicesData';
+import { products } from '../data/productsData';
 import {
   FacebookIcon,
   InstagramIcon,
@@ -113,9 +113,9 @@ const Footer = () => {
               <li className="flex items-center gap-3 text-sm text-black/50">
                 <Phone size={16} className="text-yellow-400 shrink-0" />
                 <div className="flex flex-col">
+                  <span>+256 750 088467</span>
                   <span>+256 774 175310</span>
-                <span>+256 750 088467</span>
-                <span>+256 757 175 310</span>
+                  <span>+256 757 175 310</span>
                 </div>
               </li>
               <li className="flex items-center gap-3 text-sm text-black/50">

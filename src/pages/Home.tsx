@@ -17,7 +17,7 @@ import {
   Clock,
   HeartHandshake,
 } from "lucide-react";
-import { getServiceBySlug } from "../data/servicesData";
+import { coreServices } from "../data/coreServicesData";
 import images from "../assets/images";
 import Seo from "../components/Seo";
 import { Reveal, RevealGroup, RevealItem } from "../components/Reveal";
@@ -25,14 +25,6 @@ import { Reveal, RevealGroup, RevealItem } from "../components/Reveal";
 interface HomeProps {
   onQuote: () => void;
 }
-
-const homeServiceSlugs = [
-  "fiberglass-manufacturing",
-  "epoxy-products",
-  "raw-materials-supply",
-  "construction-architectural",
-  "furniture",
-];
 
 function useInView<T extends HTMLElement>() {
   const ref = useRef<T>(null);
@@ -82,13 +74,9 @@ function Counter({ end, suffix = "" }: { end: number; suffix?: string }) {
 }
 
 export default function Home({ onQuote }: HomeProps) {
-  const featuredServices = homeServiceSlugs
-    .map((slug) => getServiceBySlug(slug))
-    .filter((service) => service !== undefined);
-
   const stats = [
-    { icon: Award, value: 10, suffix: "+", label: "Years Experience" },
-    { icon: Building2, value: 15, suffix: "+", label: "Projects Completed" },
+    { icon: Award, value: 15, suffix: "+", label: "Years Experience" },
+    { icon: Building2, value: 20, suffix: "+", label: "Projects Completed" },
     { icon: Users, value: 12, suffix: "+", label: "Partners & Clients" },
     { icon: TrendingUp, value: 500, suffix: "+", label: "Workforce" },
   ];
@@ -165,14 +153,13 @@ export default function Home({ onQuote }: HomeProps) {
               </span>
             </div>
             <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.05] mb-6 animate-[fadeInUp_0.8s_ease-out]">
-              Fiberglass & Epoxy <span className="text-yellow-400">Solutions</span>, Engineered with Purpose
+              Fiberglass <span className="text-yellow-400">Products</span>, Engineered with Purpose
             </h1>
             <p className="text-lg text-white/60 mb-10 max-w-xl leading-relaxed animate-[fadeInUp_1s_ease-out]">
               Sayona International is Uganda's trusted manufacturer of
-              fiberglass products, epoxy solutions, and industrial fabrication
-              — supplying premium fiberglass raw materials for the
-              construction, industrial, automotive, commercial, and
-              residential sectors.
+              fiberglass products and premium fiberglass raw materials —
+              serving the construction, industrial, automotive, commercial,
+              and residential sectors.
             </p>
             <div className="flex flex-wrap gap-4 animate-[fadeInUp_1.2s_ease-out]">
               <button
@@ -250,10 +237,9 @@ export default function Home({ onQuote }: HomeProps) {
             </p>
           </div>
           <RevealGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {featuredServices.map((service, i) => (
+            {coreServices.map((service, i) => (
               <RevealItem key={i}>
-                <Link
-                  to={`/services/${service.slug}`}
+                <div
                   className="group relative flex flex-col h-full bg-black/3 border border-black/10 overflow-hidden hover:border-yellow-400/40 hover:bg-black/6 transition-all duration-300"
                 >
                   <div className="relative h-40 overflow-hidden">
@@ -277,26 +263,21 @@ export default function Home({ onQuote }: HomeProps) {
                     <h3 className="text-black font-bold text-lg mb-2">
                       {service.title}
                     </h3>
-                    <p className="text-black/50 text-sm leading-relaxed mb-4 line-clamp-2">
+                    <p className="text-black/50 text-sm leading-relaxed mb-4 line-clamp-2 min-h-11">
                       {service.intro}
                     </p>
                     <div className="flex flex-wrap gap-1.5 mt-auto">
-                      {service.items.slice(0, 5).map((item) => (
+                      {service.items.map((item) => (
                         <span
-                          key={item.title}
+                          key={item}
                           className="text-[11px] leading-none px-2 py-1.5 bg-yellow-400/10 text-black/70 border border-black/10"
                         >
-                          {item.title}
+                          {item}
                         </span>
                       ))}
-                      {service.items.length > 5 && (
-                        <span className="text-[11px] leading-none px-2 py-1.5 text-black/40">
-                          +{service.items.length - 5} more
-                        </span>
-                      )}
                     </div>
                   </div>
-                </Link>
+                </div>
               </RevealItem>
             ))}
           </RevealGroup>

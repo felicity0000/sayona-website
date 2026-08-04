@@ -2,10 +2,6 @@ import { Layers, Droplet, Warehouse, Building2, Motorbike, Home as HomeIcon, Amp
 import type { LucideIcon } from 'lucide-react';
 import images from '../assets/images';
 
-import fibreBox01 from '../assets/fibre-boxes/fibre-box-01.png';
-import fibreBox02 from '../assets/fibre-boxes/fibre-box-02.png';
-import fibreBox03 from '../assets/fibre-boxes/fibre-box-03.png';
-import fibreBox04 from '../assets/fibre-boxes/fibre-box-04.png';
 import fibreBox15 from '../assets/fibre-boxes/fibre-box-15.png';
 
 import motorbikeBox1 from '../assets/fibre-boxes/motor-bike-with-box-1.jpeg';
@@ -13,6 +9,8 @@ import motorbikeBox2 from '../assets/fibre-boxes/motor-bike-with-box-2.jpeg';
 import motorbikeBox3 from '../assets/fibre-boxes/motor-bike-with-box-3.jpeg';
 import motorbikeBox4 from '../assets/fibre-boxes/motor-bike-with-box-4.jpeg';
 import motorbikeBox5 from '../assets/fibre-boxes/motor-bike-with-box-5.jpeg';
+import motorbikeBox6 from '../assets/fibre-boxes/motor-bike-with-box-6.jpeg';
+import motorbikeBox7 from '../assets/fibre-boxes/motor-bike-with-box-7.jpeg';
 
 import roofing1 from '../assets/roofings/roofings-1.jpg';
 import roofing2 from '../assets/roofings/roofings-2.jpg';
@@ -20,25 +18,36 @@ import roofing3 from '../assets/roofings/roofings-3.jpg';
 import roofing4 from '../assets/roofings/roofings-4.jpg';
 import roofingsBetter2 from '../assets/roofings/roofings-better-2.jpeg';
 
-import pots1 from '../assets/pots/new-pots-1.jpeg';
-import pots2 from '../assets/pots/new-pots-2.jpeg';
-import pots3 from '../assets/pots/new-pots-3.jpeg';
+import pots1 from '../assets/3-pots/new-pots-1.jpeg';
+import pots2 from '../assets/3-pots/new-pots-2.jpeg';
+import pots3 from '../assets/3-pots/new-pots-3.jpeg';
+import pots4 from '../assets/3-pots/new-pots-4.jpeg';
+import pots5 from '../assets/3-pots/new-pots-5.jpeg';
+import pots6 from '../assets/3-pots/new-pots-6.jpeg';
+import pots7 from '../assets/3-pots/new-pots-7.jpeg';
+import pots8 from '../assets/3-pots/new-pots-8.jpeg';
+import pots9 from '../assets/3-pots/new-pots-9.jpeg';
+import pots10 from '../assets/3-pots/new-pots-10.jpeg';
+import pots11 from '../assets/3-pots/new-pots-11.jpeg';
+import pots12 from '../assets/3-pots/new-pots-12.jpeg';
+import pots13 from '../assets/3-pots/new-pots-13.jpeg';
 
 import industrialComponent1 from '../assets/aluminium-product/industrial-component-1.jpeg';
 import industrialComponent2 from '../assets/aluminium-product/industrial-component-2.jpeg';
 import industrialComponent3 from '../assets/aluminium-product/industrial-component-3.jpeg';
 import industrialComponent4 from '../assets/aluminium-product/industrial-component-4.jpeg';
 
-import decorativeCeilingMedallion from '../assets/architectural-works/decorative-celing.jpeg';
-import archYardJaliColumns from '../assets/architectural-works/arch-new-1.jpeg';
-import archCornicesStack from '../assets/architectural-works/arch-new-2.jpeg';
-import archYardWide from '../assets/architectural-works/arch-new-3.jpeg';
-import archJaliCircular from '../assets/architectural-works/arch-new-5.jpeg';
-import archFlutedColumns from '../assets/architectural-works/arch-new-6.jpeg';
-import archJaliStar from '../assets/architectural-works/arch-new-7.jpeg';
-import archCarvedPillar from '../assets/architectural-works/arch-new-8.jpeg';
-import archTempleSpires from '../assets/architectural-works/arch-new-9.jpeg';
-import archTempleFacade from '../assets/architectural-works/arch-new-10.jpeg';
+import grc1 from '../assets/1-grc/grc-1.jpeg';
+import grc2 from '../assets/1-grc/grc-2.jpeg';
+import grc3 from '../assets/1-grc/grc-3.jpeg';
+import grc4 from '../assets/1-grc/grc-4.jpeg';
+import grc5 from '../assets/1-grc/grc-5.jpeg';
+import grc6 from '../assets/1-grc/grc-6.jpeg';
+import grc7 from '../assets/1-grc/grc-7.jpeg';
+import grc8 from '../assets/1-grc/grc-8.jpeg';
+import grc9 from '../assets/1-grc/grc-9.jpeg';
+import grc10 from '../assets/1-grc/grc-10.jpeg';
+import grc11 from '../assets/1-grc/grc-11.jpeg';
 
 import epoxy1 from '../assets/epoxy/epoxy-1.jpeg';
 import epoxy2 from '../assets/epoxy/epoxy-2.jpeg';
@@ -46,10 +55,16 @@ import epoxy3 from '../assets/epoxy/epoxy-3.jpeg';
 import epoxy4 from '../assets/epoxy/epoxy-4.jpeg';
 import epoxyTable1 from '../assets/epoxy/epoxy-table-1.jpg';
 
-import lightingFence from '../assets/decorations/new-lightings-1.jpeg';
-import lightingBuildingWide from '../assets/decorations/new-lightings-2.jpeg';
+import xmasLighting1 from '../assets/4-light-decorations/xmas-lighting-1.jpeg';
+import xmasLighting2 from '../assets/4-light-decorations/xmas-lighting-2.jpeg';
+import xmasLighting3 from '../assets/4-light-decorations/xmas-lighting-3.jpeg';
+import xmasLighting4 from '../assets/4-light-decorations/xmas-lighting-4.jpeg';
+import xmasLighting5 from '../assets/4-light-decorations/xmas-lighting-5.jpeg';
+import xmasLighting6 from '../assets/4-light-decorations/xmas-lighting-6.jpeg';
+import xmasLighting7 from '../assets/4-light-decorations/xmas-lighting-7.jpeg';
+import xmasLighting8 from '../assets/4-light-decorations/xmas-lighting-8.jpeg';
+import xmasLighting9 from '../assets/4-light-decorations/xmas-lighting-9.jpeg';
 import lightingFacadeSanta from '../assets/decorations/new-lightings-3.jpeg';
-import lightingXmasGate from '../assets/decorations/new-lightings-4.jpeg';
 
 import rawMaterialFiberglassMat from '../assets/raw-materials-supply-products/fiber-glass-mat-1.jpg';
 import rawMaterialResin from '../assets/raw-materials-supply-products/resin.jpg';
@@ -63,14 +78,17 @@ import furnitureDisplayCounter from '../assets/furniture-products/furni-1.jpeg';
 import furnitureDeskDetail from '../assets/furniture-products/furni-3.jpeg';
 import furnitureLobbyWide from '../assets/furniture-products/furni-4.jpeg';
 
-import cncWoodCutting1 from '../assets/cnc-wood-products/cnc-wood-1.jpeg';
-import cncWoodMachine1 from '../assets/cnc-wood-products/cnc-wood-2.jpeg';
-import cncWoodPanel1 from '../assets/cnc-wood-products/cnc-wood-3.jpeg';
+import cncWoodCutting1 from '../assets/6-cnc-wood-products/cnc-wood-1.jpeg';
+import cncWoodMachine1 from '../assets/6-cnc-wood-products/cnc-wood-2.jpeg';
+import cncWoodPanel1 from '../assets/6-cnc-wood-products/cnc-wood-3.jpeg';
 
-import metalPlasmaFloral1 from '../assets/metal-fabrication-products/new-metal-works-1.jpeg';
-import metalCutterMachine1 from '../assets/metal-fabrication-products/new-metal-works-2.jpeg';
-import metalLaserSparks1 from '../assets/metal-fabrication-products/new-metal-works-3.jpeg';
-import metalGate1 from '../assets/metal-fabrication-products/new-metal-works-4.jpeg';
+import metalPlasmaFloral1 from '../assets/5-metal-fabrication-products/new-metal-works-1.jpeg';
+import metalCutterMachine1 from '../assets/5-metal-fabrication-products/new-metal-works-2.jpeg';
+import metalLaserSparks1 from '../assets/5-metal-fabrication-products/new-metal-works-3.jpeg';
+import metalPlasmaAction1 from '../assets/5-metal-fabrication-products/new-metal-works-5.jpeg';
+import metalMedallionPanel1 from '../assets/5-metal-fabrication-products/new-metal-works-6.jpeg';
+import metalPlasmaAction2 from '../assets/5-metal-fabrication-products/new-metal-works-7.jpeg';
+import metalLatticePanel1 from '../assets/5-metal-fabrication-products/new-metal-works-8.jpeg';
 
 import interiorDesign1 from '../assets/interior-design/interior-design-1.jpg';
 import interiorDesign2 from '../assets/interior-design/interior-design-2.jpg';
@@ -108,7 +126,7 @@ export interface ServiceShowcase {
     sideImages: string[];
     fit: 'contain' | 'cover'; // 'contain': transparent PNG cutouts (floating, drop-shadow). 'cover': real photos (rounded, cropped).
   };
-  secondary?: ShowcaseBlock & { fit: 'contain' | 'cover' };
+  secondary?: ShowcaseBlock & { fit: 'contain' | 'cover'; secondImage?: string };
   // Grid of real-world / in-use photos, shown as its own section (e.g. customer installs).
   gallery?: {
     tagline: string;
@@ -225,7 +243,7 @@ export const products: ServiceData[] = [
     image: fibreBox15,
     title: 'Motorbike / Delivery Boxes',
     intro: "Weatherproof, lockable fiberglass delivery boxes built for boda-bodas, courier fleets, and utility vehicles — lightweight and secure, with custom branding available for your business.",
-    catalogue: '/catalogues/motorbike-boxes-courier.pdf',
+    catalogue: '/catalogues/sayona-fibreglass-courier-boxes-with%20measurements.pdf',
     items: [
       { title: 'Motorcycle Courier Boxes', desc: 'Weatherproof fiberglass delivery boxes with secure locking lids and space for custom branding — built for boda-boda and courier fleets.', image: images.motorcycleCourierBox1 },
       { title: 'Delivery Boxes', desc: 'Durable, lockable fiberglass boxes for last-mile delivery, with your logo and contact details printed on request.', image: images.motorcycleCourierBox1 },
@@ -243,23 +261,24 @@ export const products: ServiceData[] = [
           'Lightweight build for easy mounting',
           'Custom branding & logo printing available',
         ],
-        mainImage: fibreBox02,
-        sideImages: [fibreBox01, fibreBox03],
-        fit: 'contain',
+        mainImage: motorbikeBox6,
+        sideImages: [motorbikeBox7],
+        fit: 'cover',
       },
       secondary: {
         tagline: 'Your Brand, Your Box',
         heading: 'Custom Branding on Every Box',
         description: 'We print your logo, colors, and contact details directly onto the fiberglass shell — turning every delivery into a moving advert for your business. Whichever brand colors you run, we match them.',
-        image: fibreBox04,
-        fit: 'contain',
+        image: motorbikeBox3,
+        secondImage: motorbikeBox5,
+        fit: 'cover',
       },
       gallery: {
         tagline: 'On the Road',
         heading: 'Real Boxes, Riding for Real Businesses',
         highlight: 'Riding',
         description: 'From courier fleets to restaurant delivery riders, here are boxes we’ve built and branded out on the road across Kampala.',
-        images: [motorbikeBox1, motorbikeBox2, motorbikeBox3, motorbikeBox4, motorbikeBox5],
+        images: [motorbikeBox1, motorbikeBox2, motorbikeBox4],
       },
       banner: {
         tagline: 'In-House Manufacturing',
@@ -318,18 +337,21 @@ export const products: ServiceData[] = [
     slug: 'pots',
     icon: Amphora,
     image: pots1,
-    title: 'Pots',
+    title: 'Fiberglass Pots',
     intro: 'Fiberglass pots in a wide range of shapes, sizes, and finishes — lightweight, weatherproof, and finished to match any space, indoors or out.',
     catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
-      { title: 'Round Pots', desc: 'Classic rounded planters in a range of sizes, finished in a smooth, high-gloss glaze.', image: pots1 },
-      { title: 'Tall Planters', desc: 'Statement tall planters for lobbies, entrances, and feature corners, indoors or out.', image: pots2 },
-      { title: 'Decorative Vases', desc: 'Sculptural fiberglass vases finished for hospitality, retail, and residential interiors.', image: pots3 },
+      { title: 'Round Pots', desc: 'Classic rounded planters in a range of sizes, finished in a smooth, high-gloss glaze.' },
+      { title: 'Tall Planters', desc: 'Statement tall planters for lobbies, entrances, and feature corners, indoors or out.' },
+      { title: 'Decorative Vases', desc: 'Sculptural fiberglass vases finished for hospitality, retail, and residential interiors.' },
+      { title: 'Ribbed & Textured Pots', desc: 'Ribbed, textured finishes that add tactile detail and a modern edge to any planter.' },
+      { title: 'Geometric & Faceted Vases', desc: 'Angular, faceted vase forms for a bold, contemporary display piece.' },
+      { title: 'Square & Tapered Planters', desc: 'Clean-lined tapered planters suited to entrances and architectural spaces.' },
     ],
     showcase: {
       hero: {
         tagline: 'Handcrafted in Fiberglass',
-        heading: 'Pots, Styled for Every Space',
+        heading: 'Fiberglass Pots, Styled for Every Space',
         highlight: 'Styled',
         description: 'From classic rounded pots to tall statement planters and sculptural vases, every piece is hand-finished in fiberglass — lightweight enough to move, tough enough to live outdoors year-round.',
         features: [
@@ -338,22 +360,30 @@ export const products: ServiceData[] = [
           'Custom colors to match any brand or décor',
           'Built for both indoor and outdoor use',
         ],
-        mainImage: pots1,
-        sideImages: [pots2, pots3],
-        fit: 'contain',
+        mainImage: pots10,
+        sideImages: [pots3, pots8],
+        fit: 'cover',
       },
       secondary: {
         tagline: 'Decorative Finishes',
         heading: 'Sculptural Pieces for Interiors',
         description: 'Beyond standard pots, we craft decorative vases and sculptural pieces finished for hotels, showrooms, and residences — form and function shaped to order.',
-        image: pots3,
-        fit: 'contain',
+        image: pots4,
+        secondImage: pots11,
+        fit: 'cover',
+      },
+      gallery: {
+        tagline: 'Styles & Finishes',
+        heading: 'A Shape and Finish for Every Space',
+        highlight: 'Finish',
+        description: 'From ribbed textures to tapered planters, here are more of the shapes and finishes we produce in fiberglass.',
+        images: [pots2, pots6, pots7, pots9, pots12, pots13],
       },
       banner: {
         tagline: 'Made to Order',
         heading: 'Produced in Bulk, Finished by Hand',
         description: 'Every batch is molded, glazed, and finished in our own workshop — consistent color and quality whether you need one piece or a hundred.',
-        image: pots2,
+        image: pots5,
       },
     },
   },
@@ -419,7 +449,7 @@ export const products: ServiceData[] = [
   {
     slug: 'grc-cement-architectural',
     icon: Landmark,
-    image: archTempleFacade,
+    image: grc3,
     title: 'GRC & Cement Architectural Works',
     intro: 'We blend traditional elegance with modern engineering—crafting facades, columns, furniture, and temple elements that endure weather and time. Each piece is designed for structural strength and visual impact, enhancing residential, commercial, and public spaces with refined, lasting architectural beauty.',
     catalogue: '/catalogues/Sayona%20-works.pdf',
@@ -427,27 +457,26 @@ export const products: ServiceData[] = [
       {
         title: 'Decorative Cement Pillars & Columns',
         desc: 'Crafted to offer both load-bearing strength and ornamental detailing, perfect for enhancing entrances, corridors, or open verandas.',
-        image: archFlutedColumns,
+        image: grc1,
       },
       {
         title: 'Exterior Finishing & Garden Decor',
         desc: 'Resilient outdoor elements including edging, sculptures, and accent decor that withstand environmental exposure while elevating landscape aesthetics.',
-        image: archYardWide,
+        image: grc5,
       },
       {
         title: 'Ceiling Work – Domes, Trims & Mouldings',
         desc: 'Architectural ceiling accents with refined detailing, adding depth, luxury, and cultural character to indoor environments.',
-        image: decorativeCeilingMedallion,
+        image: grc8,
       },
       {
         title: 'Designer Boundary Walls & Concrete Fencing',
         desc: 'Modern and classic fence designs molded in cement to offer privacy, perimeter security, and curb appeal.',
-        image: archJaliCircular,
+        image: grc11,
       },
       {
         title: 'Stamped Concrete Flooring – Driveways, Walkways',
         desc: 'Durable, slip-resistant surfaces with stone, tile, or wood textures that bring artistic flair to functional outdoor paths and vehicle zones.',
-        image: archCornicesStack,
       },
       {
         title: 'Planters, Benches & Outdoor Furniture (Cement-Based)',
@@ -456,7 +485,7 @@ export const products: ServiceData[] = [
       {
         title: 'Artistic Wall Relief Panels & Murals',
         desc: 'Custom-designed cement panels and relief art that bring storytelling, symbolism, or branding into architectural surfaces.',
-        image: archJaliStar,
+        image: grc6,
       },
     ],
     showcase: {
@@ -471,59 +500,74 @@ export const products: ServiceData[] = [
           'Domed ceilings, trims & architectural mouldings',
           'Boundary walls, stamped concrete & wall relief art',
         ],
-        mainImage: archTempleFacade,
-        sideImages: [archTempleSpires, archCarvedPillar],
-        fit: 'contain',
+        mainImage: grc2,
+        sideImages: [grc4, grc10],
+        fit: 'cover',
       },
       secondary: {
         tagline: 'Cast On-Site',
         heading: 'Cast in Our Own Production Yard',
         description: 'Beyond temples and facades, we cast decorative jalis, columns, and mouldings directly in our own yard — durable GRC and cement detailing built to hold its finish through years of weather.',
-        image: archYardJaliColumns,
-        fit: 'contain',
+        image: grc9,
+        fit: 'cover',
       },
       banner: {
         tagline: 'Manufactured in Bulk',
         heading: 'A Yard Full of Craftsmanship',
         description: 'From balusters and cornices to fluted columns, every piece is cast, cured, and stocked in our own production yard — ready to fabricate and install at scale.',
-        image: archYardWide,
+        image: grc7,
       },
     },
   },
   {
     slug: 'lighting-decorations',
     icon: Sparkles,
-    image: lightingFacadeSanta,
-    title: 'Lighting Decorations',
-    intro: 'Custom lighting installations and festive décor for buildings, events, and public spaces — from full facade illuminations to holiday displays that transform a space after dark.',
+    image: xmasLighting4,
+    title: 'Christmas Lighting Decorations',
+    intro: 'Custom Christmas and holiday lighting installations for buildings, malls, dealerships, and public landmarks — full facade illuminations, branded festive motifs, and lit archways that transform a space for the season.',
     catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
-      { title: 'Building Facade Lighting', desc: 'Full-height LED string light installations that outline and illuminate entire building facades.', image: lightingFacadeSanta },
-      { title: 'Festive Holiday Displays', desc: 'Custom Christmas and holiday-season lighting, signage, and decorative motifs for storefronts and offices.', image: lightingXmasGate },
-      { title: 'Event & Hospitality Lighting', desc: 'Elegant string lighting for hotels, event venues, and public spaces.', image: lightingBuildingWide },
+      { title: 'Building Facade Lighting', desc: 'Full-height LED string light installations that outline and illuminate entire building facades for the festive season.' },
+      { title: 'Branded Festive Displays', desc: 'Custom Christmas motifs — bells, stars, reindeer, and sleighs — designed and lit to match a brand or storefront.' },
+      { title: 'Archways & Entrance Displays', desc: 'Lit archways and entrance installations that welcome visitors and mark an occasion.' },
+      { title: 'Landmark & Monument Lighting', desc: 'Large-scale festive lighting for monuments, clocktowers, and public landmarks.' },
     ],
     showcase: {
       hero: {
-        tagline: 'Custom Lighting Installations',
-        heading: 'Lighting Decorations, Designed to Shine',
+        tagline: 'Christmas & Holiday Lighting',
+        heading: 'Christmas Lighting, Designed to Shine',
         highlight: 'Shine',
-        description: "From full building facades to festive holiday displays, we design, install, and maintain custom lighting that transforms a space after dark — built to run reliably through every season.",
+        description: "From full building facades to branded holiday archways, we design, install, and maintain custom Christmas lighting that transforms a space for the season — built to run reliably through the holidays.",
         features: [
           'Custom LED & string light installations',
-          'Full building facade & rooftop lighting',
-          'Festive displays for the holiday season',
-          'Designed, installed & maintained by our team',
+          'Full building facade & rooftop Christmas lighting',
+          'Branded festive motifs — bells, stars, reindeer & more',
+          'Lit archways, entrances & landmark installations',
         ],
         mainImage: lightingFacadeSanta,
-        sideImages: [lightingBuildingWide, lightingFence],
-        fit: 'contain',
+        sideImages: [xmasLighting5, xmasLighting3],
+        fit: 'cover',
       },
       secondary: {
         tagline: 'Festive Displays',
         heading: 'Custom Holiday Décor',
         description: 'Beyond facade lighting, we design custom festive motifs, signage, and seasonal displays that turn any building into a landmark for the holidays.',
-        image: lightingXmasGate,
-        fit: 'contain',
+        image: xmasLighting8,
+        secondImage: xmasLighting2,
+        fit: 'cover',
+      },
+      gallery: {
+        tagline: 'Lit Up for the Season',
+        heading: 'Christmas Lighting Across Kampala',
+        highlight: 'Kampala',
+        description: 'From office facades to fences and gardens, here are more of the festive lighting installations we design and install every holiday season.',
+        images: [xmasLighting6, xmasLighting7, xmasLighting9],
+      },
+      banner: {
+        tagline: 'Full Facade Lighting',
+        heading: 'Every Floor, Lit From Top to Bottom',
+        description: 'From ground-floor gardens to the rooftop, every string of lights is planned, installed, and maintained by our own team through the holiday season.',
+        image: xmasLighting1,
       },
     },
   },
@@ -723,12 +767,11 @@ export const products: ServiceData[] = [
   {
     slug: 'cnc-plasma-metal',
     icon: Flame,
-    image: metalGate1,
+    image: metalMedallionPanel1,
     title: 'CNC Plasma Metal Design & Cutting',
-    intro: 'Precision plasma-cut metalwork for gates, railings, signage, and decorative installations — combining structural strength with intricate, custom-cut detailing.',
+    intro: 'Precision plasma-cut metalwork for railings, signage, and decorative installations — combining structural strength with intricate, custom-cut detailing.',
     catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
-      { title: 'Tailored Entrance Gates (Residential & Commercial)', desc: 'Custom-designed gates combining robust security with artistic plasma-cut metal patterns and fiberglass panel infills for standout first impressions.', image: metalGate1 },
       { title: 'Security Grills & Burglar-Proofing Structures', desc: 'Reinforced metalworks offering dependable protection for homes and businesses without compromising on aesthetics.' },
       { title: 'Metal Furniture Components', desc: 'Fabricated frames, legs, and structures for industrial-style furniture with precision-cut details and structural integrity.' },
       { title: 'Balcony Railings, Stair Handrails & Window Grills', desc: 'Elegant, custom profiles that elevate safety and design coherence across interior and exterior settings.' },
@@ -742,23 +785,24 @@ export const products: ServiceData[] = [
         tagline: 'Precision Metal Craft',
         heading: 'Plasma-Cut Metalwork, Designed to Impress',
         highlight: 'Designed',
-        description: 'From tailored entrance gates to decorative dividers and industrial frames, every piece is plasma-cut to precise patterns and fabricated for lasting strength — gates can also be finished with fiberglass panel infills for extra privacy and a clean, seamless look.',
+        description: 'From decorative dividers to industrial frames, every piece is plasma-cut to precise patterns and fabricated for lasting strength — finished to a clean, seamless look.',
         features: [
-          'Custom entrance gates with metal & fiberglass detailing',
           'Railings, handrails & window grills',
           'Decorative dividers & architectural signage',
           'Industrial racks, shelving & support frames',
+          'Custom nameplates & directional boards',
         ],
-        mainImage: metalGate1,
-        sideImages: [metalPlasmaFloral1, metalLaserSparks1],
-        fit: 'contain',
+        mainImage: metalPlasmaAction1,
+        sideImages: [metalLatticePanel1, metalPlasmaFloral1],
+        fit: 'cover',
       },
       secondary: {
         tagline: 'Precision Equipment',
         heading: 'Cut on Advanced CNC Plasma Machines',
         description: 'From compact cutters to multi-axis CNC plasma systems, our equipment delivers clean, repeatable cuts across steel and metal sheet — precise patterns, every time.',
-        image: metalCutterMachine1,
-        fit: 'contain',
+        image: metalPlasmaAction2,
+        secondImage: metalCutterMachine1,
+        fit: 'cover',
       },
       banner: {
         tagline: 'Precision Cutting',
