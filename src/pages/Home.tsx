@@ -21,6 +21,10 @@ import { coreServices } from "../data/coreServicesData";
 import images from "../assets/images";
 import Seo from "../components/Seo";
 import { Reveal, RevealGroup, RevealItem } from "../components/Reveal";
+import HeadingSpan from "../components/HeadingSpan";
+import { useT } from "../i18n/translations";
+import { useLanguage } from "../i18n/LanguageContext";
+import { localizeCoreService } from "../i18n/localizeCoreService";
 
 interface HomeProps {
   onQuote: () => void;
@@ -74,51 +78,29 @@ function Counter({ end, suffix = "" }: { end: number; suffix?: string }) {
 }
 
 export default function Home({ onQuote }: HomeProps) {
+  const t = useT();
+  const { language } = useLanguage();
+  const localizedCoreServices = coreServices.map((s) => localizeCoreService(s, language));
+
   const stats = [
-    { icon: Award, value: 15, suffix: "+", label: "Years Experience" },
-    { icon: Building2, value: 20, suffix: "+", label: "Projects Completed" },
-    { icon: Users, value: 12, suffix: "+", label: "Partners & Clients" },
-    { icon: TrendingUp, value: 500, suffix: "+", label: "Workforce" },
+    { icon: Award, value: 15, suffix: "+", label: t.home.stats.yearsExperience },
+    { icon: Building2, value: 20, suffix: "+", label: t.home.stats.projectsCompleted },
+    { icon: Users, value: 12, suffix: "+", label: t.home.stats.partnersClients },
+    { icon: TrendingUp, value: 500, suffix: "+", label: t.home.stats.workforce },
   ];
 
-  const whyChooseUs = [
-    {
-      icon: Factory,
-      title: "Integrated Manufacturing",
-      desc: "Our in-house facilities house advanced CNC systems, high-precision 3D printers, and metal fabrication units—ensuring total control over design, quality, and timelines. This vertical integration allows us to deliver cohesive, scalable, and cost-effective solutions under one roof.",
-    },
-    {
-      icon: Settings2,
-      title: "Tailored Solutions",
-      desc: "Every project is unique. We collaborate closely with clients to transform their ideas into bespoke architectural, decorative, or structural products—crafted to exact specifications in terms of size, material, finish, and function.",
-    },
-    {
-      icon: BadgeCheck,
-      title: "Quality Control",
-      desc: "Every stage of production undergoes rigorous quality checks by our expert technicians and artisans. From raw material sourcing to final installation, our commitment to quality ensures precision, performance, and long-lasting durability.",
-    },
-    {
-      icon: Cpu,
-      title: "Technological Lead",
-      desc: "We invest continuously in emerging technologies—be it multi-axis CNC systems, AI-assisted design software, or advanced 3D prototyping. This empowers us to deliver complex geometries, faster turnarounds, and futuristic aesthetics.",
-    },
-    {
-      icon: Clock,
-      title: "Project Reliability",
-      desc: "With streamlined workflows, disciplined scheduling, and agile project management, we’re known for delivering projects on time without compromising on finish or structural integrity. We treat every deadline as a commitment.",
-    },
-    {
-      icon: HeartHandshake,
-      title: "Customer Centricity",
-      desc: "Our clients are at the core of everything we do. From transparent pricing and clear communication to post-project support, we ensure an experience that’s seamless, respectful, and value-driven—building trust that lasts beyond delivery.",
-    },
-  ];
+  const whyChooseIcons = [Factory, Settings2, BadgeCheck, Cpu, Clock, HeartHandshake];
+  const whyChooseUs = t.home.whyChoose.items.map((item, i) => ({
+    icon: whyChooseIcons[i],
+    title: item.title,
+    desc: item.desc,
+  }));
 
   return (
     <div className="bg-white">
       <Seo
-        title="Fiberglass, Epoxy & Interior Solutions in Uganda"
-        description="Sayona International is Uganda's trusted manufacturer of fiberglass products, epoxy flooring, aluminium fabrication, furniture, and interior & exterior finishing — serving Kampala and East Africa since 2009."
+        title={t.home.seo.title}
+        description={t.home.seo.description}
         path="/"
         image={images.heroApproved}
       />
@@ -149,24 +131,21 @@ export default function Home({ onQuote }: HomeProps) {
             <div className="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/30 px-4 py-1.5 rounded-full mb-6 animate-[fadeInUp_0.6s_ease-out]">
               <span className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
               <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">
-                Excellence Since 2009
+                {t.home.hero.badge}
               </span>
             </div>
             <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.05] mb-6 animate-[fadeInUp_0.8s_ease-out]">
-              Fiberglass <span className="text-yellow-400">Products</span>, Engineered with Purpose
+              <HeadingSpan parts={t.home.hero.heading} />
             </h1>
             <p className="text-lg text-white/60 mb-10 max-w-xl leading-relaxed animate-[fadeInUp_1s_ease-out]">
-              Sayona International is Uganda's trusted manufacturer of
-              fiberglass products and premium fiberglass raw materials —
-              serving the construction, industrial, automotive, commercial,
-              and residential sectors.
+              {t.home.hero.paragraph}
             </p>
             <div className="flex flex-wrap gap-4 animate-[fadeInUp_1.2s_ease-out]">
               <button
                 onClick={onQuote}
                 className="group bg-yellow-400 hover:bg-yellow-300 text-black font-bold px-8 py-4 tracking-wider uppercase text-sm transition-all duration-200 hover:shadow-[0_0_30px_rgba(234,179,8,0.4)] active:scale-95 flex items-center gap-2"
               >
-                Get a Quote
+                {t.home.hero.getQuote}
                 <ArrowRight
                   size={18}
                   className="group-hover:translate-x-1 transition-transform"
@@ -176,7 +155,7 @@ export default function Home({ onQuote }: HomeProps) {
                 to="/contact"
                 className="group border border-white/30 hover:border-yellow-400 hover:text-yellow-400 text-white font-bold px-8 py-4 tracking-wider uppercase text-sm transition-all duration-200 active:scale-95 flex items-center gap-2"
               >
-                Our Projects
+                {t.home.hero.ourProjects}
                 <ArrowRight
                   size={18}
                   className="group-hover:translate-x-1 transition-transform"
@@ -225,19 +204,17 @@ export default function Home({ onQuote }: HomeProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">
-              What We Do
+              {t.home.services.eyebrow}
             </span>
             <h2 className="text-4xl md:text-5xl font-black text-black mt-3 mb-4">
-              Our Core <span className="text-yellow-400">Services</span>
+              <HeadingSpan parts={t.home.services.heading} />
             </h2>
             <p className="text-black/50 max-w-2xl mx-auto">
-              Fiberglass manufacturing, epoxy solutions, and raw material
-              supply, delivered with in-house manufacturing and skilled
-              craftsmanship.
+              {t.home.services.paragraph}
             </p>
           </div>
           <RevealGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {coreServices.map((service, i) => (
+            {localizedCoreServices.map((service, i) => (
               <RevealItem key={i}>
                 <div
                   className="group relative flex flex-col h-full bg-black/3 border border-black/10 overflow-hidden hover:border-yellow-400/40 hover:bg-black/6 transition-all duration-300"
@@ -289,18 +266,13 @@ export default function Home({ onQuote }: HomeProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">
-              Why Choose
+              {t.home.whyChoose.eyebrow}
             </span>
             <h2 className="text-4xl md:text-5xl font-black text-black mt-3 mb-6">
-              Sayona <span className="text-yellow-400">International</span>
+              <HeadingSpan parts={t.home.whyChoose.heading} />
             </h2>
             <p className="text-black/60 leading-relaxed">
-              "Perform With Purpose" is more than a motto — it's the mindset
-              behind everything we do. From precision manufacturing to customer
-              collaboration, every project reflects our commitment to
-              excellence, innovation, and impact. We don't just build products;
-              we craft purposeful solutions that endure, inspire, and deliver
-              real value.
+              {t.home.whyChoose.paragraph}
             </p>
           </div>
 
@@ -330,7 +302,7 @@ export default function Home({ onQuote }: HomeProps) {
                   ))}
                 </div>
                 <span className="text-black/70 text-xs tracking-[0.3em] uppercase font-medium">
-                  Perform With Purpose
+                  {t.home.whyChoose.panelTag}
                 </span>
               </div>
             </Reveal>
@@ -358,9 +330,7 @@ export default function Home({ onQuote }: HomeProps) {
           </div>
 
           <p className="text-black/60 text-center max-w-3xl mx-auto mt-16 leading-relaxed">
-            Together, these strengths make Sayona International a partner of
-            choice for clients seeking precision-crafted, future-ready design
-            and fabrication solutions.
+            {t.home.whyChoose.closing}
           </p>
         </div>
       </section>
@@ -371,24 +341,16 @@ export default function Home({ onQuote }: HomeProps) {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <Reveal>
               <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">
-                Who We Are
+                {t.home.aboutTeaser.eyebrow}
               </span>
               <h2 className="text-4xl md:text-5xl font-black text-black mt-3 mb-6">
-                A Legacy of <span className="text-yellow-400">Engineering</span>{" "}
-                Excellence
+                <HeadingSpan parts={t.home.aboutTeaser.heading} />
               </h2>
               <p className="text-black/60 leading-relaxed mb-6">
-                Founded in 2009, Sayona International has grown into one of
-                Uganda's most trusted engineering and construction firms. We
-                combine decades of expertise with modern technology to deliver
-                projects that stand the test of time.
+                {t.home.aboutTeaser.paragraph}
               </p>
               <ul className="space-y-3 mb-8">
-                {[
-                  "Experienced multidisciplinary team",
-                  "Commitment to safety and sustainability",
-                  "On-time, on-budget delivery",
-                ].map((item, i) => (
+                {t.home.aboutTeaser.bullets.map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-black/70">
                     <CheckCircle2
                       size={20}
@@ -402,7 +364,7 @@ export default function Home({ onQuote }: HomeProps) {
                 to="/about"
                 className="group inline-flex items-center gap-2 text-yellow-400 font-bold text-sm tracking-wider uppercase border-b border-yellow-400 pb-1 hover:gap-4 transition-all duration-200"
               >
-                Learn More About Us
+                {t.home.aboutTeaser.learnMore}
                 <ArrowRight
                   size={16}
                   className="group-hover:translate-x-1 transition-transform"
@@ -411,10 +373,10 @@ export default function Home({ onQuote }: HomeProps) {
             </Reveal>
             <RevealGroup className="grid grid-cols-2 gap-4">
               {[
-                { icon: Hammer, label: "Construction", val: "Expertise" },
-                { icon: Wrench, label: "Engineering", val: "Solutions" },
-                { icon: ShieldCheck, label: "Safety", val: "First" },
-                { icon: Award, label: "Quality", val: "Assured" },
+                { icon: Hammer, ...t.home.aboutTeaser.grid[0] },
+                { icon: Wrench, ...t.home.aboutTeaser.grid[1] },
+                { icon: ShieldCheck, ...t.home.aboutTeaser.grid[2] },
+                { icon: Award, ...t.home.aboutTeaser.grid[3] },
               ].map((item, i) => (
                 <RevealItem
                   key={i}
@@ -435,14 +397,13 @@ export default function Home({ onQuote }: HomeProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="text-center mb-16">
             <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">
-              Trusted By
+              {t.home.partners.eyebrow}
             </span>
             <h2 className="text-4xl md:text-5xl font-black text-black mt-3 mb-4">
-              Our <span className="text-yellow-400">Partners</span> & Clients
+              <HeadingSpan parts={t.home.partners.heading} />
             </h2>
             <p className="text-black/50 max-w-2xl mx-auto">
-              We are proud to have delivered projects for leading organizations
-              across Uganda and East Africa.
+              {t.home.partners.paragraph}
             </p>
           </Reveal>
           <RevealGroup className="grid grid-cols-2 sm:grid-cols-3 gap-6">
@@ -488,18 +449,17 @@ export default function Home({ onQuote }: HomeProps) {
         <Reveal className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-8">
           <div>
             <h2 className="text-3xl md:text-4xl font-black text-black mb-3">
-              Ready to Start Your Project?
+              {t.home.cta.heading}
             </h2>
             <p className="text-black/70 text-lg">
-              Let's build something great together. Get a customized quote
-              today.
+              {t.home.cta.paragraph}
             </p>
           </div>
           <button
             onClick={onQuote}
             className="group bg-black hover:bg-zinc-800 text-white font-bold px-10 py-5 tracking-wider uppercase text-sm transition-all duration-200 hover:shadow-2xl active:scale-95 flex items-center gap-2 whitespace-nowrap"
           >
-            Request a Quote
+            {t.home.cta.button}
             <ArrowRight
               size={18}
               className="group-hover:translate-x-1 transition-transform"

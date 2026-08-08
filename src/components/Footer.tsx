@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
 import sayonaLogo from '../assets/sayona-logo.png';
 import { products } from '../data/productsData';
+import { useT } from '../i18n/translations';
+import { useLanguage } from '../i18n/LanguageContext';
+import { localizeService } from '../i18n/localizeService';
 import {
   FacebookIcon,
   InstagramIcon,
@@ -24,14 +27,17 @@ const socialLinks = [
   { Icon: TiktokIcon, href: 'https://www.tiktok.com/@sayonaintltd?_r=1&_t=ZS-98FABjis0vK', label: 'TikTok' },
 ];
 
-const quickLinks = [
-  { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
-  { label: 'Products', path: '/' },
-  { label: 'Contact', path: '/contact' },
-];
-
 const Footer = () => {
+  const t = useT();
+  const { language } = useLanguage();
+  const localizedProducts = products.map((p) => localizeService(p, language));
+  const quickLinks = [
+    { label: t.nav.home, path: '/' },
+    { label: t.nav.about, path: '/about' },
+    { label: t.nav.products, path: '/' },
+    { label: t.nav.contact, path: '/contact' },
+  ];
+
   return (
     <footer className="bg-white text-black/70 border-t border-black/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -50,7 +56,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-sm leading-relaxed text-black/50">
-              Engineering excellence, building trust. We deliver world-class construction, infrastructure, and engineering solutions across the region.
+              {t.footer.tagline}
             </p>
             <div className="flex flex-wrap gap-3 mt-6">
               {socialLinks.map(({ Icon, href, label }) => (
@@ -70,7 +76,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-black font-bold text-sm tracking-widest uppercase mb-5">Quick Links</h4>
+            <h4 className="text-black font-bold text-sm tracking-widest uppercase mb-5">{t.footer.quickLinksHeading}</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
@@ -87,9 +93,9 @@ const Footer = () => {
 
           {/* Products */}
           <div>
-            <h4 className="text-black font-bold text-sm tracking-widest uppercase mb-5">Products</h4>
+            <h4 className="text-black font-bold text-sm tracking-widest uppercase mb-5">{t.footer.productsHeading}</h4>
             <ul className="space-y-3">
-              {products.map((p) => (
+              {localizedProducts.map((p) => (
                 <li key={p.slug}>
                   <Link
                     to={`/services/${p.slug}`}
@@ -104,7 +110,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-black font-bold text-sm tracking-widest uppercase mb-5">Get in Touch</h4>
+            <h4 className="text-black font-bold text-sm tracking-widest uppercase mb-5">{t.footer.getInTouchHeading}</h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-sm text-black/50">
                 <MapPin size={16} className="text-yellow-400 mt-0.5 shrink-0" />
@@ -128,13 +134,13 @@ const Footer = () => {
         
         <div className="mt-12 pt-8 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-black/40 tracking-wide">
-            © {new Date().getFullYear()} Sayona International. All rights reserved.
+            © {new Date().getFullYear()} {t.footer.rightsReserved}
           </p>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center gap-2 text-xs text-black/50 hover:text-yellow-400 transition-colors duration-200 group"
           >
-            Back to top
+            {t.footer.backToTop}
             <span className="w-8 h-8 border border-black/20 rounded-full flex items-center justify-center group-hover:bg-yellow-400 group-hover:border-yellow-400 group-hover:text-black transition-all duration-200">
               <ArrowUp size={14} />
             </span>

@@ -9,6 +9,7 @@ import {
   Phone,
   FileText,
 } from "lucide-react";
+import { useT } from "../i18n/translations";
 
 interface QuoteModalProps {
   open: boolean;
@@ -16,6 +17,7 @@ interface QuoteModalProps {
 }
 
 const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
+  const t = useT();
   const [form, setForm] = useState({
     name: "",
     company: "",
@@ -51,15 +53,7 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
 
   if (!open) return null;
 
-  const services = [
-    "Civil Construction",
-    "Engineering Design",
-    "Steel Fabrication",
-    "Project Management",
-    "Maintenance & Repair",
-    "Consulting",
-    "Products & Supply",
-  ];
+  const services = t.quoteModal.services;
 
   return (
     <div
@@ -83,25 +77,23 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
               <CheckCircle2 size={32} className="text-black " />
             </div>
             <h3 className="text-2xl font-black text-black mb-2">
-              Quote Request Submitted!
+              {t.quoteModal.successHeading}
             </h3>
             <p className="text-black/60">
-              Thank you for your interest. Our team will review your request and
-              get back to you within 24 hours.
+              {t.quoteModal.successBody}
             </p>
           </div>
         ) : (
           <div className="p-8">
             <div className="mb-8">
               <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">
-                Request a Quote
+                {t.quoteModal.eyebrow}
               </span>
               <h2 className="text-3xl font-black text-black mt-2 mb-2">
-                Let's Build Together
+                {t.quoteModal.heading}
               </h2>
               <p className="text-black/50 text-sm">
-                Fill out the form below and we'll provide a customized quote for
-                your project.
+                {t.quoteModal.subheading}
               </p>
             </div>
 
@@ -115,7 +107,7 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">
-                    Name *
+                    {t.quoteModal.nameLabel}
                   </label>
                   <div className="relative">
                     <User
@@ -130,13 +122,13 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
                         setForm({ ...form, name: e.target.value })
                       }
                       className="w-full bg-black/5 border border-black/10 text-black pl-10 pr-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
-                      placeholder="Your name"
+                      placeholder={t.quoteModal.namePlaceholder}
                     />
                   </div>
                 </div>
                 <div>
                   <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">
-                    Company
+                    {t.quoteModal.companyLabel}
                   </label>
                   <div className="relative">
                     <Building2
@@ -150,7 +142,7 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
                         setForm({ ...form, company: e.target.value })
                       }
                       className="w-full bg-black/5 border border-black/10 text-black pl-10 pr-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
-                      placeholder="Company name"
+                      placeholder={t.quoteModal.companyPlaceholder}
                     />
                   </div>
                 </div>
@@ -159,7 +151,7 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">
-                    Email *
+                    {t.quoteModal.emailLabel}
                   </label>
                   <div className="relative">
                     <Mail
@@ -174,13 +166,13 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
                         setForm({ ...form, email: e.target.value })
                       }
                       className="w-full bg-black/5 border border-black/10 text-black pl-10 pr-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
-                      placeholder="you@example.com"
+                      placeholder={t.quoteModal.emailPlaceholder}
                     />
                   </div>
                 </div>
                 <div>
                   <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">
-                    Phone
+                    {t.quoteModal.phoneLabel}
                   </label>
                   <div className="relative">
                     <Phone
@@ -194,7 +186,7 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
                         setForm({ ...form, phone: e.target.value })
                       }
                       className="w-full bg-black/5 border border-black/10 text-black pl-10 pr-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
-                      placeholder="+255 ..."
+                      placeholder={t.quoteModal.phonePlaceholder}
                     />
                   </div>
                 </div>
@@ -203,7 +195,7 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">
-                    Service Needed *
+                    {t.quoteModal.serviceLabel}
                   </label>
                   <div className="relative">
                     <FileText
@@ -219,7 +211,7 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
                       className="w-full bg-black/5 border border-black/10 text-black pl-10 pr-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200 appearance-none"
                     >
                       <option value="" className="bg-white text-black">
-                        Select a service
+                        {t.quoteModal.servicePlaceholder}
                       </option>
                       {services.map((s) => (
                         <option key={s} value={s} className="bg-white text-black">
@@ -231,7 +223,7 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
                 </div>
                 <div>
                   <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">
-                    Project Type
+                    {t.quoteModal.projectTypeLabel}
                   </label>
                   <input
                     type="text"
@@ -240,27 +232,27 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
                       setForm({ ...form, projectType: e.target.value })
                     }
                     className="w-full bg-black/5 border border-black/10 text-black px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
-                    placeholder="e.g. Building, Bridge, Factory"
+                    placeholder={t.quoteModal.projectTypePlaceholder}
                   />
                 </div>
               </div>
 
               <div>
                 <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">
-                  Estimated Budget
+                  {t.quoteModal.budgetLabel}
                 </label>
                 <input
                   type="text"
                   value={form.budget}
                   onChange={(e) => setForm({ ...form, budget: e.target.value })}
                   className="w-full bg-black/5 border border-black/10 text-black px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
-                  placeholder="e.g. $50,000 - $100,000"
+                  placeholder={t.quoteModal.budgetPlaceholder}
                 />
               </div>
 
               <div>
                 <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">
-                  Project Details *
+                  {t.quoteModal.detailsLabel}
                 </label>
                 <textarea
                   required
@@ -270,7 +262,7 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
                     setForm({ ...form, message: e.target.value })
                   }
                   className="w-full bg-black/5 border border-black/10 text-black px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200 resize-none"
-                  placeholder="Describe your project, timeline, and any specific requirements..."
+                  placeholder={t.quoteModal.detailsPlaceholder}
                 />
               </div>
 
@@ -282,11 +274,11 @@ const QuoteModal = ({ open, onClose }: QuoteModalProps) => {
                 {status === "loading" ? (
                   <>
                     <span className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
-                    Submitting...
+                    {t.quoteModal.submitting}
                   </>
                 ) : (
                   <>
-                    Submit Request
+                    {t.quoteModal.submit}
                     <Send
                       size={16}
                       className="group-hover:translate-x-1 transition-transform"

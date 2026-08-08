@@ -11,12 +11,20 @@ import motorbikeBox4 from '../assets/fibre-boxes/motor-bike-with-box-4.jpeg';
 import motorbikeBox5 from '../assets/fibre-boxes/motor-bike-with-box-5.jpeg';
 import motorbikeBox6 from '../assets/fibre-boxes/motor-bike-with-box-6.jpeg';
 import motorbikeBox7 from '../assets/fibre-boxes/motor-bike-with-box-7.jpeg';
+import motorbikeBox8 from '../assets/fibre-boxes/motor-bike-with-box-8.jpeg';
+import motorbikeBox9 from '../assets/fibre-boxes/motor-bike-with-box-9.jpeg';
 
 import roofing1 from '../assets/roofings/roofings-1.jpg';
 import roofing2 from '../assets/roofings/roofings-2.jpg';
 import roofing3 from '../assets/roofings/roofings-3.jpg';
 import roofing4 from '../assets/roofings/roofings-4.jpg';
 import roofingsBetter2 from '../assets/roofings/roofings-better-2.jpeg';
+import roofing5 from '../assets/roofings/roofings-5.jpeg';
+import roofing6 from '../assets/roofings/roofings-6.jpeg';
+import roofing7 from '../assets/roofings/roofings-7.jpeg';
+import roofing8 from '../assets/roofings/roofings-8.jpeg';
+import roofing9 from '../assets/roofings/roofings-9.jpeg';
+import roofing10 from '../assets/roofings/roofings-10.jpeg';
 
 import pots1 from '../assets/3-pots/new-pots-1.jpeg';
 import pots2 from '../assets/3-pots/new-pots-2.jpeg';
@@ -49,6 +57,18 @@ import grc9 from '../assets/1-grc/grc-9.jpeg';
 import grc10 from '../assets/1-grc/grc-10.jpeg';
 import grc11 from '../assets/1-grc/grc-11.jpeg';
 
+import construction1 from '../assets/2-construction/construction-1.jpeg';
+import construction2 from '../assets/2-construction/construction-2.jpeg';
+import construction3 from '../assets/2-construction/construction-3.jpeg';
+import construction4 from '../assets/2-construction/construction-4.jpeg';
+import construction5 from '../assets/2-construction/construction-5.jpeg';
+import construction6 from '../assets/2-construction/construction-6.jpeg';
+import construction7 from '../assets/2-construction/construction-7.jpeg';
+import construction8 from '../assets/2-construction/construction-8.jpeg';
+import construction9 from '../assets/2-construction/construction-9.jpeg';
+import construction10 from '../assets/2-construction/construction-10.jpeg';
+import construction11 from '../assets/2-construction/construction-11.jpeg';
+
 import epoxy1 from '../assets/epoxy/epoxy-1.jpeg';
 import epoxy2 from '../assets/epoxy/epoxy-2.jpeg';
 import epoxy3 from '../assets/epoxy/epoxy-3.jpeg';
@@ -71,12 +91,18 @@ import rawMaterialResin from '../assets/raw-materials-supply-products/resin.jpg'
 import rawMaterialWovenRoving from '../assets/raw-materials-supply-products/fiber-glass-mat-2.jpg';
 import rawMaterialChoppedStrandRoll from '../assets/raw-materials-supply-products/fiber-glass-mat-3.jpg';
 import rawMaterialFiberglassCloth from '../assets/raw-materials-supply-products/fiber-glass-mat-4.jpg';
+import rawMaterial1 from '../assets/raw-materials-supply-products/raw-material-1.jpeg';
+import rawMaterial2 from '../assets/raw-materials-supply-products/raw-material-2.jpeg';
+import rawMaterial3 from '../assets/raw-materials-supply-products/raw-material-3.jpeg';
+import rawMaterial4 from '../assets/raw-materials-supply-products/raw-material-4.jpeg';
 
-import furnitureWardrobe from '../assets/furniture-products/Wardrobe-furniture-3.jpg';
+import furnitureWardrobe from '../assets/furniture-products/furniture-3.jpg';
 import furnitureReceptionDesk from '../assets/furniture-products/furni-2.jpeg';
 import furnitureDisplayCounter from '../assets/furniture-products/furni-1.jpeg';
 import furnitureDeskDetail from '../assets/furniture-products/furni-3.jpeg';
 import furnitureLobbyWide from '../assets/furniture-products/furni-4.jpeg';
+import furnitureCabinet from '../assets/furniture-products/furniture-1.jpeg';
+import furnitureBaikalDesk from '../assets/furniture-products/furniture-2.jpeg';
 
 import cncWoodCutting1 from '../assets/6-cnc-wood-products/cnc-wood-1.jpeg';
 import cncWoodMachine1 from '../assets/6-cnc-wood-products/cnc-wood-2.jpeg';
@@ -278,7 +304,7 @@ export const products: ServiceData[] = [
         heading: 'Real Boxes, Riding for Real Businesses',
         highlight: 'Riding',
         description: 'From courier fleets to restaurant delivery riders, here are boxes we’ve built and branded out on the road across Kampala.',
-        images: [motorbikeBox1, motorbikeBox2, motorbikeBox4],
+        images: [motorbikeBox1, motorbikeBox2, motorbikeBox4, motorbikeBox8, motorbikeBox9],
       },
       banner: {
         tagline: 'In-House Manufacturing',
@@ -291,38 +317,46 @@ export const products: ServiceData[] = [
   {
     slug: 'roofing',
     icon: HomeIcon,
-    image: roofing1,
-    title: 'Roofing',
-    intro: "Complete fiberglass roofing systems engineered for durability, insulation, and natural light — built to withstand Uganda's climate.",
+    image: roofing5,
+    title: 'Transparent Sheets & Mabati',
+    intro: "Transparent fiberglass roofing sheets, plus mabati that we both custom-make for industrial sites and companies and supply imported — engineered for durability, insulation, and natural light.",
     catalogue: '/catalogues/roofings.pdf',
     items: [
-      { title: 'Fiberglass Roofing Systems', desc: 'Complete roofing systems engineered for durability, insulation, and fast installation.', image: images.roofing_sheets_1 },
+      { title: 'Transparent Roofing Sheets', desc: 'Light-transmitting fiberglass sheets that bring natural daylight into covered spaces.', image: images.roofing_sheets_1 },
+      { title: 'Custom-Made Mabati', desc: 'Mabati fabricated to size for industrial sites, warehouses, and companies.' },
+      { title: 'Imported Mabati', desc: 'Quality imported mabati supplied in a full range of colors, alongside our own fiberglass production.' },
       { title: 'Transparent Roofing Panels', desc: 'Light-transmitting roofing panels that bring natural daylight into covered spaces.', images: [images.transparent_roofing_panels_1, images.transparent_roofing_panels_2, images.transparent_roofing_panels_3] },
-      { title: 'Corrugated Fiberglass Sheets', desc: 'Standard-profile corrugated sheets combining strength with weather resistance.' },
       { title: 'Skylight Systems', desc: 'Custom fiberglass skylights that flood interiors with natural light.' },
     ],
     showcase: {
       hero: {
-        tagline: 'Built for the Elements',
-        heading: 'Fiberglass Roofing, Built to Perform',
+        tagline: 'Built for Natural Light',
+        heading: 'Transparent Sheets & Mabati, Built to Perform',
         highlight: 'Perform',
-        description: 'From arched canopy walkways to corrugated warehouse sheets, our fiberglass roofing combines strength, insulation, and natural light transmission — designed and installed by our own technical team.',
+        description: 'From transparent fiberglass sheets to mabati we custom-make for industrial sites and companies, plus quality imported mabati, our roofing combines strength, insulation, and natural light transmission — designed and installed by our own technical team.',
         features: [
-          'UV-stable, weatherproof fiberglass sheets',
-          'Available in clear, tinted, and solid colors',
-          'Insulated against heat and noise',
-          'Custom arches, skylights, and canopy shapes',
+          'Transparent, light-transmitting fiberglass sheets',
+          'Custom-made mabati for industrial & company use',
+          'Quality imported mabati, in a full range of colors',
+          'UV-stable, weatherproof, and insulated against heat and noise',
         ],
-        mainImage: roofing1,
-        sideImages: [roofing2, roofing4],
+        mainImage: roofing4,
+        sideImages: [roofing6, roofing7],
         fit: 'cover',
       },
       secondary: {
         tagline: 'Natural Light',
         heading: 'Transparent Panels for Daylight Interiors',
         description: 'Our transparent roofing panels flood interiors with natural daylight while keeping the same structural strength as solid sheets — ideal for walkways, carports, and covered patios.',
-        image: roofing3,
+        image: roofing1,
         fit: 'cover',
+      },
+      gallery: {
+        tagline: 'Mabati, Every Color',
+        heading: 'Mabati & Sheets in Every Color',
+        highlight: 'Color',
+        description: 'From bold yellows to deep blues and reds, here are more of the mabati and transparent sheet colors we stock and fabricate to order.',
+        images: [roofing2, roofing3, roofing8, roofing9, roofing10],
       },
       banner: {
         tagline: 'Freshly Fabricated',
@@ -520,6 +554,59 @@ export const products: ServiceData[] = [
     },
   },
   {
+    slug: 'construction',
+    icon: Building2,
+    image: construction1,
+    title: 'Construction',
+    intro: 'From temple architecture to decorative ceilings and entrance archways, we deliver large-scale construction and architectural finishing — combining structural craftsmanship with intricate detail for landmark projects across Uganda.',
+    catalogue: '/catalogues/Sayona%20-works.pdf',
+    items: [
+      { title: 'Temple & Religious Architecture', desc: 'Full-scale construction of temples and religious structures, combining traditional design with modern building techniques.' },
+      { title: 'Decorative Ceiling Work', desc: 'Hand-painted medallions, carved plaster ceilings, and domed ceiling features finished with intricate detail.' },
+      { title: 'Carved Stone & GRC Detailing', desc: 'Hand-carved sandstone pillars, jali lattice screens, and GRC detailing for facades and interiors.' },
+      { title: 'Entrance Arches & Signage Structures', desc: 'Custom-built entrance archways and signage structures that make a statement at any property.' },
+      { title: 'Rooftop Domes & Architectural Spires', desc: 'Domed rooftops and ornamental spires finished to match the scale and detail of the build.' },
+    ],
+    showcase: {
+      hero: {
+        tagline: 'Architectural Construction',
+        heading: 'Construction, Crafted for the Ages',
+        highlight: 'Crafted',
+        description: 'From full temple construction to decorative ceilings and entrance archways, every project is built with structural precision and intricate architectural detailing — delivered as a complete, turnkey construction solution.',
+        features: [
+          'Full-scale temple & religious architecture',
+          'Hand-painted & carved decorative ceilings',
+          'Carved stone, GRC & jali detailing',
+          'Entrance arches, domes & signage structures',
+        ],
+        mainImage: construction1,
+        sideImages: [construction2, construction4],
+        fit: 'cover',
+      },
+      secondary: {
+        tagline: 'Decorative Ceilings',
+        heading: 'Ceilings, Painted and Carved by Hand',
+        description: 'From hand-painted medallions to carved plaster ceiling roses, every ceiling is finished with the same level of detail as the rest of the build — a signature feature of our construction projects.',
+        image: construction6,
+        secondImage: construction11,
+        fit: 'cover',
+      },
+      gallery: {
+        tagline: 'Craftsmanship in Every Detail',
+        heading: 'Carved Stone, Jalis & Rooftop Domes',
+        highlight: 'Domes',
+        description: 'From hand-carved sandstone pillars to jali lattice screens, rooftop domes, and entrance archways, here is more of the detailed craftsmanship behind every construction project.',
+        images: [construction3, construction5, construction7, construction9, construction10],
+      },
+      banner: {
+        tagline: 'Built for Grandeur',
+        heading: 'Every Hall, Finished in Full Detail',
+        description: 'From the ceiling to the floor, every surface is designed, painted, and finished on-site — construction built to inspire and endure.',
+        image: construction8,
+      },
+    },
+  },
+  {
     slug: 'lighting-decorations',
     icon: Sparkles,
     image: xmasLighting4,
@@ -615,6 +702,13 @@ export const products: ServiceData[] = [
         image: rawMaterialChoppedStrandRoll,
         fit: 'cover',
       },
+      gallery: {
+        tagline: 'In Stock, Ready to Ship',
+        heading: 'Rolls, Mats & Films in Stock',
+        highlight: 'In Stock',
+        description: 'From printed veils to pigmented films, here are more of the composite raw materials we keep stocked and ready to supply.',
+        images: [rawMaterial1, rawMaterial2, rawMaterial3, rawMaterial4],
+      },
       banner: {
         tagline: 'Fine Surface Finish',
         heading: 'Fiberglass Cloth, Stocked in Bulk',
@@ -626,7 +720,7 @@ export const products: ServiceData[] = [
   {
     slug: 'furniture',
     icon: Sofa,
-    image: furnitureReceptionDesk,
+    image: furnitureLobbyWide,
     title: 'Furniture',
     intro: 'From reception counters and office desks to fitted wardrobes, we design and craft furniture for homes, offices, and hospitality spaces — built to order and finished to a premium standard.',
     catalogue: '/catalogues/Sayona%20-works.pdf',
@@ -649,14 +743,15 @@ export const products: ServiceData[] = [
           'Bespoke furniture built and upholstered to order',
         ],
         mainImage: furnitureReceptionDesk,
-        sideImages: [furnitureDisplayCounter, furnitureDeskDetail],
+        sideImages: [furnitureDisplayCounter, furnitureBaikalDesk],
         fit: 'cover',
       },
       secondary: {
-        tagline: 'Real Installations',
-        heading: 'Reception Furniture, Built and Installed',
-        description: 'From corporate lobbies to showroom counters, every piece is measured, built, and installed on-site — finished to match the space it\'s built for.',
-        image: furnitureLobbyWide,
+        tagline: 'Finished in Detail',
+        heading: 'Every Edge, Finished to a High Gloss',
+        description: 'From corporate lobbies to showroom counters, every piece is measured, built, and installed on-site — finished to a high-gloss standard that holds up close.',
+        image: furnitureDeskDetail,
+        secondImage: furnitureCabinet,
         fit: 'cover',
       },
       banner: {
