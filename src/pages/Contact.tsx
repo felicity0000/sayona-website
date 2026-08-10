@@ -2,12 +2,9 @@ import { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
 import Seo from '../components/Seo';
 import { Reveal } from '../components/Reveal';
-import HeadingSpan from '../components/HeadingSpan';
-import { useT } from '../i18n/translations';
 import images from '../assets/images';
 
 const Contact =() => {
-  const t = useT();
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [error, setError] = useState('');
@@ -19,17 +16,17 @@ const Contact =() => {
   };
 
   const contactInfo = [
-    { icon: MapPin, label: t.contact.info.addressLabel, value: 'Plot 17 Enterprise Road, Ntinda Industrial Area, Kampala, Uganda' },
-    { icon: Phone, label: t.contact.info.phoneLabel, value: '+256 774 175310' },
-    { icon: Mail, label: t.contact.info.emailLabel, value: 'info@sayonainternational.com' },
-    { icon: Clock, label: t.contact.info.hoursLabel, value: t.contact.info.hoursValue },
+    { icon: MapPin, label: 'Address', value: 'Plot 17 Enterprise Road, Ntinda Industrial Area, Kampala, Uganda' },
+    { icon: Phone, label: 'Phone', value: '+256 774 175310' },
+    { icon: Mail, label: 'Email', value: 'info@sayonainternational.com' },
+    { icon: Clock, label: 'Working Hours', value: 'Mon - Sat: 8:00 AM - 6:00 PM' },
   ];
 
   return (
     <div className="bg-white">
       <Seo
-        title={t.contact.seo.title}
-        description={t.contact.seo.description}
+        title="Contact Us"
+        description="Get in touch with Sayona International in Kampala, Uganda. Request a quote for fiberglass, epoxy, aluminium, furniture, or interior and exterior craftsmanship projects."
         path="/contact"
         image={images.contactUsHero}
       />
@@ -41,12 +38,12 @@ const Contact =() => {
           <div className="absolute top-20 -right-32 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl" />
         </div>
         <Reveal className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">{t.contact.hero.eyebrow}</span>
+          <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">Contact Us</span>
           <h1 className="text-5xl md:text-6xl font-black text-white mt-3 mb-6">
-            <HeadingSpan parts={t.contact.hero.heading} />
+            Let's <span className="text-yellow-400">Connect</span>
           </h1>
           <p className="text-white/60 max-w-2xl mx-auto text-lg leading-relaxed">
-            {t.contact.hero.paragraph}
+            Have a project in mind or need more information? Reach out to us and our team will get back to you promptly.
           </p>
         </Reveal>
       </section>
@@ -57,9 +54,9 @@ const Contact =() => {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Info */}
             <Reveal>
-              <h2 className="text-3xl font-black text-black mb-6">{t.contact.info.heading}</h2>
+              <h2 className="text-3xl font-black text-black mb-6">Get in Touch</h2>
               <p className="text-black/60 leading-relaxed mb-8">
-                {t.contact.info.paragraph}
+                We're here to answer any questions you may have about our services, products, or projects. Reach out through any of the channels below or fill out the contact form.
               </p>
               <div className="space-y-4">
                 {contactInfo.map((info, i) => (
@@ -86,13 +83,13 @@ const Contact =() => {
                   <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-6 animate-[scaleIn_0.3s_ease-out]">
                     <CheckCircle2 size={32} className="text-black" />
                   </div>
-                  <h3 className="text-2xl font-black text-black mb-2">{t.contact.form.successHeading}</h3>
-                  <p className="text-black/60">{t.contact.form.successBody}</p>
+                  <h3 className="text-2xl font-black text-black mb-2">Message Sent!</h3>
+                  <p className="text-black/60">Thank you for reaching out. We'll get back to you soon.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  <h2 className="text-2xl font-black text-black mb-2">{t.contact.form.heading}</h2>
-                  <p className="text-black/50 text-sm mb-6">{t.contact.form.subheading}</p>
+                  <h2 className="text-2xl font-black text-black mb-2">Send Us a Message</h2>
+                  <p className="text-black/50 text-sm mb-6">Fill out the form below and we'll respond within 24 hours.</p>
 
                   {error && (
                     <div className="bg-red-500/10 border border-red-500/30 text-red-400 text-sm p-3">
@@ -102,58 +99,58 @@ const Contact =() => {
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">{t.contact.form.nameLabel}</label>
+                      <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">Name *</label>
                       <input
                         required
                         type="text"
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
                         className="w-full bg-black/5 border border-black/10 text-black px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
-                        placeholder={t.contact.form.namePlaceholder}
+                        placeholder="Your full name"
                       />
                     </div>
                     <div>
-                      <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">{t.contact.form.phoneLabel}</label>
+                      <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">Phone</label>
                       <input
                         type="tel"
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
                         className="w-full bg-black/5 border border-black/10 text-black px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
-                        placeholder={t.contact.form.phonePlaceholder}
+                        placeholder="+256 ..."
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">{t.contact.form.emailLabel}</label>
+                    <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">Email *</label>
                     <input
                       required
                       type="email"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       className="w-full bg-black/5 border border-black/10 text-black px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
-                      placeholder={t.contact.form.emailPlaceholder}
+                      placeholder="you@example.com"
                     />
                   </div>
                   <div>
-                    <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">{t.contact.form.subjectLabel}</label>
+                    <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">Subject *</label>
                     <input
                       required
                       type="text"
                       value={form.subject}
                       onChange={(e) => setForm({ ...form, subject: e.target.value })}
                       className="w-full bg-black/5 border border-black/10 text-black px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200"
-                      placeholder={t.contact.form.subjectPlaceholder}
+                      placeholder="What is this about?"
                     />
                   </div>
                   <div>
-                    <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">{t.contact.form.messageLabel}</label>
+                    <label className="text-black/60 text-xs font-medium tracking-wide uppercase mb-2 block">Message *</label>
                     <textarea
                       required
                       rows={4}
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
                       className="w-full bg-black/5 border border-black/10 text-black px-4 py-3 text-sm focus:border-yellow-400 focus:outline-none transition-colors duration-200 resize-none"
-                      placeholder={t.contact.form.messagePlaceholder}
+                      placeholder="Tell us about your project or inquiry..."
                     />
                   </div>
                   <button
@@ -164,11 +161,11 @@ const Contact =() => {
                     {status === 'loading' ? (
                       <>
                         <span className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
-                        {t.contact.form.sending}
+                        Sending...
                       </>
                     ) : (
                       <>
-                        {t.contact.form.send}
+                        Send Message
                         <Send size={16} className="group-hover:translate-x-1 transition-transform" />
                     </>
                     )}

@@ -5,10 +5,6 @@ import { getServiceBySlug, type ShowcaseBlock } from '../data/productsData';
 import ImageCarousel from '../components/ImageCarousel';
 import Seo from '../components/Seo';
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal';
-import HeadingSpan from '../components/HeadingSpan';
-import { useT } from '../i18n/translations';
-import { useLanguage } from '../i18n/LanguageContext';
-import { localizeService } from '../i18n/localizeService';
 
 interface ServiceDetailProps {
   onQuote: () => void;
@@ -48,11 +44,8 @@ function ShowcaseTextBlock({ block }: { block: ShowcaseBlock }) {
 }
 
 const ServiceDetail = ({ onQuote }: ServiceDetailProps) => {
-  const t = useT();
-  const { language } = useLanguage();
   const { slug = '' } = useParams();
-  const rawService = getServiceBySlug(slug);
-  const service = rawService && localizeService(rawService, language);
+  const service = getServiceBySlug(slug);
   const featured = service?.items.filter((item) => item.image || item.images?.length) ?? [];
   const rest = service?.items.filter((item) => !item.image && !item.images?.length) ?? [];
   const isMixed = featured.length > 0 && rest.length > 0;
@@ -60,13 +53,13 @@ const ServiceDetail = ({ onQuote }: ServiceDetailProps) => {
   if (!service) {
     return (
       <div className="bg-white min-h-screen pt-40 pb-20 text-center">
-        <Seo title={t.serviceDetails.notFound.title} description={t.serviceDetails.notFound.description} path={`/services/${slug}`} noindex />
-        <p className="text-black/60">{t.serviceDetails.notFound.message}</p>
+        <Seo title="Service Not Found" description="This service or product could not be found." path={`/services/${slug}`} noindex />
+        <p className="text-black/60">Service not found.</p>
         <Link
           to="/"
           className="mt-6 inline-flex items-center gap-2 text-yellow-400 font-bold text-sm tracking-wider uppercase"
         >
-          <ArrowLeft size={16} /> {t.serviceDetails.backToHome}
+          <ArrowLeft size={16} /> Back to Home
         </Link>
       </div>
     );
@@ -102,7 +95,7 @@ const ServiceDetail = ({ onQuote }: ServiceDetailProps) => {
             className="group inline-flex items-center gap-2 text-white/50 hover:text-yellow-400 text-sm font-medium tracking-wide mb-8 transition-colors duration-200"
           >
             <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-            {t.serviceDetails.backToHome}
+            Back to Home
           </Link>
 
           <div className="w-16 h-16 bg-yellow-400 flex items-center justify-center mb-6">
@@ -122,7 +115,7 @@ const ServiceDetail = ({ onQuote }: ServiceDetailProps) => {
               className="group inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-black font-bold px-6 py-3 tracking-wider uppercase text-sm transition-all duration-200 hover:shadow-[0_0_20px_rgba(234,179,8,0.4)] active:scale-95 mt-8"
             >
               <Download size={18} className="group-hover:translate-y-0.5 transition-transform" />
-              {t.serviceDetails.downloadCatalogue}
+              Download Catalogue
             </a>
           )}
         </Reveal>
@@ -156,7 +149,7 @@ const ServiceDetail = ({ onQuote }: ServiceDetailProps) => {
                       onClick={onQuote}
                       className="group bg-yellow-400 hover:bg-yellow-300 text-black font-bold px-8 py-4 tracking-wider uppercase text-sm transition-all duration-200 hover:shadow-[0_0_20px_rgba(234,179,8,0.4)] active:scale-95 flex items-center gap-2"
                     >
-                      {t.serviceDetails.getQuote}
+                      Get a Quote
                       <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                     </button>
                     {service.catalogue && (
@@ -166,7 +159,7 @@ const ServiceDetail = ({ onQuote }: ServiceDetailProps) => {
                         className="group inline-flex items-center gap-2 border border-black/20 hover:border-yellow-400 text-black font-bold px-8 py-4 tracking-wider uppercase text-sm transition-all duration-200 active:scale-95"
                       >
                         <Download size={18} className="group-hover:translate-y-0.5 transition-transform" />
-                        {t.serviceDetails.catalogue}
+                        Catalogue
                       </a>
                     )}
                   </div>
@@ -270,16 +263,16 @@ const ServiceDetail = ({ onQuote }: ServiceDetailProps) => {
         <section className="bg-white py-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <Reveal className="text-center mb-16">
-              <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">{t.serviceDetails.whatsIncluded}</span>
+              <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">What's Included</span>
               <h2 className="text-3xl md:text-4xl font-black text-black mt-3">
-                <HeadingSpan parts={t.serviceDetails.productsCapabilities} />
+                Products & <span className="text-yellow-400">Capabilities</span>
               </h2>
             </Reveal>
             {featured.length > 0 && (
               <div className={rest.length > 0 ? 'mb-16' : ''}>
                 {isMixed && (
                   <h3 className="text-yellow-400/70 text-xs tracking-widest uppercase font-semibold mb-6">
-                    {t.serviceDetails.highlights}
+                    Highlights
                   </h3>
                 )}
                 <RevealGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -309,7 +302,7 @@ const ServiceDetail = ({ onQuote }: ServiceDetailProps) => {
               <div>
                 {isMixed && (
                   <h3 className="text-yellow-400/70 text-xs tracking-widest uppercase font-semibold mb-6">
-                    {t.serviceDetails.completeRange}
+                    Complete Range
                   </h3>
                 )}
                 <RevealGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -342,14 +335,14 @@ const ServiceDetail = ({ onQuote }: ServiceDetailProps) => {
         />
         <Reveal className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-8">
           <div>
-            <h2 className="text-3xl md:text-4xl font-black text-black mb-3">{t.serviceDetails.interestedInPrefix}{service.title}{t.serviceDetails.interestedInSuffix}</h2>
-            <p className="text-black/70 text-lg">{t.serviceDetails.ctaParagraph}</p>
+            <h2 className="text-3xl md:text-4xl font-black text-black mb-3">Interested in {service.title}?</h2>
+            <p className="text-black/70 text-lg">Tell us about your project and we'll provide a tailored solution.</p>
           </div>
           <button
             onClick={onQuote}
             className="group bg-black hover:bg-zinc-800 text-white font-bold px-10 py-5 tracking-wider uppercase text-sm transition-all duration-200 hover:shadow-2xl active:scale-95 flex items-center gap-2 whitespace-nowrap"
           >
-            {t.serviceDetails.getQuote}
+            Get a Quote
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </button>
         </Reveal>

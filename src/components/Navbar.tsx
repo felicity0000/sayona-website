@@ -1,31 +1,25 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Languages } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import sayonaLogo from '../assets/sayona-logo.png';
 import { products } from '../data/productsData';
-import { useT } from '../i18n/translations';
-import { useLanguage } from '../i18n/LanguageContext';
-import { localizeService } from '../i18n/localizeService';
 
 interface NavbarProps {
   onQuote: () => void;
 }
+
+const navLinks = [
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' },
+  { label: 'Products', path: '/' },
+  { label: 'Contact', path: '/contact' },
+];
 
 const Navbar = ({ onQuote }: NavbarProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const { pathname } = useLocation();
-  const t = useT();
-  const { language, toggleLanguage } = useLanguage();
-  const localizedProducts = products.map((p) => localizeService(p, language));
-
-  const navLinks = [
-    { label: t.nav.home, path: '/', key: 'home' },
-    { label: t.nav.about, path: '/about', key: 'about' },
-    { label: t.nav.products, path: '/', key: 'products' },
-    { label: t.nav.contact, path: '/contact', key: 'contact' },
-  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -34,7 +28,7 @@ const Navbar = ({ onQuote }: NavbarProps) => {
   }, []);
 
   const isActive = (link: (typeof navLinks)[number]) =>
-    link.key === 'products' ? pathname.startsWith('/services') : pathname === link.path;
+    link.label === 'Products' ? pathname.startsWith('/services') : pathname === link.path;
 
   const closeMenus = () => {
     setMenuOpen(false);
@@ -71,7 +65,7 @@ const Navbar = ({ onQuote }: NavbarProps) => {
               ? 'text-black/70 hover:text-black'
               : 'text-white/80 hover:text-white';
 
-            if (link.key === 'products') {
+            if (link.label === 'Products') {
               return (
                 <div key={link.label} className="relative group/products">
                   <Link
@@ -95,7 +89,7 @@ const Navbar = ({ onQuote }: NavbarProps) => {
                     }`}
                   >
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-2">
-                      {localizedProducts.map((p) => (
+                      {products.map((p) => (
                         <Link
                           key={p.slug}
                           to={`/services/${p.slug}`}
@@ -143,42 +137,20 @@ const Navbar = ({ onQuote }: NavbarProps) => {
         {/* CTA */}
         <div className="hidden lg:flex items-center gap-3">
           <button
-            onClick={toggleLanguage}
-            aria-label={t.nav.languageToggleAria}
-            className={`flex items-center gap-1.5 text-sm font-medium px-3 py-2 border transition-all duration-200 ${
-              scrolled
-                ? 'border-black/20 text-black/70 hover:border-black/40 hover:text-black'
-                : 'border-white/30 text-white/80 hover:border-white hover:text-white'
-            }`}
-          >
-            <Languages size={16} />
-            {language === 'en' ? '中文' : 'EN'}
-          </button>
-          <button
             onClick={onQuote}
             className="bg-yellow-400 hover:bg-yellow-300 text-black font-bold text-sm px-6 py-2.5 rounded-none transition-all duration-200 tracking-wider uppercase hover:shadow-[0_0_20px_rgba(234,179,8,0.5)] active:scale-95"
           >
-            {t.nav.getQuote}
+            Get a Quote
           </button>
         </div>
 
         {/* Mobile menu button */}
-        <div className="lg:hidden flex items-center gap-1">
-          <button
-            onClick={toggleLanguage}
-            aria-label={t.nav.languageToggleAria}
-            className={`flex items-center gap-1 text-xs font-medium px-2.5 py-1.5 border transition-all duration-200 ${scrolled ? 'border-black/20 text-black/70' : 'border-white/30 text-white/80'}`}
-          >
-            <Languages size={14} />
-            {language === 'en' ? '中文' : 'EN'}
-          </button>
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className={`p-2 transition-all duration-200 hover:scale-110 ${scrolled ? 'text-black' : 'text-white'}`}
-          >
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className={`lg:hidden p-2 transition-all duration-200 hover:scale-110 ${scrolled ? 'text-black' : 'text-white'}`}
+        >
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
 
       {/* Mobile Menu */}
@@ -194,7 +166,7 @@ const Navbar = ({ onQuote }: NavbarProps) => {
               ? 'text-yellow-400 border-yellow-400 bg-yellow-400/5'
               : 'text-black/70 border-transparent hover:text-black hover:border-black/30';
 
-            if (link.key === 'products') {
+            if (link.label === 'Products') {
               return (
                 <div key={link.label}>
                   <div className={`flex items-center justify-between border-l-2 ${linkClass}`}>
@@ -207,7 +179,7 @@ const Navbar = ({ onQuote }: NavbarProps) => {
                     </Link>
                     <button
                       onClick={() => setMobileProductsOpen((o) => !o)}
-                      aria-label={t.nav.toggleProductsAria}
+                      aria-label="Toggle products list"
                       className="px-4 py-3"
                     >
                       <ChevronDown
@@ -217,7 +189,7 @@ const Navbar = ({ onQuote }: NavbarProps) => {
                     </button>
                   </div>
                   <div className={`overflow-hidden transition-all duration-300 ${mobileProductsOpen ? 'max-h-96' : 'max-h-0'}`}>
-                    {localizedProducts.map((p) => (
+                    {products.map((p) => (
                       <Link
                         key={p.slug}
                         to={`/services/${p.slug}`}
@@ -247,7 +219,7 @@ const Navbar = ({ onQuote }: NavbarProps) => {
             onClick={() => { onQuote(); setMenuOpen(false); }}
             className="mt-3 bg-yellow-400 hover:bg-yellow-300 text-black font-bold text-sm px-6 py-3 tracking-wider uppercase transition-all duration-200"
           >
-            {t.nav.getQuote}
+            Get a Quote
           </button>
         </div>
       </div>
