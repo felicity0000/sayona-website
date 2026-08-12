@@ -2,7 +2,7 @@ import { WhatsappIcon } from './SocialIcons';
 
 const WhatsAppButton = () => {
   const message = encodeURIComponent('Hello, I would like to inquire about your services.'); // Predefined message for WhatsApp
-  const href = `https://wa.me/0756243447?text=${message}`;
+  const href = `https://wa.me/256709222047?text=${message}`;
 
   return (
     <a

@@ -39,6 +39,10 @@ import pots10 from '../assets/3-pots/new-pots-10.jpeg';
 import pots11 from '../assets/3-pots/new-pots-11.jpeg';
 import pots12 from '../assets/3-pots/new-pots-12.jpeg';
 import pots13 from '../assets/3-pots/new-pots-13.jpeg';
+import pots14 from '../assets/3-pots/new-pots-14.jpeg';
+import pots15 from '../assets/3-pots/new-pots-15.jpeg';
+import pots16 from '../assets/3-pots/new-pots-16.jpeg';
+import pots17 from '../assets/3-pots/new-pots-17.jpeg';
 
 import industrialComponent1 from '../assets/aluminium-product/industrial-component-1.jpeg';
 import industrialComponent2 from '../assets/aluminium-product/industrial-component-2.jpeg';
@@ -84,6 +88,8 @@ import xmasLighting6 from '../assets/4-light-decorations/xmas-lighting-6.jpeg';
 import xmasLighting7 from '../assets/4-light-decorations/xmas-lighting-7.jpeg';
 import xmasLighting8 from '../assets/4-light-decorations/xmas-lighting-8.jpeg';
 import xmasLighting9 from '../assets/4-light-decorations/xmas-lighting-9.jpeg';
+import xmasLighting10 from '../assets/4-light-decorations/xmas-lighting-10.jpeg';
+import xmasLighting11 from '../assets/4-light-decorations/xmas-lighting-11.jpeg';
 import lightingFacadeSanta from '../assets/decorations/new-lightings-3.jpeg';
 
 import rawMaterialFiberglassMat from '../assets/raw-materials-supply-products/fiber-glass-mat-1.jpg';
@@ -91,22 +97,20 @@ import rawMaterialResin from '../assets/raw-materials-supply-products/resin.jpg'
 import rawMaterialWovenRoving from '../assets/raw-materials-supply-products/fiber-glass-mat-2.jpg';
 import rawMaterialChoppedStrandRoll from '../assets/raw-materials-supply-products/fiber-glass-mat-3.jpg';
 import rawMaterialFiberglassCloth from '../assets/raw-materials-supply-products/fiber-glass-mat-4.jpg';
-import rawMaterial1 from '../assets/raw-materials-supply-products/raw-material-1.jpeg';
-import rawMaterial2 from '../assets/raw-materials-supply-products/raw-material-2.jpeg';
-import rawMaterial3 from '../assets/raw-materials-supply-products/raw-material-3.jpeg';
-import rawMaterial4 from '../assets/raw-materials-supply-products/raw-material-4.jpeg';
 
 import furnitureWardrobe from '../assets/furniture-products/furniture-3.jpg';
 import furnitureReceptionDesk from '../assets/furniture-products/furni-2.jpeg';
-import furnitureDisplayCounter from '../assets/furniture-products/furni-1.jpeg';
-import furnitureDeskDetail from '../assets/furniture-products/furni-3.jpeg';
 import furnitureLobbyWide from '../assets/furniture-products/furni-4.jpeg';
 import furnitureCabinet from '../assets/furniture-products/furniture-1.jpeg';
 import furnitureBaikalDesk from '../assets/furniture-products/furniture-2.jpeg';
+import furnitureModularKitchen from '../assets/furniture-products/furniture-4.jpg';
+import furnitureFittedWardrobe from '../assets/furniture-products/furniture-5.jpg';
 
 import cncWoodCutting1 from '../assets/6-cnc-wood-products/cnc-wood-1.jpeg';
 import cncWoodMachine1 from '../assets/6-cnc-wood-products/cnc-wood-2.jpeg';
 import cncWoodPanel1 from '../assets/6-cnc-wood-products/cnc-wood-3.jpeg';
+import cncWoodJaliStack1 from '../assets/6-cnc-wood-products/cnc-wood-4.jpeg';
+import cncWoodJaliStack2 from '../assets/6-cnc-wood-products/cnc-wood-5.jpeg';
 
 import metalPlasmaFloral1 from '../assets/5-metal-fabrication-products/new-metal-works-1.jpeg';
 import metalCutterMachine1 from '../assets/5-metal-fabrication-products/new-metal-works-2.jpeg';
@@ -411,7 +415,7 @@ export const products: ServiceData[] = [
         heading: 'A Shape and Finish for Every Space',
         highlight: 'Finish',
         description: 'From ribbed textures to tapered planters, here are more of the shapes and finishes we produce in fiberglass.',
-        images: [pots2, pots6, pots7, pots9, pots12, pots13],
+        images: [pots2, pots6, pots7, pots9, pots12, pots13, pots14, pots15, pots16, pots17],
       },
       banner: {
         tagline: 'Made to Order',
@@ -648,7 +652,7 @@ export const products: ServiceData[] = [
         heading: 'Christmas Lighting Across Kampala',
         highlight: 'Kampala',
         description: 'From office facades to fences and gardens, here are more of the festive lighting installations we design and install every holiday season.',
-        images: [xmasLighting6, xmasLighting7, xmasLighting9],
+        images: [xmasLighting6, xmasLighting7, xmasLighting9, xmasLighting10, xmasLighting11],
       },
       banner: {
         tagline: 'Full Facade Lighting',
@@ -702,13 +706,6 @@ export const products: ServiceData[] = [
         image: rawMaterialChoppedStrandRoll,
         fit: 'cover',
       },
-      gallery: {
-        tagline: 'In Stock, Ready to Ship',
-        heading: 'Rolls, Mats & Films in Stock',
-        highlight: 'In Stock',
-        description: 'From printed veils to pigmented films, here are more of the composite raw materials we keep stocked and ready to supply.',
-        images: [rawMaterial1, rawMaterial2, rawMaterial3, rawMaterial4],
-      },
       banner: {
         tagline: 'Fine Surface Finish',
         heading: 'Fiberglass Cloth, Stocked in Bulk',
@@ -722,12 +719,13 @@ export const products: ServiceData[] = [
     icon: Sofa,
     image: furnitureLobbyWide,
     title: 'Furniture',
-    intro: 'From reception counters and office desks to fitted wardrobes, we design and craft furniture for homes, offices, and hospitality spaces — built to order and finished to a premium standard.',
+    intro: 'From reception counters and office desks to fitted wardrobes and modular kitchens, we design and craft furniture for homes, offices, and hospitality spaces — built to order and finished to a premium standard.',
     catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
       { title: 'Reception Counters & Office Desks', desc: 'Custom-built reception counters and office desks with a high-gloss finish, designed and installed for corporate lobbies and showrooms.', image: furnitureReceptionDesk },
-      { title: 'Display Counters & Product Stands', desc: 'Glossy display counters and product stands built for exhibitions, showrooms, and retail spaces.', image: furnitureDisplayCounter },
-      { title: 'Wardrobes & Storage Units', desc: 'Custom-built wardrobes and storage units with a high-gloss finish, designed to fit any bedroom, office, or retail space.', image: furnitureWardrobe },
+      { title: 'Display Counters & Product Stands', desc: 'Glossy display counters and product stands built for exhibitions, showrooms, and retail spaces.', image: furnitureBaikalDesk },
+      { title: 'Wardrobes & Storage Units', desc: 'Custom-built wardrobes and storage units with a high-gloss finish, designed to fit any bedroom, office, or retail space.', image: furnitureFittedWardrobe },
+      { title: 'Modular Kitchen Units', desc: 'Custom-built modular kitchen cabinetry and countertops, designed and fitted to match any layout.', image: furnitureModularKitchen },
       { title: 'Custom Furniture & Upholstery', desc: 'Bespoke furniture pieces built and upholstered to order, finished to match any interior.' },
     ],
     showcase: {
@@ -735,23 +733,23 @@ export const products: ServiceData[] = [
         tagline: 'Crafted Furniture',
         heading: 'Furniture, Built and Installed to Order',
         highlight: 'Built',
-        description: 'From reception counters and office desks to display stands and fitted wardrobes, every piece is designed, built, and installed in-house — finished to a premium, high-gloss standard.',
+        description: 'From reception counters and office desks to display stands, fitted wardrobes, and modular kitchens, every piece is designed, built, and installed in-house — finished to a premium, high-gloss standard.',
         features: [
           'Reception counters & corporate office desks',
           'Display counters & product stands',
           'Custom wardrobes and storage units',
-          'Bespoke furniture built and upholstered to order',
+          'Modular kitchen units, designed and fitted to order',
         ],
         mainImage: furnitureReceptionDesk,
-        sideImages: [furnitureDisplayCounter, furnitureBaikalDesk],
+        sideImages: [furnitureBaikalDesk, furnitureFittedWardrobe],
         fit: 'cover',
       },
       secondary: {
         tagline: 'Finished in Detail',
         heading: 'Every Edge, Finished to a High Gloss',
-        description: 'From corporate lobbies to showroom counters, every piece is measured, built, and installed on-site — finished to a high-gloss standard that holds up close.',
-        image: furnitureDeskDetail,
-        secondImage: furnitureCabinet,
+        description: 'From corporate lobbies to showroom counters and modular kitchens, every piece is measured, built, and installed on-site — finished to a high-gloss standard that holds up close.',
+        image: furnitureCabinet,
+        secondImage: furnitureModularKitchen,
         fit: 'cover',
       },
       banner: {
@@ -841,15 +839,16 @@ export const products: ServiceData[] = [
           'Custom signage, frames & retail displays',
         ],
         mainImage: cncWoodPanel1,
-        sideImages: [cncWoodCutting1, cncWoodMachine1],
-        fit: 'contain',
+        sideImages: [cncWoodCutting1, cncWoodJaliStack1],
+        fit: 'cover',
       },
       secondary: {
-        tagline: 'Precision Cutting',
-        heading: 'Cut, Piece by Piece, on CNC',
-        description: 'Each design is programmed and cut on our CNC router — clean, repeatable precision for even the most intricate patterns, before every piece is hand-finished.',
-        image: cncWoodCutting1,
-        fit: 'contain',
+        tagline: 'Fresh Off the Router',
+        heading: 'Jalis & Panels, Ready to Finish',
+        highlight: 'Ready',
+        description: 'Freshly cut jali screens and decorative panels, staged straight from the CNC router before sanding, finishing, and installation.',
+        image: cncWoodJaliStack2,
+        fit: 'cover',
       },
       banner: {
         tagline: 'Advanced Equipment',

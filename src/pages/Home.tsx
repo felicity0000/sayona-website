@@ -172,16 +172,6 @@ export default function Home({ onQuote }: HomeProps) {
                   className="group-hover:translate-x-1 transition-transform"
                 />
               </button>
-              <Link
-                to="/contact"
-                className="group border border-white/30 hover:border-yellow-400 hover:text-yellow-400 text-white font-bold px-8 py-4 tracking-wider uppercase text-sm transition-all duration-200 active:scale-95 flex items-center gap-2"
-              >
-                Our Projects
-                <ArrowRight
-                  size={18}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </Link>
             </div>
           </div>
         </div>

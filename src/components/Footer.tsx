@@ -3,22 +3,16 @@ import { Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
 import sayonaLogo from '../assets/sayona-logo.png';
 import { products } from '../data/productsData';
 import {
-  FacebookIcon,
   InstagramIcon,
-  XIcon,
-  LinkedinIcon,
   WhatsappIcon,
   TiktokIcon,
 } from './SocialIcons';
 
 const socialLinks = [
-  { Icon: FacebookIcon, href: '#', label: 'Facebook' },
-  { Icon: InstagramIcon, href: '#', label: 'Instagram' },
-  { Icon: XIcon, href: '#', label: 'X' },
-  { Icon: LinkedinIcon, href: '#', label: 'LinkedIn' },
+  { Icon: InstagramIcon, href: 'https://www.instagram.com/p/Db5i9BUiwRB/?igsh=YTd6cDE3dHhxbHdm', label: 'Instagram' },
   {
     Icon: WhatsappIcon,
-    href: `https://wa.me/0756243447?text=${encodeURIComponent('Hello, I would like to inquire about your services.')}`,
+    href: `https://wa.me/256709222047?text=${encodeURIComponent('Hello, I would like to inquire about your services.')}`,
     label: 'WhatsApp',
   },
   { Icon: TiktokIcon, href: 'https://www.tiktok.com/@sayonaintltd?_r=1&_t=ZS-98FABjis0vK', label: 'TikTok' },
