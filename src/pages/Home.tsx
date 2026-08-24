@@ -21,6 +21,7 @@ import { coreServices } from "../data/coreServicesData";
 import images from "../assets/images";
 import Seo from "../components/Seo";
 import { Reveal, RevealGroup, RevealItem } from "../components/Reveal";
+import Marquee from "../components/Marquee";
 
 interface HomeProps {
   onQuote: () => void;
@@ -421,7 +422,7 @@ export default function Home({ onQuote }: HomeProps) {
       </section>
 
       {/* Partners */}
-      <section className="bg-white py-24">
+      <section className="bg-white py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="text-center mb-16">
             <span className="text-yellow-400 text-xs tracking-widest uppercase font-medium">
@@ -435,35 +436,35 @@ export default function Home({ onQuote }: HomeProps) {
               across Uganda and East Africa.
             </p>
           </Reveal>
-          <RevealGroup className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-            {[
-              { src: images.simbaCementLogo, alt: "Simba Cement" },
-              { src: images.toyotaLogo, alt: "Toyota" },
-              { src: images.nileBatteriesLogo, alt: "Nile Batteries Limited" },
-              { src: images.airtelLogo, alt: "Airtel" },
-              { src: images.mtnLogo, alt: "MTN" },
-              { src: images.gentexLogo, alt: "Gentex" },
-              { src: images.steelTubeLogo, alt: "Steel & Tube" },
-              { src: images.sgaSecurityLogo, alt: "SGA Security" },
-              { src: images.propertyServicesLogo, alt: "Property Services Limited" },
-              { src: images.eapsLogo, alt: "East African Packaging Solutions" },
-              { src: images.g4sLogo, alt: "G4S" },
-              { src: images.keshwalaGroupLogo, alt: "Keshwala Group" },
-              { src: images.meeraInvestmentsLogo, alt: "Meera Investments Ltd" },
-            ].map((partner) => (
-              <RevealItem
-                key={partner.alt}
-                className="group bg-white border border-black/10 h-32 md:h-36 flex items-center justify-center p-8 hover:border-yellow-400/40 transition-all duration-300"
-              >
-                <img
-                  src={partner.src}
-                  alt={partner.alt}
-                  className="max-w-full max-h-full object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
-                />
-              </RevealItem>
-            ))}
-          </RevealGroup>
         </div>
+        <Marquee speed={40}>
+          {[
+            { src: images.simbaCementLogo, alt: "Simba Cement" },
+            { src: images.toyotaLogo, alt: "Toyota" },
+            { src: images.nileBatteriesLogo, alt: "Nile Batteries Limited" },
+            { src: images.airtelLogo, alt: "Airtel" },
+            { src: images.mtnLogo, alt: "MTN" },
+            { src: images.gentexLogo, alt: "Gentex" },
+            { src: images.steelTubeLogo, alt: "Steel & Tube" },
+            { src: images.sgaSecurityLogo, alt: "SGA Security" },
+            { src: images.propertyServicesLogo, alt: "Property Services Limited" },
+            { src: images.eapsLogo, alt: "East African Packaging Solutions" },
+            { src: images.g4sLogo, alt: "G4S" },
+            { src: images.keshwalaGroupLogo, alt: "Keshwala Group" },
+            { src: images.meeraInvestmentsLogo, alt: "Meera Investments Ltd" },
+          ].map((partner) => (
+            <div
+              key={partner.alt}
+              className="group bg-white border border-black/10 h-32 md:h-36 w-52 md:w-60 flex items-center justify-center p-8 hover:border-yellow-400/40 transition-all duration-300"
+            >
+              <img
+                src={partner.src}
+                alt={partner.alt}
+                className="max-w-full max-h-full object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+              />
+            </div>
+          ))}
+        </Marquee>
       </section>
 
       {/* CTA */}

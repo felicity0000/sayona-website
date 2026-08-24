@@ -224,7 +224,6 @@ export const products: ServiceData[] = [
     image: epoxy3,
     title: 'Epoxy Solutions',
     intro: 'We provide premium epoxy systems suitable for industrial and decorative applications — from protective flooring to designer resin finishes — serving warehouses, hospitals, manufacturing plants, commercial buildings, hotels, offices, and residential homes.',
-    catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
       { title: 'Clear Casting Epoxy Resin', desc: 'High-clarity casting resin for art, furniture, and decorative pours.' },
       { title: 'Industrial Epoxy Resin', desc: 'Heavy-duty epoxy resin engineered for demanding industrial applications.' },
@@ -273,7 +272,7 @@ export const products: ServiceData[] = [
     image: fibreBox15,
     title: 'Motorbike / Delivery Boxes',
     intro: "Weatherproof, lockable fiberglass delivery boxes built for boda-bodas, courier fleets, and utility vehicles — lightweight and secure, with custom branding available for your business.",
-    catalogue: '/catalogues/sayona-fibreglass-courier-boxes-with%20measurements.pdf',
+    catalogue: '/catalogues/courier-boxes.pdf',
     items: [
       { title: 'Motorcycle Courier Boxes', desc: 'Weatherproof fiberglass delivery boxes with secure locking lids and space for custom branding — built for boda-boda and courier fleets.', image: images.motorcycleCourierBox1 },
       { title: 'Delivery Boxes', desc: 'Durable, lockable fiberglass boxes for last-mile delivery, with your logo and contact details printed on request.', image: images.motorcycleCourierBox1 },
@@ -324,7 +323,7 @@ export const products: ServiceData[] = [
     image: roofing5,
     title: 'Transparent Sheets & Mabati',
     intro: "Transparent fiberglass roofing sheets, plus mabati that we both custom-make for industrial sites and companies and supply imported — engineered for durability, insulation, and natural light.",
-    catalogue: '/catalogues/roofings.pdf',
+    catalogue: '/catalogues/mabati-and-sheets.pdf',
     items: [
       { title: 'Transparent Roofing Sheets', desc: 'Light-transmitting fiberglass sheets that bring natural daylight into covered spaces.', image: images.roofing_sheets_1 },
       { title: 'Custom-Made Mabati', desc: 'Mabati fabricated to size for industrial sites, warehouses, and companies.' },
@@ -377,7 +376,7 @@ export const products: ServiceData[] = [
     image: pots1,
     title: 'Fiberglass Pots',
     intro: 'Fiberglass pots in a wide range of shapes, sizes, and finishes — lightweight, weatherproof, and finished to match any space, indoors or out.',
-    catalogue: '/catalogues/Sayona%20-works.pdf',
+    catalogue: '/catalogues/fibre-glass-pots.pdf',
     items: [
       { title: 'Round Pots', desc: 'Classic rounded planters in a range of sizes, finished in a smooth, high-gloss glaze.' },
       { title: 'Tall Planters', desc: 'Statement tall planters for lobbies, entrances, and feature corners, indoors or out.' },
@@ -431,7 +430,7 @@ export const products: ServiceData[] = [
     image: industrialComponent2,
     title: 'Aluminium Product Fabrication & Assembly',
     intro: 'We fabricate aluminium doors, windows, partitions, and structural glazing systems — engineered for strength, energy efficiency, and a clean architectural finish across residential and commercial spaces.',
-    catalogue: '/catalogues/Sayona%20-works.pdf',
+    catalogue: '/catalogues/office-works.pdf',
     items: [
       {
         title: 'Aluminium Doors (Sliding, Casement, Folding)',
@@ -490,7 +489,6 @@ export const products: ServiceData[] = [
     image: grc3,
     title: 'GRC & Cement Architectural Works',
     intro: 'We blend traditional elegance with modern engineering—crafting facades, columns, furniture, and temple elements that endure weather and time. Each piece is designed for structural strength and visual impact, enhancing residential, commercial, and public spaces with refined, lasting architectural beauty.',
-    catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
       {
         title: 'Decorative Cement Pillars & Columns',
@@ -563,7 +561,6 @@ export const products: ServiceData[] = [
     image: construction1,
     title: 'Construction',
     intro: 'From temple architecture to decorative ceilings and entrance archways, we deliver large-scale construction and architectural finishing — combining structural craftsmanship with intricate detail for landmark projects across Uganda.',
-    catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
       { title: 'Temple & Religious Architecture', desc: 'Full-scale construction of temples and religious structures, combining traditional design with modern building techniques.' },
       { title: 'Decorative Ceiling Work', desc: 'Hand-painted medallions, carved plaster ceilings, and domed ceiling features finished with intricate detail.' },
@@ -616,7 +613,6 @@ export const products: ServiceData[] = [
     image: xmasLighting4,
     title: 'Christmas Lighting Decorations',
     intro: 'Custom Christmas and holiday lighting installations for buildings, malls, dealerships, and public landmarks — full facade illuminations, branded festive motifs, and lit archways that transform a space for the season.',
-    catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
       { title: 'Building Facade Lighting', desc: 'Full-height LED string light installations that outline and illuminate entire building facades for the festive season.' },
       { title: 'Branded Festive Displays', desc: 'Custom Christmas motifs — bells, stars, reindeer, and sleighs — designed and lit to match a brand or storefront.' },
@@ -668,7 +664,6 @@ export const products: ServiceData[] = [
     image: rawMaterialFiberglassMat,
     title: 'Raw Materials Supply',
     intro: 'Sayona International supplies premium-quality composite raw materials for manufacturers, contractors, fabricators, and artisans across Uganda and East Africa.',
-    catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
       { title: 'General Purpose Polyester Resin', desc: 'Versatile resin suited for a wide range of fiberglass fabrication needs.', image: rawMaterialResin },
       { title: 'Epoxy Resin', desc: 'High-performance resin for casting, coating, and composite lamination.' },
@@ -720,7 +715,7 @@ export const products: ServiceData[] = [
     image: furnitureLobbyWide,
     title: 'Furniture',
     intro: 'From reception counters and office desks to fitted wardrobes and modular kitchens, we design and craft furniture for homes, offices, and hospitality spaces — built to order and finished to a premium standard.',
-    catalogue: '/catalogues/Sayona%20-works.pdf',
+    catalogue: '/catalogues/office-works.pdf',
     items: [
       { title: 'Reception Counters & Office Desks', desc: 'Custom-built reception counters and office desks with a high-gloss finish, designed and installed for corporate lobbies and showrooms.', image: furnitureReceptionDesk },
       { title: 'Display Counters & Product Stands', desc: 'Glossy display counters and product stands built for exhibitions, showrooms, and retail spaces.', image: furnitureBaikalDesk },
@@ -766,7 +761,7 @@ export const products: ServiceData[] = [
     image: interiorDesign4,
     title: 'Interior & Exterior Craftsmanship',
     intro: 'End-to-end interior and exterior craftsmanship — from showroom design and fit-outs to façade works, modular kitchens, lighting, and landscaping — delivered as a single turnkey solution.',
-    catalogue: '/catalogues/Sayona%20-works.pdf',
+    catalogue: '/catalogues/office-works.pdf',
     items: [
       { title: 'Showroom Interiors & Facades', desc: 'Captivating showroom designs featuring branded displays, lighting, signage, and premium façade treatments to enhance visibility and attract customers.', image: interiorDesign4 },
       { title: 'Interior Fit-Outs: Walls, Ceilings & Finishes', desc: 'Turnkey solutions including wall paneling, false ceilings, decorative trims, partitions, acoustics, paint, and wallpaper tailored to client aesthetics.', image: interiorDesign3 },
@@ -813,7 +808,7 @@ export const products: ServiceData[] = [
     image: cncWoodPanel1,
     title: 'CNC Wood Carving & Cutting',
     intro: 'Precision CNC 2D/3D wood carving and cutting for architectural, furniture, and spiritual pieces — from decorative jalis and wall panels to carved beds, mandaps, and bespoke signage.',
-    catalogue: '/catalogues/Sayona%20-works.pdf',
+    catalogue: '/catalogues/cnc-wood.pdf',
     items: [
       { title: 'Designer Wooden Partitions & Decorative Jalis', desc: 'Intricately carved panels and screens that serve as elegant space dividers and aesthetic highlights — ideal for homes, offices, hotels, and religious spaces.', image: cncWoodMachine1 },
       { title: 'Customized Signage & Nameplates', desc: 'Personalized CNC-engraved signs and nameplates in wood or composite materials, offering refined branding with durability and visual impact.' },
@@ -864,7 +859,6 @@ export const products: ServiceData[] = [
     image: metalMedallionPanel1,
     title: 'CNC Plasma Metal Design & Cutting',
     intro: 'Precision plasma-cut metalwork for railings, signage, and decorative installations — combining structural strength with intricate, custom-cut detailing.',
-    catalogue: '/catalogues/Sayona%20-works.pdf',
     items: [
       { title: 'Security Grills & Burglar-Proofing Structures', desc: 'Reinforced metalworks offering dependable protection for homes and businesses without compromising on aesthetics.' },
       { title: 'Metal Furniture Components', desc: 'Fabricated frames, legs, and structures for industrial-style furniture with precision-cut details and structural integrity.' },

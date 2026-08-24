@@ -10,6 +10,7 @@ import ServiceDetail from './pages/ServiceDetails';
 import NotFound from './pages/NotFound';
 import QuoteModal from './components/QuoteModal';
 import WhatsAppButton from './components/WhatsappButton';
+import Preloader from './components/Preloader';
 
 const pageVariants = {
   initial: { opacity: 0, y: 12 },
@@ -47,6 +48,7 @@ function App() {
   return (
     <MotionConfig reducedMotion="user">
       <div className="min-h-screen bg-white">
+        <Preloader />
         <ScrollToTop />
         <Navbar onQuote={onQuote} />
         <main>
