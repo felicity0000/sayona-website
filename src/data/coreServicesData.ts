@@ -3,6 +3,7 @@ import type { LucideIcon } from 'lucide-react';
 import images from '../assets/images';
 import epoxy3 from '../assets/epoxy/epoxy-3.jpeg';
 import rawMaterialFiberglassMat from '../assets/raw-materials-supply-products/fiber-glass-mat-1.jpg';
+import fibreGlassManufacturing from '../assets/fibre-glass-manufacturing.jpg';
 import furnitureReceptionDesk from '../assets/furniture-products/furni-2.jpeg';
 
 // Standalone data for the "Our Core Services" section on the home page.
@@ -21,7 +22,7 @@ export const coreServices: CoreService[] = [
   {
     slug: 'fiberglass-manufacturing',
     icon: Layers,
-    image: images.root_top_glass_sheets_1,
+    image: fibreGlassManufacturing,
     title: 'Fiberglass Manufacturing',
     intro: 'We design and manufacture high-quality fiberglass products tailored to meet the unique requirements of our clients — from architectural finishes to industrial components — combining durability, versatility, and refined craftsmanship in every piece.',
     items: [
